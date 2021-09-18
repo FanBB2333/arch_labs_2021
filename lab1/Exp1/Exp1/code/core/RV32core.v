@@ -114,9 +114,9 @@ module  RV32core(
         .DatatoReg_EX(DatatoReg_EXE),.RegWrite_EX(RegWrite_EXE),.WR_EX(mem_w_EXE),
         .u_b_h_w_EX(u_b_h_w_EXE),.MIO_EX(MIO_EXE));
     
-    MUX2T1_32 mux_A_EXE(.I0(),.I1(),.s(),.o());     //to fill sth. in ()
+    MUX2T1_32 mux_A_EXE(.I0(),.I1(),.s(ALUSrc_A_ctrl),.o());     //to fill sth. in ()
 
-    MUX2T1_32 mux_B_EXE(.I0(),.I1(),.s(),.o());       //to fill sth. in ()
+    MUX2T1_32 mux_B_EXE(.I0(),.I1(),.s(ALUSrc_B_ctrl),.o());       //to fill sth. in ()
 
     ALU alu(.A(ALUA_EXE),.B(ALUB_EXE),.Control(ALUControl_EXE),
         .res(ALUout_EXE),.zero(ALUzero_EXE),.overflow(ALUoverflow_EXE));
