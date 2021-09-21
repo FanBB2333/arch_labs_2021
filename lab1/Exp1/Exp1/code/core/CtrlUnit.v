@@ -85,7 +85,9 @@ module CtrlUnit(
     wire S_valid = SW | SH | SB;
 
 
-    assign Branch = ;                       //to fill sth. in 
+    wire U_valid = LUI | AUIPC; //
+    wire J_valid = JAL; // 
+    assign Branch = BEQ | BNE | BLT | BGE | BLTU | BGEU;                       //to fill sth. in 
 
     parameter Imm_type_I = 3'b001;
     parameter Imm_type_B = 3'b010;
@@ -138,9 +140,9 @@ module CtrlUnit(
 
     assign MIO = L_valid | S_valid;
 
-    assign rs1use =  ;                        //to fill sth. in 
+    assign rs1use =  R_valid | I_valid | S_valid | B_valid | L_valid | JALR;                        //to fill sth. in 
 
-    assign rs2use = ;                         //to fill sth. in 
+    assign rs2use = R_valid | S_valid | B_valid;                         //to fill sth. in 
 
     assign hazard_optype = ;                  //to fill sth. in 
 
