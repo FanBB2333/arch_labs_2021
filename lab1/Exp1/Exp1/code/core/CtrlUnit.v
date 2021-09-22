@@ -101,11 +101,11 @@ module CtrlUnit(
                     {3{LUI | AUIPC}}              & Imm_type_U ;
 
 
-    assign cmp_ctrl = ;                         //to fill sth. in 
+    assign cmp_ctrl = funct3;                         //to fill sth. in 
 
-    assign ALUSrc_A = ;                         //to fill sth. in 
+    assign ALUSrc_A = rs1use;                         //to fill sth. in 
 
-    assign ALUSrc_B = ;                         //to fill sth. in 
+    assign ALUSrc_B = !rs2use;                         //to fill sth. in 
 
     parameter ALU_ADD  = 4'b0001;
     parameter ALU_SUB  = 4'b0010;
