@@ -145,5 +145,9 @@ module CtrlUnit(
     assign rs2use = R_valid | S_valid | B_valid;                         //to fill sth. in 
 
     assign hazard_optype = ;                  //to fill sth. in 
+    // 00： no hazard
+    // 01: structure hazard
+    // 10: data hazard
+    // 11: control hazard
 
 endmodule
