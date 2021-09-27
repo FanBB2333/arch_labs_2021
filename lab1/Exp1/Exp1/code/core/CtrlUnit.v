@@ -3,11 +3,11 @@
 
 module CtrlUnit(
     input[31:0] inst,
-    input cmp_res,
+    input cmp_res, // 比较结果，如果为1的话则需要跳转
     output Branch, ALUSrc_A, ALUSrc_B, DatatoReg, RegWrite, mem_w,
         MIO, rs1use, rs2use,
     output [1:0] hazard_optype,
-    output [2:0] ImmSel, cmp_ctrl,
+    output [2:0] ImmSel, cmp_ctrl, // cmp_ctrl 用于判断需要用哪一种Branch指令比较
     output [3:0] ALUControl,
     output JALR
 );
@@ -87,7 +87,7 @@ module CtrlUnit(
 
     wire U_valid = LUI | AUIPC; //
     wire J_valid = JAL; // 
-    assign Branch = BEQ | BNE | BLT | BGE | BLTU | BGEU;                       //to fill sth. in 
+    assign Branch = (BEQ | BNE | BLT | BGE | BLTU | BGEU) && cmp_res;                       //to fill sth. in 
 
     parameter Imm_type_I = 3'b001;
     parameter Imm_type_B = 3'b010;
@@ -145,9 +145,10 @@ module CtrlUnit(
     assign rs2use = R_valid | S_valid | B_valid;                         //to fill sth. in 
 
     assign hazard_optype = ;                  //to fill sth. in 
+
     // 00： no hazard
-    // 01: structure hazard
-    // 10: data hazard
-    // 11: control hazard
+    // 01: ALU type with data hazard
+    // 10: Load-use type with data hazard
+    // 11: Branch type with control hazard
 
 endmodule
