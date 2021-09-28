@@ -17,7 +17,7 @@ module  RV32core(
 
     wire Branch_ctrl, JALR, RegWrite_ctrl, mem_w_ctrl, MIO_ctrl,
         ALUSrc_A_ctrl, ALUSrc_B_ctrl, DatatoReg_ctrl, rs1use_ctrl, rs2use_ctrl;
-    wire[1:0] hazard_optype_ctrl;
+    wire[1:0] hazard_optype_ctrl, hazard_optype_ctrl_before1, hazard_optype_ctrl_before2;
     wire[2:0] ImmSel_ctrl, cmp_ctrl;
     wire[3:0] ALUControl_ctrl;
 
@@ -71,6 +71,12 @@ module  RV32core(
         .mem_w(mem_w_ctrl),.MIO(MIO_ctrl),.rs1use(rs1use_ctrl),.rs2use(rs2use_ctrl),
         .hazard_optype(hazard_optype_ctrl),.ImmSel(ImmSel_ctrl),.cmp_ctrl(cmp_ctrl),
         .ALUControl(ALUControl_ctrl),.JALR(JALR));
+    
+    Latch2_2 hazard_optype_latch(.clk(debug_clk), .rst(rst), .hazard_optype_ctrl(hazard_optype_ctrl)
+    
+        .hazard_optype_ctrl_before1(hazard_optype_ctrl_before1), hazard_optype_ctrl_before2(hazard_optype_ctrl_before2)
+    );
+
     
     Regs register(.clk(debug_clk),.rst(rst),.L_S(RegWrite_WB),.R_addr_A(inst_ID[19:15]),
         .R_addr_B(inst_ID[24:20]),.rdata_A(rs1_data_reg),.rdata_B(rs2_data_reg),
