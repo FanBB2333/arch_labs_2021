@@ -136,7 +136,7 @@ module CtrlUnit(
 
     assign RegWrite = R_valid | I_valid | JAL | JALR | L_valid | LUI | AUIPC;
 
-    assign mem_w = S_valid;
+    assign mem_w = S_valid; // 1 means write to memory
 
     assign MIO = L_valid | S_valid;
 
@@ -144,7 +144,7 @@ module CtrlUnit(
 
     assign rs2use = R_valid | S_valid | B_valid;                         //to fill sth. in 
 
-    assign hazard_optype = ;                  //to fill sth. in 
+    assign hazard_optype = { (B_valid | L_valid) && !(R_valid | I_valid), (R_valid | I_valid | B_valid) && (!L_valid) };                  //to fill sth. in 
 
     // 00： no hazard
     // 01: ALU type with data hazard
