@@ -29,3 +29,70 @@ launch_simulation
 open_wave_config E:/arch_labs_2021/lab1/Exp1/Exp1/code/sim/core_sim_behav.wcfg
 source core_sim.tcl
 close_sim
+launch_simulation
+open_wave_config E:/arch_labs_2021/lab1/Exp1/Exp1/code/sim/core_sim_behav.wcfg
+source core_sim.tcl
+close_sim
+launch_simulation
+open_wave_config E:/arch_labs_2021/lab1/Exp1/Exp1/code/sim/core_sim_behav.wcfg
+source core_sim.tcl
+close_sim
+launch_simulation
+open_wave_config E:/arch_labs_2021/lab1/Exp1/Exp1/code/sim/core_sim_behav.wcfg
+source core_sim.tcl
+close_sim
+launch_simulation
+open_wave_config E:/arch_labs_2021/lab1/Exp1/Exp1/code/sim/core_sim_behav.wcfg
+source core_sim.tcl
+close_sim
+launch_simulation
+open_wave_config E:/arch_labs_2021/lab1/Exp1/Exp1/code/sim/core_sim_behav.wcfg
+source core_sim.tcl
+close_sim
+launch_simulation
+open_wave_config E:/arch_labs_2021/lab1/Exp1/Exp1/code/sim/core_sim_behav.wcfg
+source core_sim.tcl
+close_sim
+set_property -name {xsim.simulate.log_all_signals} -value {true} -objects [get_filesets sim_1]
+launch_simulation
+open_wave_config E:/arch_labs_2021/lab1/Exp1/Exp1/code/sim/core_sim_behav.wcfg
+source core_sim.tcl
+close_sim
+launch_simulation
+open_wave_config E:/arch_labs_2021/lab1/Exp1/Exp1/code/sim/core_sim_behav.wcfg
+source core_sim.tcl
+current_wave_config {core_sim_behav.wcfg}
+add_wave {{/core_sim/core/hazard_unit/reg_DE_flush}} 
+current_wave_config {core_sim_behav.wcfg}
+add_wave {{/core_sim/core/hazard_optype_latch/hazard_optype_ctrl_before1}} 
+current_wave_config {core_sim_behav.wcfg}
+add_wave {{/core_sim/core/hazard_optype_latch/hazard_optype_ctrl_before2}} 
+current_wave_config {core_sim_behav.wcfg}
+add_wave {{/core_sim/core/hazard_unit/rd_EXE}} 
+current_wave_config {core_sim_behav.wcfg}
+add_wave {{/core_sim/core/hazard_unit}} 
+save_wave_config {E:/arch_labs_2021/lab1/Exp1/Exp1/code/sim/core_sim_behav.wcfg}
+save_wave_config {E:/arch_labs_2021/lab1/Exp1/Exp1/code/sim/core_sim_behav.wcfg}
+save_wave_config {E:/arch_labs_2021/lab1/Exp1/Exp1/code/sim/core_sim_behav.wcfg}
+save_wave_config {E:/arch_labs_2021/lab1/Exp1/Exp1/code/sim/core_sim_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config E:/arch_labs_2021/lab1/Exp1/Exp1/code/sim/core_sim_behav.wcfg
+source core_sim.tcl
+close_sim
+launch_simulation
+open_wave_config E:/arch_labs_2021/lab1/Exp1/Exp1/code/sim/core_sim_behav.wcfg
+source core_sim.tcl
+close_sim
+launch_simulation
+open_wave_config E:/arch_labs_2021/lab1/Exp1/Exp1/code/sim/core_sim_behav.wcfg
+source core_sim.tcl
+add_bp {E:/arch_labs_2021/lab1/Exp1/Exp1/code/core/HazardDetectionUnit.v} 20
+remove_bps -file {E:/arch_labs_2021/lab1/Exp1/Exp1/code/core/HazardDetectionUnit.v} -line 20
+current_wave_config {core_sim_behav.wcfg}
+add_wave {{/core_sim/core/hazard_unit/rs1_IF}} 
+current_wave_config {core_sim_behav.wcfg}
+add_wave {{/core_sim/core/hazard_unit/rs2_IF}} 
+save_wave_config {E:/arch_labs_2021/lab1/Exp1/Exp1/code/sim/core_sim_behav.wcfg}
+save_wave_config {E:/arch_labs_2021/lab1/Exp1/Exp1/code/sim/core_sim_behav.wcfg}
+close_sim

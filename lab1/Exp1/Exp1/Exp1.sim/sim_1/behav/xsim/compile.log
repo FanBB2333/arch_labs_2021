@@ -30,8 +30,8 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "E:/arch_labs_2021/lab1/Exp1/Exp1/co
 INFO: [VRFC 10-311] analyzing module ROM_D
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/arch_labs_2021/lab1/Exp1/Exp1/code/core/RV32core.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module RV32core
-INFO: [VRFC 10-2458] undeclared symbol Addr, assumed default net type wire [E:/arch_labs_2021/lab1/Exp1/Exp1/code/core/RV32core.v:189]
-INFO: [VRFC 10-2458] undeclared symbol MWR, assumed default net type wire [E:/arch_labs_2021/lab1/Exp1/Exp1/code/core/RV32core.v:190]
+INFO: [VRFC 10-2458] undeclared symbol Addr, assumed default net type wire [E:/arch_labs_2021/lab1/Exp1/Exp1/code/core/RV32core.v:194]
+INFO: [VRFC 10-2458] undeclared symbol MWR, assumed default net type wire [E:/arch_labs_2021/lab1/Exp1/Exp1/code/core/RV32core.v:195]
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/arch_labs_2021/lab1/Exp1/Exp1/code/core/Regs.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Regs
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/arch_labs_2021/lab1/Exp1/Exp1/code/common/add_32.v" into library xil_defaultlib
