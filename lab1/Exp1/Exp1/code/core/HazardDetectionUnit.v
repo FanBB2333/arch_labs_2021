@@ -41,6 +41,36 @@ module HazardDetectionUnit(
 
         if(hazard_optype_ID[1] && !hazard_optype_ID[0]) begin
             // 10 load-use hazard
+            // A: 
+            if (rs1use_ID && rs1_ID != 0 && rs1_ID == rd_EXE) begin
+                // forward A from EX
+                forward_ctrl_A = 2'b11;
+                PC_EN_IF = 0;
+                reg_FD_stall = 1;
+            end
+
+            if (rs1use_ID && rs1_ID != 0 && rs1_ID == rd_MEM) begin
+                // forward A from MEM
+                forward_ctrl_A = 2'b11;
+                PC_EN_IF = 0;
+                reg_FD_stall = 0;
+
+            end
+
+            if (rs2use_ID && rs2_ID != 0 && rs2_ID == rd_EXE) begin
+                // forward B from EX
+                forward_ctrl_B = 2'b11;
+                PC_EN_IF = 0;
+                reg_FD_stall = 1;
+
+            end
+            
+            if (rs2use_ID && rs2_ID != 0 && rs2_ID == rd_MEM) begin
+                // forward B from MEM
+                forward_ctrl_B = 2'b11;
+                PC_EN_IF = 0;
+                reg_FD_stall = 0;
+            end
 
         end
 
