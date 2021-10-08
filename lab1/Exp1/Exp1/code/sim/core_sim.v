@@ -17,6 +17,8 @@ module core_sim;
         clk = 0;
         rst = 1;
         #2 rst = 0;
+//        $readmemh("rom.hex", data);
+
     end
     always #1 clk = ~clk;
 
