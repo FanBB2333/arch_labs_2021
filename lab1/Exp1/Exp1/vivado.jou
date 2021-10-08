@@ -12,3 +12,20 @@
 start_gui
 open_project E:/arch_labs_2021/lab1/Exp1/Exp1/Exp1.xpr
 update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+add_files -norecurse E:/arch_labs_2021/lab1/Exp1/Exp1/code/core/Latch2_2.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+launch_simulation
+open_wave_config E:/arch_labs_2021/lab1/Exp1/Exp1/code/sim/core_sim_behav.wcfg
+source core_sim.tcl
+close_sim
