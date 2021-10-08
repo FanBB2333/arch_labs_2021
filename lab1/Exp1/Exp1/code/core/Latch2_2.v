@@ -6,7 +6,7 @@ module    Latch2_2(
                     input clk,
                     input [1:0] hazard_optype_ctrl,
                     output reg [1:0] hazard_optype_ctrl_before1,
-                    output reg [1:0] hazard_optype_ctrl_before2,
+                    output reg [1:0] hazard_optype_ctrl_before2
                 );
     
     initial hazard_optype_ctrl_before1 = 2'b00;
