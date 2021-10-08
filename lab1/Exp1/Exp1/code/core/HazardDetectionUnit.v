@@ -55,9 +55,7 @@ module HazardDetectionUnit(
     assign reg_DE_flush = Data_stall;
     assign reg_EM_flush = 0; // blank
 
-    assign forward_ctrl_A = 2'b00;
-    assign forward_ctrl_B = 2'b00;
-    assign forward_ctrl_ls = 1'b0;
+
 
     assign PC_EN_IF = ~Data_stall;
 
@@ -75,6 +73,7 @@ module HazardDetectionUnit(
                             {2{forward_A_2}} & 2'b10 |
                             {2{forward_A_1}} & 2'b01 |
                             {2{forward_A_0}} & 2'b00;
+
     
     assign forward_ctrl_B = {2{forward_B_3}} & 2'b11 |
                             {2{forward_B_2}} & 2'b10 |
