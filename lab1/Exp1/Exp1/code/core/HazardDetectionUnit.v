@@ -18,7 +18,7 @@ module HazardDetectionUnit(
     wire fwd_A_EXE, fwd_A_MEM, fwd_B_EXE, fwd_B_MEM;
     wire alu_optype_EXE, load_optype_EXE, branch_optype_EXE;
     wire alu_optype_MEM, load_optype_MEM, branch_optype_MEM;
-    
+
     assign alu_optype_EXE = (!hazard_optype_ctrl_before1[1] && hazard_optype_ctrl_before1[0]);
     assign load_optype_EXE = (hazard_optype_ctrl_before1[1] && !hazard_optype_ctrl_before1[0]);
     assign branch_optype_EXE = (hazard_optype_ctrl_before1[1] && hazard_optype_ctrl_before1[0]);
@@ -35,20 +35,30 @@ module HazardDetectionUnit(
     assign fwd_B_MEM = (rs2use_ID && rs2_ID != 0 && rs2_ID == rd_MEM);
 
 
+
+
+    wire Hazards = (load_optype_EXE && rd_EXE != 0 || load_optype_MEM && rd_MEM != 0);
+    assign Data_stall = (rs1use_ID && rs1_ID != 0 && Hazards && 
+                        (rs1_ID == rd_EXE || rs1_ID == rd_MEM)) 
+                        || (rs2use_ID && rs2_ID != 0 && Hazards && 
+                        (rs2_ID == rd_EXE || rs2_ID == rd_MEM));
+    
     assign reg_FD_EN = 1;
     assign reg_DE_EN = 1;
     assign reg_EM_EN = 1;
     assign reg_MW_EN = 1;
-    assign reg_FD_stall = 0;
 
-    assign reg_FD_flush = 0;
-    assign reg_DE_flush = 0;
-    assign reg_EM_flush = 0;
+    assign reg_FD_stall = Data_stall;
+
+    assign reg_FD_flush = 0; // Btake || Jump  TBD
+    assign reg_DE_flush = Data_stall;
+    assign reg_EM_flush = 0; // blank
 
     assign forward_ctrl_A = 2'b00;
     assign forward_ctrl_B = 2'b00;
     assign forward_ctrl_ls = 1'b0;
-    assign PC_EN_IF = 1;
+
+    assign PC_EN_IF = ~Data_stall;
 
     always @ (posedge clk) begin
         // Default circumstance: there is no forward at all
