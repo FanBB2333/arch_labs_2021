@@ -5,6 +5,7 @@ module HazardDetectionUnit(
     input Branch_ID, rs1use_ID, rs2use_ID,
     input[1:0] hazard_optype_ID,
     input[1:0] hazard_optype_ctrl_before1, hazard_optype_ctrl_before2,
+    input[4:0] rs1_IF, rs2_IF,
 
     input[4:0] rd_EXE, rd_MEM, rs1_ID, rs2_ID, rs2_EXE,
 
@@ -41,7 +42,7 @@ module HazardDetectionUnit(
         // Forward from control signal 3 if this is a load-use hazard
 
         // TBD: reg_FD_stall sig
-        if (rs1use_ID && rs1_ID != 0 && rs1_ID == rd_EXE) begin
+        if (rs1use_ID && rs1_IF != 0 && rs1_IF == rd_EXE) begin
             // forward A from EX
             if(hazard_optype_ctrl_before1[1] && !hazard_optype_ctrl_before1[0]) begin 
                 // 10 load-use hazard in EXE
@@ -60,7 +61,7 @@ module HazardDetectionUnit(
 
         end
 
-        if (rs1use_ID && rs1_ID != 0 && rs1_ID == rd_MEM) begin
+        if (rs1use_ID && rs1_IF != 0 && rs1_IF == rd_MEM) begin
             // forward A from MEM
             if(hazard_optype_ctrl_before2[1] && !hazard_optype_ctrl_before2[0]) begin 
                 // 10 load-use hazard in MEM
@@ -78,7 +79,7 @@ module HazardDetectionUnit(
 
         end
 
-        if (rs2use_ID && rs2_ID != 0 && rs2_ID == rd_EXE) begin
+        if (rs2use_ID && rs2_IF != 0 && rs2_IF == rd_EXE) begin
             // forward B from EX
             if(hazard_optype_ctrl_before1[1] && !hazard_optype_ctrl_before1[0]) begin 
                 // 10 load-use hazard in EXE
@@ -97,7 +98,7 @@ module HazardDetectionUnit(
 
         end
         
-        if (rs2use_ID && rs2_ID != 0 && rs2_ID == rd_MEM) begin
+        if (rs2use_ID && rs2_IF != 0 && rs2_IF == rd_MEM) begin
             // forward B from MEM
 
             if(hazard_optype_ctrl_before2[1] && !hazard_optype_ctrl_before2[0]) begin 

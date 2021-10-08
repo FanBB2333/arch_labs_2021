@@ -74,6 +74,7 @@ module  RV32core(
     
     Latch2_2 hazard_optype_latch(.clk(debug_clk), .rst(rst),
         .hazard_optype_ctrl(hazard_optype_ctrl),
+        .hazard_optype_ctrl_before2_cycle(hazard_optype_ctrl_before1),
         .hazard_optype_ctrl_before1(hazard_optype_ctrl_before1), 
         .hazard_optype_ctrl_before2(hazard_optype_ctrl_before2)
     );
@@ -103,7 +104,7 @@ module  RV32core(
         .hazard_optype_ctrl_before1(hazard_optype_ctrl_before1),
         .hazard_optype_ctrl_before2(hazard_optype_ctrl_before2),
         
-        .rd_EXE(rd_EXE),
+        .rd_EXE(rd_EXE),.rs1_IF(inst_IF[19:15]),.rs2_IF(inst_IF[24:20]),
         .rd_MEM(rd_MEM),.rs1_ID(inst_ID[19:15]),.rs2_ID(inst_ID[24:20]),.rs2_EXE(rs2_EXE),
         .PC_EN_IF(PC_EN_IF),.reg_FD_EN(reg_FD_EN),.reg_FD_stall(reg_FD_stall),
         .reg_FD_flush(reg_FD_flush),.reg_DE_EN(reg_DE_EN),.reg_DE_flush(reg_DE_flush),
