@@ -34,28 +34,7 @@ module HazardDetectionUnit(
     // 11: Branch type with control hazard
 
 
-        // A: 
-        if (rs1use_ID && rs1_ID != 0 && rs1_ID == rd_EXE) begin
-            // forward A from EX
-            forward_ctrl_A = 2'b01;
-        end
-
-        if (rs1use_ID && rs1_ID != 0 && rs1_ID == rd_MEM) begin
-            // forward A from MEM
-            forward_ctrl_A = 2'b10;
-
-        end
-
-        if (rs2use_ID && rs2_ID != 0 && rs2_ID == rd_EXE) begin
-            // forward B from EX
-            forward_ctrl_B = 2'b01;
-
-        end
         
-        if (rs2use_ID && rs2_ID != 0 && rs2_ID == rd_MEM) begin
-            // forward B from MEM
-            forward_ctrl_B = 2'b10;
-        end
         // Forward from control signal 3 if this is a load-use hazard
 
 
@@ -72,7 +51,28 @@ module HazardDetectionUnit(
 
         else if (!hazard_optype_ID[1] && hazard_optype_ID[0]) begin
             // 01: ALU type
+            // A: 
+            if (rs1use_ID && rs1_ID != 0 && rs1_ID == rd_EXE) begin
+                // forward A from EX
+                forward_ctrl_A = 2'b01;
+            end
 
+            if (rs1use_ID && rs1_ID != 0 && rs1_ID == rd_MEM) begin
+                // forward A from MEM
+                forward_ctrl_A = 2'b10;
+
+            end
+
+            if (rs2use_ID && rs2_ID != 0 && rs2_ID == rd_EXE) begin
+                // forward B from EX
+                forward_ctrl_B = 2'b01;
+
+            end
+            
+            if (rs2use_ID && rs2_ID != 0 && rs2_ID == rd_MEM) begin
+                // forward B from MEM
+                forward_ctrl_B = 2'b10;
+            end
 
         end
 
