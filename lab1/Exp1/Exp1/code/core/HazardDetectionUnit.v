@@ -40,85 +40,91 @@ module HazardDetectionUnit(
 
         // Forward from control signal 3 if this is a load-use hazard
 
-
-        if(hazard_optype_ID[1] && !hazard_optype_ID[0]) begin
-            // 10 load-use hazard
-            // A: 
-            if (rs1use_ID && rs1_ID != 0 && rs1_ID == rd_EXE) begin
-                // forward A from EX
+        // TBD: reg_FD_stall sig
+        if (rs1use_ID && rs1_ID != 0 && rs1_ID == rd_EXE) begin
+            // forward A from EX
+            if(hazard_optype_ctrl_before1[1] && !hazard_optype_ctrl_before1[0]) begin 
+                // 10 load-use hazard in EXE
+                // A: 
                 forward_ctrl_A = 2'b11;
                 PC_EN_IF = 0;
                 reg_FD_stall = 1;
             end
 
-            if (rs1use_ID && rs1_ID != 0 && rs1_ID == rd_MEM) begin
-                // forward A from MEM
-                forward_ctrl_A = 2'b11;
-                PC_EN_IF = 0;
-                reg_FD_stall = 0;
-
-            end
-
-            if (rs2use_ID && rs2_ID != 0 && rs2_ID == rd_EXE) begin
-                // forward B from EX
-                forward_ctrl_B = 2'b11;
-                PC_EN_IF = 0;
-                reg_FD_stall = 1;
-
-            end
-            
-            if (rs2use_ID && rs2_ID != 0 && rs2_ID == rd_MEM) begin
-                // forward B from MEM
-                forward_ctrl_B = 2'b11;
-                PC_EN_IF = 0;
-                reg_FD_stall = 0;
-            end
-
-        end
-
-        else if (hazard_optype_ID[1] && hazard_optype_ID[0]) begin
-            // 11: branch type
-            // predict the branch
-            reg_FD_EN = 1'b0;
-            reg_FD_flush = 1'b1; // the pipeline stalls
-        end
-
-        else if (!hazard_optype_ID[1] && hazard_optype_ID[0]) begin
-            // 01: ALU type
-            // A: 
-            if (rs1use_ID && rs1_ID != 0 && rs1_ID == rd_EXE) begin
-                // forward A from EX
+            else if(!hazard_optype_ctrl_before1[1] && hazard_optype_ctrl_before1[0]) begin 
+                // 01 ALU hazard in EXE
                 forward_ctrl_A = 2'b01;
                 PC_EN_IF = 0;
                 reg_FD_stall = 1;
-
-
             end
 
-            if (rs1use_ID && rs1_ID != 0 && rs1_ID == rd_MEM) begin
-                // forward A from MEM
+        end
+
+        if (rs1use_ID && rs1_ID != 0 && rs1_ID == rd_MEM) begin
+            // forward A from MEM
+            if(hazard_optype_ctrl_before2[1] && !hazard_optype_ctrl_before2[0]) begin 
+                // 10 load-use hazard in MEM
+                forward_ctrl_A = 2'b11;
+                PC_EN_IF = 0;
+                reg_FD_stall = 0;
+            end
+
+            else if(!hazard_optype_ctrl_before2[1] && hazard_optype_ctrl_before2[0]) begin 
+                // 01 ALU hazard in MEM
                 forward_ctrl_A = 2'b10;
                 PC_EN_IF = 0;
                 reg_FD_stall = 1;
-
             end
 
-            if (rs2use_ID && rs2_ID != 0 && rs2_ID == rd_EXE) begin
-                // forward B from EX
+        end
+
+        if (rs2use_ID && rs2_ID != 0 && rs2_ID == rd_EXE) begin
+            // forward B from EX
+            if(hazard_optype_ctrl_before1[1] && !hazard_optype_ctrl_before1[0]) begin 
+                // 10 load-use hazard in EXE
+                // B: 
+                forward_ctrl_B = 2'b11;
+                PC_EN_IF = 0;
+                reg_FD_stall = 1;
+            end
+
+            else if(!hazard_optype_ctrl_before1[1] && hazard_optype_ctrl_before1[0]) begin 
+                // 01 ALU hazard in EXE
                 forward_ctrl_B = 2'b01;
                 PC_EN_IF = 0;
                 reg_FD_stall = 1;
-
             end
-            
-            if (rs2use_ID && rs2_ID != 0 && rs2_ID == rd_MEM) begin
-                // forward B from MEM
+
+        end
+        
+        if (rs2use_ID && rs2_ID != 0 && rs2_ID == rd_MEM) begin
+            // forward B from MEM
+
+            if(hazard_optype_ctrl_before2[1] && !hazard_optype_ctrl_before2[0]) begin 
+                // 10 load-use hazard in MEM
+                forward_ctrl_B = 2'b11;
+                PC_EN_IF = 0;
+                reg_FD_stall = 0;
+            end
+
+            else if(!hazard_optype_ctrl_before2[1] && hazard_optype_ctrl_before2[0]) begin 
+                // 01 ALU hazard in MEM
                 forward_ctrl_B = 2'b10;
                 PC_EN_IF = 0;
                 reg_FD_stall = 1;
             end
 
         end
+
+        // ####################### BRANCH #######################
+        else if (hazard_optype_ID[1] && hazard_optype_ID[0]) begin
+            // 11: branch type
+            // predict the branch
+            reg_FD_EN = 1'b0;
+            reg_FD_flush = 1'b1; // the pipeline stalls
+        end
+        // ####################### END OF BRANCH #######################
+
 
     end
 
