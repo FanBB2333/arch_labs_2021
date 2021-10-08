@@ -13,60 +13,71 @@ module HazardDetectionUnit(
 );
             //according to the diagram, design the Hazard Detection Unit
     
-    reg fwd_A;
-    reg fwd_B;
 
     always @ (posedge clk) begin
         // Default circumstance: there is no forward at all
-        forward_ctrl_A = 2'b00;
-        forward_ctrl_B = 2'b00;
-        forward_ctrl_ls = 1'b0;
+        forward_ctrl_A <= 2'b00;
+        forward_ctrl_B <= 2'b00;
+        forward_ctrl_ls <= 1'b0;
+        PC_EN_IF <= 1;
+        reg_FD_EN <= 1;
+        reg_DE_EN <= 1;
+        reg_EM_EN <= 1;
+        reg_MW_EN <= 1;
+        reg_FD_stall <= 0;
+        reg_FD_flush <= 0;
+        reg_DE_flush <= 0;
+        reg_EM_flush <= 0;
+        
+    // 01: ALU type with data hazard
+    // 10: Load-use type with data hazard
+    // 11: Branch type with control hazard
+
+
+        // A: 
+        if (rs1use_ID && rs1_ID != 0 && rs1_ID == rd_EXE) begin
+            // forward A from EX
+            forward_ctrl_A = 2'b01;
+        end
+
+        if (rs1use_ID && rs1_ID != 0 && rs1_ID == rd_MEM) begin
+            // forward A from MEM
+            forward_ctrl_A = 2'b10;
+
+        end
+
+        if (rs2use_ID && rs2_ID != 0 && rs2_ID == rd_EXE) begin
+            // forward B from EX
+            forward_ctrl_B = 2'b01;
+
+        end
+        
+        if (rs2use_ID && rs2_ID != 0 && rs2_ID == rd_MEM) begin
+            // forward B from MEM
+            forward_ctrl_B = 2'b10;
+        end
+        // Forward from control signal 3 if this is a load-use hazard
+
+
         if(hazard_optype_ID[1] && !hazard_optype_ID[0]) begin
-            // 10: data hazard
-            // A: 
-            if (rs1use_ID && rs1_ID != 0 && rs1_ID == rd_EXE) begin
-                // forward A from EX
-                forward_ctrl_A = 2'b01;
-            end
+            // 10 load-use hazard
 
-            if (rs1use_ID && rs1_ID != 0 && rs1_ID == rd_MEM) begin
-                // forward A from MEM
-                forward_ctrl_A = 2'b10;
-
-            end
-
-            if (rs2use_ID && rs2_ID != 0 && rs2_ID == rd_EXE) begin
-                // forward B from EX
-                forward_ctrl_B = 2'b01;
-
-            end
-            
-            if (rs2use_ID && rs2_ID != 0 && rs2_ID == rd_MEM) begin
-                // forward B from MEM
-                forward_ctrl_B = 2'b10;
-            end
-            // Forward from control signal 3 if this is a load-use hazard
         end
 
         else if (hazard_optype_ID[1] && hazard_optype_ID[0]) begin
-            // 11: control hazard
+            // 11: branch type
+            // predict the branch
 
         end
 
         else if (!hazard_optype_ID[1] && hazard_optype_ID[0]) begin
-            // 01: structure hazard
-            // stall
+            // 01: ALU type
 
 
         end
 
     end
 
-    wire Hazards = (EX_RegWrite && rd_EXE != 0 || MEM_RegWrite && rd_MEM != 0);
 
-    assign Data_hazard = (rs1use_ID && rs1_ID != 0 && Hazards && 
-                        (rs1_ID == rd_EXE || rs1_ID == rd_MEM)) 
-                        || (rs2use_ID && rs2_ID != 0 && Hazards && 
-                        (rs2_ID == rd_EXE || rs2_ID == rd_MEM));
 
 endmodule
