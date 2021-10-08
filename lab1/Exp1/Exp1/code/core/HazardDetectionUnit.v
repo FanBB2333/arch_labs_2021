@@ -16,18 +16,18 @@ module HazardDetectionUnit(
 
     always @ (posedge clk) begin
         // Default circumstance: there is no forward at all
-        forward_ctrl_A <= 2'b00;
-        forward_ctrl_B <= 2'b00;
-        forward_ctrl_ls <= 1'b0;
-        PC_EN_IF <= 1;
-        reg_FD_EN <= 1;
-        reg_DE_EN <= 1;
-        reg_EM_EN <= 1;
-        reg_MW_EN <= 1;
-        reg_FD_stall <= 0;
-        reg_FD_flush <= 0;
-        reg_DE_flush <= 0;
-        reg_EM_flush <= 0;
+        forward_ctrl_A = 2'b00;
+        forward_ctrl_B = 2'b00;
+        forward_ctrl_ls = 1'b0;
+        PC_EN_IF = 1;
+        reg_FD_EN = 1;
+        reg_DE_EN = 1;
+        reg_EM_EN = 1;
+        reg_MW_EN = 1;
+        reg_FD_stall = 0;
+        reg_FD_flush = 0;
+        reg_DE_flush = 0;
+        reg_EM_flush = 0;
         
     // 01: ALU type with data hazard
     // 10: Load-use type with data hazard
