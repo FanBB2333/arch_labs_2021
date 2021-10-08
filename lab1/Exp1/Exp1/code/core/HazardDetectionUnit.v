@@ -16,7 +16,6 @@ module HazardDetectionUnit(
 );
             //according to the diagram, design the Hazard Detection Unit
     
-
     always @ (posedge clk) begin
         // Default circumstance: there is no forward at all
         forward_ctrl_A = 2'b00;
