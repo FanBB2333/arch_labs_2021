@@ -9,13 +9,47 @@ module HazardDetectionUnit(
 
     input[4:0] rd_EXE, rd_MEM, rs1_ID, rs2_ID, rs2_EXE,
 
-    output reg PC_EN_IF, reg_FD_EN, reg_FD_stall, reg_FD_flush,
+    output PC_EN_IF, reg_FD_EN, reg_FD_stall, reg_FD_flush,
         reg_DE_EN, reg_DE_flush, reg_EM_EN, reg_EM_flush, reg_MW_EN,
-    output reg forward_ctrl_ls,
-    output reg[1:0] forward_ctrl_A, forward_ctrl_B
+    output forward_ctrl_ls,
+    output[1:0] forward_ctrl_A, forward_ctrl_B
 );
             //according to the diagram, design the Hazard Detection Unit
+    wire fwd_A_EXE, fwd_A_MEM, fwd_B_EXE, fwd_B_MEM;
+    wire alu_optype_EXE, load_optype_EXE, branch_optype_EXE;
+    wire alu_optype_MEM, load_optype_MEM, branch_optype_MEM;
     
+    assign alu_optype_EXE = (!hazard_optype_ctrl_before1[1] && hazard_optype_ctrl_before1[0]);
+    assign load_optype_EXE = (hazard_optype_ctrl_before1[1] && !hazard_optype_ctrl_before1[0]);
+    assign branch_optype_EXE = (hazard_optype_ctrl_before1[1] && hazard_optype_ctrl_before1[0]);
+
+    assign alu_optype_MEM = (!hazard_optype_ctrl_before2[1] && hazard_optype_ctrl_before2[0]);
+    assign load_optype_MEM = (hazard_optype_ctrl_before2[1] && !hazard_optype_ctrl_before2[0]);
+    assign branch_optype_MEM = (hazard_optype_ctrl_before2[1] && hazard_optype_ctrl_before2[0]);
+
+
+    assign fwd_A_EXE = (rs1use_ID && rs1_ID != 0 && rs1_ID == rd_EXE);
+    assign fwd_A_MEM = (rs1use_ID && rs1_ID != 0 && rs1_ID == rd_MEM);
+
+    assign fwd_B_EXE = (rs2use_ID && rs2_ID != 0 && rs2_ID == rd_EXE);
+    assign fwd_B_MEM = (rs2use_ID && rs2_ID != 0 && rs2_ID == rd_MEM);
+
+
+    assign reg_FD_EN = 1;
+    assign reg_DE_EN = 1;
+    assign reg_EM_EN = 1;
+    assign reg_MW_EN = 1;
+    assign reg_FD_stall = 0;
+
+    assign reg_FD_flush = 0;
+    assign reg_DE_flush = 0;
+    assign reg_EM_flush = 0;
+
+    assign forward_ctrl_A = 2'b00;
+    assign forward_ctrl_B = 2'b00;
+    assign forward_ctrl_ls = 1'b0;
+    assign PC_EN_IF = 1;
+
     always @ (posedge clk) begin
         // Default circumstance: there is no forward at all
         forward_ctrl_A = 2'b00;
