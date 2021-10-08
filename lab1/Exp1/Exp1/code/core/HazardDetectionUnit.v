@@ -38,7 +38,8 @@ module HazardDetectionUnit(
 
 
     wire Hazards = (load_optype_EXE && rd_EXE != 0 || load_optype_MEM && rd_MEM != 0);
-    assign Data_stall = (rs1use_ID && rs1_ID != 0 && Hazards && 
+    
+    wire Data_stall = (rs1use_ID && rs1_ID != 0 && Hazards && 
                         (rs1_ID == rd_EXE || rs1_ID == rd_MEM)) 
                         || (rs2use_ID && rs2_ID != 0 && Hazards && 
                         (rs2_ID == rd_EXE || rs2_ID == rd_MEM));
@@ -59,6 +60,26 @@ module HazardDetectionUnit(
     assign forward_ctrl_ls = 1'b0;
 
     assign PC_EN_IF = ~Data_stall;
+
+    wire forward_A_3, forward_B_3, forward_A_2, forward_B_2, forward_A_1, forward_B_1, forward_A_0, forward_B_0;
+    assign forward_A_3 = load_optype_MEM && fwd_A_MEM;
+    assign forward_B_3 = load_optype_MEM && fwd_B_MEM;
+    assign forward_A_2 = alu_optype_MEM && fwd_A_MEM;
+    assign forward_B_2 = alu_optype_MEM && fwd_B_MEM;
+    assign forward_A_1 = alu_optype_EXE && fwd_A_EXE;
+    assign forward_B_1 = alu_optype_EXE && fwd_B_EXE;
+    assign forward_A_0 = 0;
+    assign forward_B_0 = 0;
+
+    assign forward_ctrl_A = {2{forward_A_3}} & 2'b11 |
+                            {2{forward_A_2}} & 2'b10 |
+                            {2{forward_A_1}} & 2'b01 |
+                            {2{forward_A_0}} & 2'b00;
+    
+    assign forward_ctrl_B = {2{forward_B_3}} & 2'b11 |
+                            {2{forward_B_2}} & 2'b10 |
+                            {2{forward_B_1}} & 2'b01 |
+                            {2{forward_B_0}} & 2'b00;
 
     always @ (posedge clk) begin
         // Default circumstance: there is no forward at all
