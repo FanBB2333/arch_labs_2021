@@ -122,3 +122,10 @@ selectCodeEditor("RV32core.v", 153, 151); // bP
 // TclEventType: DG_GRAPH_STALE
 // TclEventType: FILE_SET_CHANGE
 // [GUI Memory]: 128 MB (+13092kb) [00:02:05]
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// Elapsed time: 61 seconds
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // F
