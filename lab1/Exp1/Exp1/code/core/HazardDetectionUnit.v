@@ -66,7 +66,7 @@ module HazardDetectionUnit(
                 // 10 load-use hazard in MEM
                 forward_ctrl_A = 2'b11;
                 PC_EN_IF = 0;
-                reg_FD_stall = 0;
+                reg_FD_stall = 1;
             end
 
             else if(!hazard_optype_ctrl_before2[1] && hazard_optype_ctrl_before2[0]) begin 
@@ -104,7 +104,7 @@ module HazardDetectionUnit(
                 // 10 load-use hazard in MEM
                 forward_ctrl_B = 2'b11;
                 PC_EN_IF = 0;
-                reg_FD_stall = 0;
+                reg_FD_stall = 1;
             end
 
             else if(!hazard_optype_ctrl_before2[1] && hazard_optype_ctrl_before2[0]) begin 
