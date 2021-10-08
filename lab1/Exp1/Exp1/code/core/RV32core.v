@@ -72,9 +72,10 @@ module  RV32core(
         .hazard_optype(hazard_optype_ctrl),.ImmSel(ImmSel_ctrl),.cmp_ctrl(cmp_ctrl),
         .ALUControl(ALUControl_ctrl),.JALR(JALR));
     
-    Latch2_2 hazard_optype_latch(.clk(debug_clk), .rst(rst), .hazard_optype_ctrl(hazard_optype_ctrl)
-    
-        .hazard_optype_ctrl_before1(hazard_optype_ctrl_before1), hazard_optype_ctrl_before2(hazard_optype_ctrl_before2)
+    Latch2_2 hazard_optype_latch(.clk(debug_clk), .rst(rst),
+        .hazard_optype_ctrl(hazard_optype_ctrl),
+        .hazard_optype_ctrl_before1(hazard_optype_ctrl_before1), 
+        .hazard_optype_ctrl_before2(hazard_optype_ctrl_before2)
     );
 
     
