@@ -87,7 +87,7 @@ module CtrlUnit(
 
     wire U_valid = LUI | AUIPC; //
     wire J_valid = JAL; // 
-    assign Branch = (BEQ | BNE | BLT | BGE | BLTU | BGEU) && cmp_res;                       //to fill sth. in 
+    assign Branch = (B_valid && cmp_res) | JALR | JAL;                       //to fill sth. in 
 
     parameter Imm_type_I = 3'b001;
     parameter Imm_type_B = 3'b010;
