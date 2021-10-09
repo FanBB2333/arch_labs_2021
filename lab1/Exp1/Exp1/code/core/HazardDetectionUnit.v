@@ -60,7 +60,7 @@ module HazardDetectionUnit(
 
     assign reg_FD_stall = Data_stall;
 
-    assign reg_FD_flush = branch_optype_ID; // Branch jump
+    assign reg_FD_flush = branch_optype_ID && cmp_res_ID; // Branch jump
     assign reg_DE_flush = Data_stall;
     assign reg_EM_flush = 0; // blank
 
