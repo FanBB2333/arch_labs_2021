@@ -18,6 +18,8 @@ module HazardDetectionUnit(
     wire fwd_A_EXE, fwd_A_MEM, fwd_B_EXE, fwd_B_MEM;
     wire alu_optype_EXE, load_optype_EXE, branch_optype_EXE;
     wire alu_optype_MEM, load_optype_MEM, branch_optype_MEM;
+    wire branch_optype_ID;
+
 
     assign alu_optype_EXE = (!hazard_optype_ctrl_before1[1] && hazard_optype_ctrl_before1[0]);
     assign load_optype_EXE = (hazard_optype_ctrl_before1[1] && !hazard_optype_ctrl_before1[0]);
@@ -27,6 +29,7 @@ module HazardDetectionUnit(
     assign load_optype_MEM = (hazard_optype_ctrl_before2[1] && !hazard_optype_ctrl_before2[0]);
     assign branch_optype_MEM = (hazard_optype_ctrl_before2[1] && hazard_optype_ctrl_before2[0]);
 
+    assign branch_optype_ID = (hazard_optype_ID[1] && hazard_optype_ID[0]);
 
     assign fwd_A_EXE = (rs1use_ID && rs1_ID != 0 && rs1_ID == rd_EXE);
     assign fwd_A_MEM = (rs1use_ID && rs1_ID != 0 && rs1_ID == rd_MEM);
@@ -56,7 +59,7 @@ module HazardDetectionUnit(
 
     assign reg_FD_stall = Data_stall;
 
-    assign reg_FD_flush = 0; // Btake || Jump  TBD
+    assign reg_FD_flush = branch_optype_ID; // Branch jump
     assign reg_DE_flush = Data_stall;
     assign reg_EM_flush = 0; // blank
 
