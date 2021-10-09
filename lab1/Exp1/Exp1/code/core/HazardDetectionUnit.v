@@ -6,7 +6,8 @@ module HazardDetectionUnit(
     input[1:0] hazard_optype_ID,
     input[1:0] hazard_optype_ctrl_before1, hazard_optype_ctrl_before2,
     input[4:0] rs1_IF, rs2_IF,
-
+    input cmp_res_ID,
+    
     input[4:0] rd_EXE, rd_MEM, rs1_ID, rs2_ID, rs2_EXE,
 
     output PC_EN_IF, reg_FD_EN, reg_FD_stall, reg_FD_flush,
