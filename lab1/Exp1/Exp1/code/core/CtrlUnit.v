@@ -103,7 +103,7 @@ module CtrlUnit(
 
     assign cmp_ctrl = funct3;                         //to fill sth. in 
 
-    assign ALUSrc_A = rs1use;                         //to fill sth. in 
+    assign ALUSrc_A = R_valid | I_valid | S_valid | B_valid | L_valid;                         //to fill sth. in 
 
     assign ALUSrc_B = !rs2use;                         //to fill sth. in 
 
