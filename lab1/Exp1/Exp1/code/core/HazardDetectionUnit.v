@@ -6,7 +6,7 @@ module HazardDetectionUnit(
     input[1:0] hazard_optype_ID,
     input[1:0] hazard_optype_ctrl_before1, hazard_optype_ctrl_before2,
     input[4:0] rs1_IF, rs2_IF,
-    input cmp_res_ID,
+    input RegWrite_ctrl,
     
     input[4:0] rd_EXE, rd_MEM, rs1_ID, rs2_ID, rs2_EXE,
 
@@ -58,15 +58,15 @@ module HazardDetectionUnit(
     assign reg_EM_EN = 1;
     assign reg_MW_EN = 1;
 
-    assign reg_FD_stall = Data_stall;
+    assign reg_FD_stall = Data_stall && RegWrite_ctrl;
 
     assign reg_FD_flush = Branch_ID; // Branch jump
-    assign reg_DE_flush = Data_stall;
+    assign reg_DE_flush = Data_stall && RegWrite_ctrl;
     assign reg_EM_flush = 0; // blank
 
 
 
-    assign PC_EN_IF = ~Data_stall;
+    assign PC_EN_IF = ~(Data_stall && RegWrite_ctrl);
 
     wire forward_A_3, forward_B_3, forward_A_2, forward_B_2, forward_A_1, forward_B_1, forward_A_0, forward_B_0;
     assign forward_A_3 = load_optype_MEM && fwd_A_MEM;
