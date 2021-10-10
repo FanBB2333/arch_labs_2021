@@ -63,7 +63,7 @@ module Code2Inst (
 //                    3'b101: inst = {"srli", I_Type, "  "};
                     3'b101:  case(code[30])              
                         1'b0: inst = {"srli", I_Type, "  "};
-                        1'b1: inst = {"srai", I_Type, "  "};
+                        1'b1: inst = {"srai", I_Type, "ara  "};
                     endcase
                     3'b001: inst = {"slli", I_Type, "  "};
                     3'b100: inst = {"xori", I_Type, "  "};
