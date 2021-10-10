@@ -21,6 +21,6 @@ E:/arch_labs_2021/lab1/Exp1/Exp1/code/core/REG_ID_EX.v,1629996012,verilog,,E:/ar
 E:/arch_labs_2021/lab1/Exp1/Exp1/code/core/REG_IF_ID.v,1629996023,verilog,,E:/arch_labs_2021/lab1/Exp1/Exp1/code/core/REG_MEM_WB.v,,REG_IF_ID,,,../../../../code/auxillary,,,,,
 E:/arch_labs_2021/lab1/Exp1/Exp1/code/core/REG_MEM_WB.v,1629996041,verilog,,E:/arch_labs_2021/lab1/Exp1/Exp1/code/core/ROM_D.v,,REG_MEM_WB,,,../../../../code/auxillary,,,,,
 E:/arch_labs_2021/lab1/Exp1/Exp1/code/core/ROM_D.v,1633672490,verilog,,E:/arch_labs_2021/lab1/Exp1/Exp1/code/core/RV32core.v,,ROM_D,,,../../../../code/auxillary,,,,,
-E:/arch_labs_2021/lab1/Exp1/Exp1/code/core/RV32core.v,1633693276,verilog,,E:/arch_labs_2021/lab1/Exp1/Exp1/code/core/Regs.v,,RV32core,,,../../../../code/auxillary,,,,,
+E:/arch_labs_2021/lab1/Exp1/Exp1/code/core/RV32core.v,1633788200,verilog,,E:/arch_labs_2021/lab1/Exp1/Exp1/code/core/Regs.v,,RV32core,,,../../../../code/auxillary,,,,,
 E:/arch_labs_2021/lab1/Exp1/Exp1/code/core/Regs.v,1629993973,verilog,,E:/arch_labs_2021/lab1/Exp1/Exp1/code/common/add_32.v,,Regs,,,../../../../code/auxillary,,,,,
 E:/arch_labs_2021/lab1/Exp1/Exp1/code/sim/core_sim.v,1633693418,verilog,,,,core_sim,,,../../../../code/auxillary,,,,,

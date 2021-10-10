@@ -1,0 +1,13 @@
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+|       Launch Clock       |      Capture Clock       |                                                 Pin                                                      |
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+|                  clkout0 |                  clkout0 |                                                                                   vga/ascii_code_reg[4]/D|
+|                  clkout0 |                  clkout0 |                                                                                   vga/ascii_code_reg[2]/D|
+|                  clkout0 |                  clkout0 |                                                                                   vga/ascii_code_reg[3]/D|
+|                  clkout0 |                  clkout0 |                                                                                   vga/ascii_code_reg[6]/D|
+|                  clkout0 |                  clkout0 |                                                                                   vga/ascii_code_reg[5]/D|
+|                  clkout3 |                  clkout0 |                                                                         vga/data_buf_reg_0_3_30_31/RAMA/I|
+|                  clkout3 |                  clkout0 |                                                                         vga/data_buf_reg_0_3_24_29/RAMA/I|
+|                  clkout3 |                  clkout0 |                                                                       vga/data_buf_reg_0_3_6_11/RAMB_D1/I|
+|                  clkout3 |                  clkout0 |                                                                      vga/data_buf_reg_0_3_12_17/RAMA_D1/I|
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
