@@ -33,6 +33,7 @@ module Code2Inst (
                     4'b1110: inst = {" and",R_Type, "  "};
                     4'b1100: inst = {" or",R_Type, "   "};
                     4'b0100: inst = {" slt",R_Type, "  "};
+                    4'b0101: inst = {" sra",R_Type, "  "};  // added sra
                     4'b0110: inst = {" sltu",R_Type, " "};
                     4'b1010: inst = {" srl",R_Type, "  "};
                     4'b1000: inst = {" xor",R_Type, "  "};
@@ -59,7 +60,11 @@ module Code2Inst (
                     3'b110: inst = {"ori", I_Type, "  "};
                     3'b010: inst = {"slti", I_Type, "  "};
                     3'b011: inst = {"sltiu", I_Type};
-                    3'b101: inst = {"srli", I_Type, "  "};
+//                    3'b101: inst = {"srli", I_Type, "  "};
+                    3'b101:  case(code[30])              
+                        1'b0: inst = {"srli", I_Type, "  "};
+                        1'b1: inst = {"srai", I_Type, "  "};
+                    endcase
                     3'b001: inst = {"slli", I_Type, "  "};
                     3'b100: inst = {"xori", I_Type, "  "};
                     default: inst = "illeillegal instruction";      //illegal instruction     
