@@ -59,7 +59,7 @@ module HazardDetectionUnit(
     assign reg_MW_EN = 1;
 
     assign reg_FD_stall = Data_stall && RegWrite_ctrl;
-
+    // Branch_id : if need to jump
     assign reg_FD_flush = Branch_ID; // Branch jump
     assign reg_DE_flush = Data_stall && RegWrite_ctrl;
     assign reg_EM_flush = 0; // blank
