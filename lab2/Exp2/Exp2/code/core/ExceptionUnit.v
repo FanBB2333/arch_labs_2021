@@ -2,13 +2,13 @@
 
 module ExceptionUnit(
     input clk, rst,
-    input csr_rw_in,
-    input[1:0] csr_wsc_mode_in,
-    input csr_w_imm_mux,
-    input[11:0] csr_rw_addr_in,
-    input[31:0] csr_w_data_reg,
-    input[4:0] csr_w_data_imm,
-    output[31:0] csr_r_data_out,
+    input csr_rw_in, // if the inst is CSR inst
+    input[1:0] csr_wsc_mode_in, // inst_MEM[13:12]
+    input csr_w_imm_mux, // CSRRWI | CSRRSI | CSRRCI
+    input[11:0] csr_rw_addr_in, // inst_MEM[31:20]
+    input[31:0] csr_w_data_reg, // rs1_data_MEM
+    input[4:0] csr_w_data_imm, // rs1_MEM
+    output[31:0] csr_r_data_out, // to mux in MEM stage
 
     input interrupt,
     input illegal_inst,
