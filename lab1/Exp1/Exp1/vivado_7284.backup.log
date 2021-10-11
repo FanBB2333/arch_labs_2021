@@ -1,0 +1,32 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Sun Oct 10 18:34:25 2021
+# Process ID: 7284
+# Current directory: E:/arch_labs_2021/lab1/Exp1/Exp1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8364 E:\arch_labs_2021\lab1\Exp1\Exp1\Exp1.xpr
+# Log file: E:/arch_labs_2021/lab1/Exp1/Exp1/vivado.log
+# Journal file: E:/arch_labs_2021/lab1/Exp1/Exp1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project E:/arch_labs_2021/lab1/Exp1/Exp1/Exp1.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'E:/Xilinx/Vivado/2020.2/data/ip'.
+open_project: Time (s): cpu = 00:00:22 ; elapsed = 00:00:20 . Memory (MB): peak = 1021.738 ; gain = 0.000
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+[Sun Oct 10 18:52:44 2021] Launched synth_1...
+Run output will be captured here: E:/arch_labs_2021/lab1/Exp1/Exp1/Exp1.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 4
+[Sun Oct 10 18:57:59 2021] Launched impl_1...
+Run output will be captured here: E:/arch_labs_2021/lab1/Exp1/Exp1/Exp1.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Sun Oct 10 20:05:58 2021] Launched impl_1...
+Run output will be captured here: E:/arch_labs_2021/lab1/Exp1/Exp1/Exp1.runs/impl_1/runme.log
+exit
+INFO: [Common 17-206] Exiting Vivado at Sun Oct 10 20:29:25 2021...
