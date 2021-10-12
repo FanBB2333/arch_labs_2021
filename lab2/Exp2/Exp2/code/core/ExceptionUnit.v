@@ -5,7 +5,7 @@ module ExceptionUnit(
     input csr_rw_in, // if the inst is CSR inst
     input[1:0] csr_wsc_mode_in, // inst_MEM[13:12]
     input csr_w_imm_mux, // CSRRWI | CSRRSI | CSRRCI
-    input[11:0] csr_rw_addr_in, // inst_MEM[31:20]
+    input[11:0] csr_rw_addr_in, // inst_MEM[31:20], represents the csr reg
     input[31:0] csr_w_data_reg, // rs1_data_MEM
     input[4:0] csr_w_data_imm, // rs1_MEM
     output[31:0] csr_r_data_out, // to mux in MEM stage
@@ -18,7 +18,7 @@ module ExceptionUnit(
 
     input mret,
 
-    input[31:0] epc_cur,
+    input[31:0] epc_cur, // PC_WB
     input[31:0] epc_next,
     output[31:0] PC_redirect,
     output redirect_mux,
@@ -34,8 +34,11 @@ module ExceptionUnit(
 
     wire[31:0] mstatus;
 
-    CSRRegs csr(.clk(clk),.rst(rst),.csr_w(csr_w),.raddr(csr_raddr),.waddr(csr_waddr),
-        .wdata(csr_wdata),.rdata(csr_r_data_out),.mstatus(mstatus),.csr_wsc_mode(csr_wsc));
+    CSRRegs csr(
+        .clk(clk),.rst(rst),.csr_w(csr_w),.raddr(csr_raddr),.waddr(csr_waddr),
+        .wdata(csr_wdata),.csr_wsc_mode(csr_wsc),
+        // output
+        .rdata(csr_r_data_out),.mstatus(mstatus));
 
     //According to the diagram, design the Exception Unit
 
