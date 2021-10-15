@@ -45,9 +45,9 @@ module CSRRegs(
 		end
         else if(csr_w) begin
             case(csr_wsc_mode)
-                2'b01: CSR[waddr_map] = wdata;
-                2'b10: CSR[waddr_map] = CSR[waddr_map] | wdata;
-                2'b11: CSR[waddr_map] = CSR[waddr_map] & ~wdata;
+                2'b01: CSR[waddr_map] = wdata; // csrrw, csrrwi
+                2'b10: CSR[waddr_map] = CSR[waddr_map] | wdata; // csrrs, csrrsi
+                2'b11: CSR[waddr_map] = CSR[waddr_map] & ~wdata; // csrrc, csrrci
                 default: CSR[waddr_map] = wdata;
             endcase            
         end
