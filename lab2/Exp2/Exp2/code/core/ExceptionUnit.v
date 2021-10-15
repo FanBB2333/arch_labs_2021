@@ -19,7 +19,7 @@ module ExceptionUnit(
     input mret,
 
     input[31:0] epc_cur, // PC_WB
-    input[31:0] epc_next, // MEM向前开始 未被flush的最新PC
+    input[31:0] epc_next, // MEM向前�?�? 未被flush的最新PC
     output[31:0] PC_redirect,
     output redirect_mux,
 
@@ -44,10 +44,10 @@ module ExceptionUnit(
     assign reg_DE_flush = 0;
     assign reg_EM_flush = 0;
     assign reg_MW_flush = 0;
-
+    assign redirect_mux = 0; // TBD
 
     assign PC_redirect = csr_r_data_out;
-    According to the diagram, design the Exception Unit
+//    According to the diagram, design the Exception Unit
     always @(posedge clk) begin
         if(rst) begin
             csr_raddr <= 0;
