@@ -19,7 +19,7 @@ module ExceptionUnit(
     input mret,
 
     input[31:0] epc_cur, // PC_WB
-    input[31:0] epc_next, // MEM向前�??�?? 未被flush的最新PC
+    input[31:0] epc_next, // MEM向前�??�?? 未被flush的最新PC
     output[31:0] PC_redirect,
     output redirect_mux,
 
@@ -33,6 +33,9 @@ module ExceptionUnit(
     reg[1:0] csr_wsc;
 
     wire[31:0] mstatus;
+
+    initial csr_raddr = 0;
+    initial csr_waddr = 0;
 
     CSRRegs csr(
         .clk(clk),.rst(rst),.csr_w(csr_w),.raddr(csr_raddr),.waddr(csr_waddr),
@@ -64,19 +67,22 @@ module ExceptionUnit(
     assign RegWrite_cancel = illegal_inst | l_access_fault | s_access_fault | ecall_m; // TBD
 //    According to the diagram, design the Exception Unit
     always @(posedge clk) begin
+        if(csr_rw_in) begin
+            csr_raddr <= csr_rw_addr_in;
+            csr_waddr <= csr_rw_addr_in;
+            if (csr_w_imm_mux) begin
+                csr_wdata <= csr_w_data_imm;
+            
+            end
+            else begin
+                csr_wdata <= csr_w_data_reg;
+            end
+            csr_wsc <= csr_wsc_mode_in;
 
-        csr_raddr <= csr_rw_addr_in;
-        csr_waddr <= csr_rw_addr_in;
-        if (csr_w_imm_mux) begin
-            csr_wdata <= csr_w_data_imm;
-        
+            csr_w <= csr_rw_in; 
         end
-        else begin
-            csr_wdata <= csr_w_data_reg;
-        end
-        csr_wsc <= csr_wsc_mode_in;
 
-        csr_w <= csr_rw_in;
+
 
     end
 
