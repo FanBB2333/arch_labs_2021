@@ -15,7 +15,7 @@ module CSRRegs(
     // Address mapping. The address is 12 bits, but only 4 bits are used in this module.
     wire raddr_valid = raddr[11:7] == 5'h6 && raddr[5:3] == 3'h0; // [11:7] == 2'b00110
     wire[3:0] raddr_map = (raddr[6] << 3) + raddr[2:0];
-    wire waddr_valid = waddr[11:7] == 5'h6 && waddr[5:3] == 3'h0;
+    wire waddr_valid = waddr[11:7] == 5'h6 && waddr[5:3] == 3'h0; // [11:7] == 2'b00110
     wire[3:0] waddr_map = (waddr[6] << 3) + waddr[2:0];
 
     assign mstatus = CSR[0];
