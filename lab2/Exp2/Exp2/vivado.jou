@@ -2,10 +2,10 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Fri Oct 15 17:08:22 2021
-# Process ID: 22660
+# Start of session at: Fri Oct 15 18:30:42 2021
+# Process ID: 13528
 # Current directory: E:/arch_labs_2021/lab2/Exp2/Exp2
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent16944 E:\arch_labs_2021\lab2\Exp2\Exp2\Exp2.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent17784 E:\arch_labs_2021\lab2\Exp2\Exp2\Exp2.xpr
 # Log file: E:/arch_labs_2021/lab2/Exp2/Exp2/vivado.log
 # Journal file: E:/arch_labs_2021/lab2/Exp2/Exp2\vivado.jou
 #-----------------------------------------------------------
@@ -13,10 +13,22 @@ start_gui
 open_project E:/arch_labs_2021/lab2/Exp2/Exp2/Exp2.xpr
 update_compile_order -fileset sources_1
 launch_simulation
+open_wave_config E:/arch_labs_2021/lab2/Exp2/Exp2/code/sim/core_sim_behav.wcfg
+source core_sim.tcl
+save_wave_config {E:/arch_labs_2021/lab2/Exp2/Exp2/code/sim/core_sim_behav.wcfg}
+save_wave_config {E:/arch_labs_2021/lab2/Exp2/Exp2/code/sim/core_sim_behav.wcfg}
+save_wave_config {E:/arch_labs_2021/lab2/Exp2/Exp2/code/sim/core_sim_behav.wcfg}
+save_wave_config {E:/arch_labs_2021/lab2/Exp2/Exp2/code/sim/core_sim_behav.wcfg}
+current_wave_config {core_sim_behav.wcfg}
+add_wave {{/core_sim/core/interrupter}} 
+save_wave_config {E:/arch_labs_2021/lab2/Exp2/Exp2/code/sim/core_sim_behav.wcfg}
+save_wave_config {E:/arch_labs_2021/lab2/Exp2/Exp2/code/sim/core_sim_behav.wcfg}
+save_wave_config {E:/arch_labs_2021/lab2/Exp2/Exp2/code/sim/core_sim_behav.wcfg}
+close_sim
 launch_simulation
-reset_run synth_1
-launch_runs synth_1 -jobs 4
-wait_on_run synth_1
+open_wave_config E:/arch_labs_2021/lab2/Exp2/Exp2/code/sim/core_sim_behav.wcfg
+source core_sim.tcl
+close_sim
 launch_simulation
 open_wave_config E:/arch_labs_2021/lab2/Exp2/Exp2/code/sim/core_sim_behav.wcfg
 source core_sim.tcl
@@ -28,28 +40,66 @@ close_sim
 launch_simulation
 open_wave_config E:/arch_labs_2021/lab2/Exp2/Exp2/code/sim/core_sim_behav.wcfg
 source core_sim.tcl
+close_sim
+launch_simulation
+open_wave_config E:/arch_labs_2021/lab2/Exp2/Exp2/code/sim/core_sim_behav.wcfg
+source core_sim.tcl
+current_wave_config {core_sim_behav.wcfg}
+add_wave {{/core_sim/core/exp_unit/csr/CSR}} 
 save_wave_config {E:/arch_labs_2021/lab2/Exp2/Exp2/code/sim/core_sim_behav.wcfg}
 save_wave_config {E:/arch_labs_2021/lab2/Exp2/Exp2/code/sim/core_sim_behav.wcfg}
-current_wave_config {core_sim_behav.wcfg}
-add_wave {{/core_sim/core/redirect_mux_exp}} 
-current_wave_config {core_sim_behav.wcfg}
-add_wave {{/core_sim/core/RegWrite_cancel_exp}} 
-current_wave_config {core_sim_behav.wcfg}
-add_wave {{/core_sim/core/PC_redirect_exp}} 
-current_wave_config {core_sim_behav.wcfg}
-add_wave {{/core_sim/core/csr_rw_MEM}} 
-current_wave_config {core_sim_behav.wcfg}
-add_wave {{/core_sim/core/csr_w_imm_mux_MEM}} 
-current_wave_config {core_sim_behav.wcfg}
-add_wave {{/core_sim/core/CSRout_MEM}} 
-current_wave_config {core_sim_behav.wcfg}
-add_wave {{/core_sim/core/exp_vector_WB}} 
 save_wave_config {E:/arch_labs_2021/lab2/Exp2/Exp2/code/sim/core_sim_behav.wcfg}
 close_sim
 launch_simulation
 open_wave_config E:/arch_labs_2021/lab2/Exp2/Exp2/code/sim/core_sim_behav.wcfg
 source core_sim.tcl
+close_sim
+launch_simulation
+launch_simulation
+open_wave_config E:/arch_labs_2021/lab2/Exp2/Exp2/code/sim/core_sim_behav.wcfg
+source core_sim.tcl
+close_sim
+launch_simulation
+open_wave_config E:/arch_labs_2021/lab2/Exp2/Exp2/code/sim/core_sim_behav.wcfg
+source core_sim.tcl
+close_sim
+launch_simulation
+open_wave_config E:/arch_labs_2021/lab2/Exp2/Exp2/code/sim/core_sim_behav.wcfg
+source core_sim.tcl
+close_sim
+launch_simulation
+open_wave_config E:/arch_labs_2021/lab2/Exp2/Exp2/code/sim/core_sim_behav.wcfg
+source core_sim.tcl
+close_sim
+launch_simulation
+open_wave_config E:/arch_labs_2021/lab2/Exp2/Exp2/code/sim/core_sim_behav.wcfg
+source core_sim.tcl
+current_wave_config {core_sim_behav.wcfg}
+add_wave {{/core_sim/core/exp_unit/csr/raddr}} {{/core_sim/core/exp_unit/csr/waddr}} {{/core_sim/core/exp_unit/csr/wdata}} {{/core_sim/core/exp_unit/csr/csr_w}} {{/core_sim/core/exp_unit/csr/csr_wsc_mode}} {{/core_sim/core/exp_unit/csr/rdata}} {{/core_sim/core/exp_unit/csr/mstatus}} {{/core_sim/core/exp_unit/csr/CSR}} {{/core_sim/core/exp_unit/csr/raddr_valid}} {{/core_sim/core/exp_unit/csr/raddr_map}} {{/core_sim/core/exp_unit/csr/waddr_valid}} {{/core_sim/core/exp_unit/csr/waddr_map}} 
 save_wave_config {E:/arch_labs_2021/lab2/Exp2/Exp2/code/sim/core_sim_behav.wcfg}
 save_wave_config {E:/arch_labs_2021/lab2/Exp2/Exp2/code/sim/core_sim_behav.wcfg}
-save_wave_config {E:/arch_labs_2021/lab2/Exp2/Exp2/code/sim/core_sim_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config E:/arch_labs_2021/lab2/Exp2/Exp2/code/sim/core_sim_behav.wcfg
+source core_sim.tcl
+close_sim
+launch_simulation
+open_wave_config E:/arch_labs_2021/lab2/Exp2/Exp2/code/sim/core_sim_behav.wcfg
+source core_sim.tcl
+close_sim
+launch_simulation
+open_wave_config E:/arch_labs_2021/lab2/Exp2/Exp2/code/sim/core_sim_behav.wcfg
+source core_sim.tcl
+close_sim
+launch_simulation
+open_wave_config E:/arch_labs_2021/lab2/Exp2/Exp2/code/sim/core_sim_behav.wcfg
+source core_sim.tcl
+close_sim
+launch_simulation
+open_wave_config E:/arch_labs_2021/lab2/Exp2/Exp2/code/sim/core_sim_behav.wcfg
+source core_sim.tcl
+close_sim
+launch_simulation
+open_wave_config E:/arch_labs_2021/lab2/Exp2/Exp2/code/sim/core_sim_behav.wcfg
+source core_sim.tcl
 close_sim
