@@ -40,10 +40,12 @@ module ExceptionUnit(
         // output
         .rdata(csr_r_data_out),.mstatus(mstatus));
     
-    assign reg_FD_flush = 0;
-    assign reg_DE_flush = 0;
-    assign reg_EM_flush = 0;
-    assign reg_MW_flush = 0;
+    wire ls_fault = l_access_fault | s_access_fault;
+    
+    assign reg_FD_flush = redirect_mux;
+    assign reg_DE_flush = redirect_mux;
+    assign reg_EM_flush = redirect_mux;
+    assign reg_MW_flush = redirect_mux;
     assign redirect_mux = illegal_inst | l_access_fault | s_access_fault | ecall_m | mret; // TBD
 
     assign PC_redirect = csr_r_data_out;
