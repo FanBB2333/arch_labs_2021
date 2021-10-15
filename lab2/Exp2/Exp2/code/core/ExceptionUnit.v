@@ -27,10 +27,10 @@ module ExceptionUnit(
     output RegWrite_cancel
 );
 
-    wire[11:0] csr_raddr, csr_waddr;
-    wire[31:0] csr_wdata;
-    wire csr_w;
-    wire[1:0] csr_wsc;
+    reg[11:0] csr_raddr, csr_waddr;
+    reg[31:0] csr_wdata;
+    reg csr_w;
+    reg[1:0] csr_wsc;
 
     wire[31:0] mstatus;
 
@@ -43,10 +43,10 @@ module ExceptionUnit(
 
 
 
-    assign csr_raddr = csr_rw_in ? csr_rw_addr_in : 0;
-    assign csr_waddr = csr_rw_in ? csr_rw_addr_in : 0;
-    assign csr_wdata = csr_w_imm_mux ? csr_w_data_imm : csr_w_data_reg;
-    assign csr_wsc = csr_wsc_mode_in;
+    // assign csr_raddr = csr_rw_in ? csr_rw_addr_in : 0;
+    // assign csr_waddr = csr_rw_in ? csr_rw_addr_in : 0;
+    // assign csr_wdata = csr_w_imm_mux ? csr_w_data_imm : csr_w_data_reg;
+    // assign csr_wsc = csr_wsc_mode_in;
 
     assign csr_w = csr_rw_in ;// not csrrs rd, csr, x0, namely csrr rd, csr
     // csrrw: write, csrrs: set 
@@ -63,26 +63,22 @@ module ExceptionUnit(
     assign PC_redirect = csr_r_data_out;
     assign RegWrite_cancel = illegal_inst | l_access_fault | s_access_fault | ecall_m; // TBD
 //    According to the diagram, design the Exception Unit
-    // always @(posedge clk) begin
-    //     if(rst) begin
-    //         csr_raddr <= 0;
-    //         csr_waddr <= 0;
-    //         csr_wdata <= 0;
-    //         csr_wsc <= 0;
-    //         csr_w <= 0;
-    //     end
-    //     else begin
-    //         csr_raddr <= csr_rw_addr_in;
-    //         csr_waddr <= csr_rw_addr_in;
-    //         csr_wdata <= csr_w_data_reg;
-    //         csr_wsc <= csr_wsc_mode_in;
+    always @(posedge clk) begin
 
-    //         csr_w <= csr_rw_in;
-    //         if (mret)begin
-                
-    //         end
-    //     end
-    // end
+        csr_raddr <= csr_rw_addr_in;
+        csr_waddr <= csr_rw_addr_in;
+        if (csr_w_imm_mux) begin
+            csr_wdata <= csr_w_data_imm;
+        
+        end
+        else begin
+            csr_wdata <= csr_w_data_reg;
+        end
+        csr_wsc <= csr_wsc_mode_in;
+
+        csr_w <= csr_rw_in;
+
+    end
 
 
 endmodule
