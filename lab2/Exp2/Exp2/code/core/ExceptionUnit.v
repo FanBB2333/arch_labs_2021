@@ -43,8 +43,8 @@ module ExceptionUnit(
 
 
 
-    assign csr_raddr = csr_rw_addr_in;
-    assign csr_waddr = csr_rw_addr_in;
+    assign csr_raddr = csr_rw_in ? csr_rw_addr_in : 0;
+    assign csr_waddr = csr_rw_in ? csr_rw_addr_in : 0;
     assign csr_wdata = csr_w_imm_mux ? csr_w_data_imm : csr_w_data_reg;
     assign csr_wsc = csr_wsc_mode_in;
 
