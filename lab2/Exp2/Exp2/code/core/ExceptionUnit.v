@@ -52,6 +52,7 @@ module ExceptionUnit(
 
     assign csr_w = csr_rw_in;
 
+    assign PC_redirect = csr_r_data_out;
     //According to the diagram, design the Exception Unit
     // always @(posedge clk) begin
     //     if(rst) begin
