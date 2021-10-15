@@ -19,7 +19,7 @@ module ExceptionUnit(
     input mret,
 
     input[31:0] epc_cur, // PC_WB
-    input[31:0] epc_next, // MEM向前�?�? 未被flush的最新PC
+    input[31:0] epc_next, // MEM向前�??�?? 未被flush的最新PC
     output[31:0] PC_redirect,
     output redirect_mux,
 
@@ -48,7 +48,7 @@ module ExceptionUnit(
     // assign csr_wdata = csr_w_imm_mux ? csr_w_data_imm : csr_w_data_reg;
     // assign csr_wsc = csr_wsc_mode_in;
 
-    assign csr_w = csr_rw_in ;// not csrrs rd, csr, x0, namely csrr rd, csr
+    // assign csr_w = csr_rw_in ;// not csrrs rd, csr, x0, namely csrr rd, csr
     // csrrw: write, csrrs: set 
 
 
