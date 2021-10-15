@@ -44,5 +44,3 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "E:/arch_labs_2021/lab2/Exp2/Exp2/co
 INFO: [VRFC 10-311] analyzing module debug_clk
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/arch_labs_2021/lab2/Exp2/Exp2/code/sim/core_sim.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module core_sim
-INFO: [VRFC 10-2263] Analyzing Verilog file "E:/arch_labs_2021/lab2/Exp2/Exp2/Exp2.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module glbl
