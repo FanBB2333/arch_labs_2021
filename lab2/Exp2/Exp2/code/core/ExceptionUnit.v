@@ -19,7 +19,7 @@ module ExceptionUnit(
     input mret,
 
     input[31:0] epc_cur, // PC_WB
-    input[31:0] epc_next,
+    input[31:0] epc_next, // MEM向前开始 未被flush的最新PC
     output[31:0] PC_redirect,
     output redirect_mux,
 
@@ -39,32 +39,40 @@ module ExceptionUnit(
         .wdata(csr_wdata),.csr_wsc_mode(csr_wsc),
         // output
         .rdata(csr_r_data_out),.mstatus(mstatus));
+    
+    assign reg_FD_flush = 0;
+    assign reg_DE_flush = 0;
+    assign reg_EM_flush = 0;
+    assign reg_MW_flush = 0;
+
+    assign csr_raddr = csr_rw_addr_in;
+    assign csr_waddr = csr_rw_addr_in;
+    assign csr_wdata = csr_w_data_reg;
+    assign csr_wsc = csr_wsc_mode_in;
+
+    assign csr_w = csr_rw_in;
 
     //According to the diagram, design the Exception Unit
-    always @(posedge clk) begin
-        if(rst) begin
-            csr_raddr <= 0;
-            csr_waddr <= 0;
-            csr_wdata <= 0;
-            csr_wsc <= 0;
-            csr_w <= 0;
-        end
-        else begin
-            csr_raddr <= csr_rw_addr_in;
-            csr_waddr <= csr_rw_addr_in;
-            csr_wdata <= csr_w_data_reg;
-            csr_wsc <= csr_wsc_mode_in;
+    // always @(posedge clk) begin
+    //     if(rst) begin
+    //         csr_raddr <= 0;
+    //         csr_waddr <= 0;
+    //         csr_wdata <= 0;
+    //         csr_wsc <= 0;
+    //         csr_w <= 0;
+    //     end
+    //     else begin
+    //         csr_raddr <= csr_rw_addr_in;
+    //         csr_waddr <= csr_rw_addr_in;
+    //         csr_wdata <= csr_w_data_reg;
+    //         csr_wsc <= csr_wsc_mode_in;
 
-            csr_w <= csr_rw_in;
-            if (mret)begin
+    //         csr_w <= csr_rw_in;
+    //         if (mret)begin
                 
-            end
-        end
-        
-
-
-        
-    end
+    //         end
+    //     end
+    // end
 
 
 endmodule
