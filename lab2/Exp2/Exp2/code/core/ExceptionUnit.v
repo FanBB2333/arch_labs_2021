@@ -45,35 +45,29 @@ module ExceptionUnit(
     assign reg_EM_flush = 0;
     assign reg_MW_flush = 0;
 
-    assign csr_raddr = csr_rw_addr_in;
-    assign csr_waddr = csr_rw_addr_in;
-    assign csr_wdata = csr_w_data_reg;
-    assign csr_wsc = csr_wsc_mode_in;
-
-    assign csr_w = csr_rw_in;
 
     assign PC_redirect = csr_r_data_out;
-    //According to the diagram, design the Exception Unit
-    // always @(posedge clk) begin
-    //     if(rst) begin
-    //         csr_raddr <= 0;
-    //         csr_waddr <= 0;
-    //         csr_wdata <= 0;
-    //         csr_wsc <= 0;
-    //         csr_w <= 0;
-    //     end
-    //     else begin
-    //         csr_raddr <= csr_rw_addr_in;
-    //         csr_waddr <= csr_rw_addr_in;
-    //         csr_wdata <= csr_w_data_reg;
-    //         csr_wsc <= csr_wsc_mode_in;
+    According to the diagram, design the Exception Unit
+    always @(posedge clk) begin
+        if(rst) begin
+            csr_raddr <= 0;
+            csr_waddr <= 0;
+            csr_wdata <= 0;
+            csr_wsc <= 0;
+            csr_w <= 0;
+        end
+        else begin
+            csr_raddr <= csr_rw_addr_in;
+            csr_waddr <= csr_rw_addr_in;
+            csr_wdata <= csr_w_data_reg;
+            csr_wsc <= csr_wsc_mode_in;
 
-    //         csr_w <= csr_rw_in;
-    //         if (mret)begin
+            csr_w <= csr_rw_in;
+            if (mret)begin
                 
-    //         end
-    //     end
-    // end
+            end
+        end
+    end
 
 
 endmodule
