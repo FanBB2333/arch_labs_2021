@@ -44,10 +44,10 @@ module ExceptionUnit(
     assign reg_DE_flush = 0;
     assign reg_EM_flush = 0;
     assign reg_MW_flush = 0;
-    assign redirect_mux = interrupt | illegal_inst | l_access_fault | s_access_fault
-     | ecall_m | mret; // TBD
+    assign redirect_mux = illegal_inst | l_access_fault | s_access_fault | ecall_m | mret; // TBD
 
     assign PC_redirect = csr_r_data_out;
+    assign RegWrite_cancel = illegal_inst | l_access_fault | s_access_fault | ecall_m; // TBD
 //    According to the diagram, design the Exception Unit
     always @(posedge clk) begin
         if(rst) begin
