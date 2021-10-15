@@ -48,8 +48,8 @@ module ExceptionUnit(
     assign csr_wdata = csr_w_imm_mux ? csr_w_data_imm : csr_w_data_reg;
     assign csr_wsc = csr_wsc_mode_in;
 
-    assign csr_w = csr_rw_in;
-    
+    assign csr_w = csr_rw_in ;// not csrrs rd, csr, x0, namely csrr rd, csr
+    // csrrw: write, csrrs: set 
 
 
     wire ls_fault = l_access_fault | s_access_fault;
