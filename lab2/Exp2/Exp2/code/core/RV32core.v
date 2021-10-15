@@ -164,7 +164,7 @@ module  RV32core(
         .csr_w_imm_mux(csr_w_imm_mux_MEM),.csr_rw_addr_in(inst_MEM[31:20]),
         .csr_w_data_reg(rs1_data_MEM),.csr_w_data_imm(rs1_MEM),
         .csr_r_data_out(CSRout_MEM),
-
+        // exp_vector: {illegal_inst, ECALL, l_access_fault_MEM, s_access_fault_MEM}
         .interrupt(interrupter),
         .illegal_inst(~isFlushed_WB & exp_vector_WB[3]),
         .ecall_m(~isFlushed_WB & exp_vector_WB[2]),
