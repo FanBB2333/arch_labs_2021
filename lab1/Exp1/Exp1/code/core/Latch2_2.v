@@ -6,8 +6,8 @@ module    Latch2_2(
                     input clk,
                     input [1:0] hazard_optype_ctrl,
                     input [1:0] hazard_optype_ctrl_before2_cycle,
-                    output reg [1:0] hazard_optype_ctrl_before1,
-                    output reg [1:0] hazard_optype_ctrl_before2
+                    output reg [1:0] hazard_optype_ctrl_before1,  // hazard_optype_EXE
+                    output reg [1:0] hazard_optype_ctrl_before2   // hazard_optype_MEM
                 );
     
     initial hazard_optype_ctrl_before1 = 2'b00;

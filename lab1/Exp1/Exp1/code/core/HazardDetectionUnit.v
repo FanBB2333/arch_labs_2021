@@ -41,13 +41,8 @@ module HazardDetectionUnit(
 
 
 
-    // wire Hazards = (load_optype_EXE && rd_EXE != 0 || load_optype_MEM && rd_MEM != 0);
     wire Hazards = (load_optype_EXE && rd_EXE != 0 );
     wire Data_stall;
-    // assign Data_stall = (rs1use_ID && rs1_ID != 0 && Hazards && 
-    //                     (rs1_ID == rd_EXE || rs1_ID == rd_MEM)) 
-    //                     || (rs2use_ID && rs2_ID != 0 && Hazards && 
-    //                     (rs2_ID == rd_EXE || rs2_ID == rd_MEM));
     assign Data_stall = (rs1use_ID && rs1_ID != 0 && Hazards && 
                         (rs1_ID == rd_EXE)) 
                         || (rs2use_ID && rs2_ID != 0 && Hazards && 
