@@ -83,7 +83,7 @@ module HazardDetectionUnit(
                             {2{forward_B_1}} & 2'b01 |
                             {2{forward_B_0}} & 2'b00;
     
-    assign forward_ctrl_ls = load_optype_MEM && fwd_B_MEM;
+    assign forward_ctrl_ls = load_optype_MEM && (rs2_EXE == rd_MEM);
 
 
 
