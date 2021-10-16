@@ -11,13 +11,13 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="14801fs"></ZoomEndTime>
-      <Cursor1Time time="15000fs"></Cursor1Time>
+      <ZoomStartTime time="110040fs"></ZoomStartTime>
+      <ZoomEndTime time="124921fs"></ZoomEndTime>
+      <Cursor1Time time="118060fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="276"></NameColumnWidth>
-      <ValueColumnWidth column_width="100"></ValueColumnWidth>
+      <ValueColumnWidth column_width="96"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="76" />
    <wvobject fp_name="/core_sim/clk" type="logic">
@@ -63,6 +63,10 @@
    <wvobject fp_name="/core_sim/core/inst_WB" type="array">
       <obj_property name="ElementShortName">inst_WB[31:0]</obj_property>
       <obj_property name="ObjectShortName">inst_WB[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/core_sim/core/forward_ctrl_ls" type="logic">
+      <obj_property name="ElementShortName">forward_ctrl_ls</obj_property>
+      <obj_property name="ObjectShortName">forward_ctrl_ls</obj_property>
    </wvobject>
    <wvobject fp_name="/core_sim/core/Branch_ctrl" type="logic">
       <obj_property name="ElementShortName">Branch_ctrl</obj_property>
@@ -123,10 +127,6 @@
    <wvobject fp_name="/core_sim/core/forward_ctrl_B" type="array">
       <obj_property name="ElementShortName">forward_ctrl_B[1:0]</obj_property>
       <obj_property name="ObjectShortName">forward_ctrl_B[1:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/core_sim/core/forward_ctrl_ls" type="logic">
-      <obj_property name="ElementShortName">forward_ctrl_ls</obj_property>
-      <obj_property name="ObjectShortName">forward_ctrl_ls</obj_property>
    </wvobject>
    <wvobject fp_name="/core_sim/core/hazard_optype_ctrl" type="array">
       <obj_property name="ElementShortName">hazard_optype_ctrl[1:0]</obj_property>
@@ -239,7 +239,6 @@
    <wvobject fp_name="/core_sim/core/hazard_unit/forward_ctrl_A" type="array">
       <obj_property name="ElementShortName">forward_ctrl_A[1:0]</obj_property>
       <obj_property name="ObjectShortName">forward_ctrl_A[1:0]</obj_property>
-      <obj_property name="isExpanded"></obj_property>
    </wvobject>
    <wvobject fp_name="/core_sim/core/hazard_unit/forward_ctrl_B" type="array">
       <obj_property name="ElementShortName">forward_ctrl_B[1:0]</obj_property>
