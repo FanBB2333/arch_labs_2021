@@ -59,9 +59,8 @@ module HazardDetectionUnit(
     assign reg_DE_flush = Data_stall && RegWrite_ctrl;
     assign reg_EM_flush = 0; // blank
 
-
-
     assign PC_EN_IF = ~(Data_stall && RegWrite_ctrl);
+
 
     wire forward_A_3, forward_B_3, forward_A_2, forward_B_2, forward_A_1, forward_B_1, forward_A_0, forward_B_0;
     assign forward_A_3 = load_optype_MEM && fwd_A_MEM;
