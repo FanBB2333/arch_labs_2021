@@ -56,11 +56,12 @@ module ExceptionUnit(
 
 
     wire ls_fault = l_access_fault | s_access_fault;
-    
-    assign reg_FD_flush = illegal_inst | l_access_fault | s_access_fault | ecall_m;
-    assign reg_DE_flush = illegal_inst | l_access_fault | s_access_fault | ecall_m;
-    assign reg_EM_flush = illegal_inst | l_access_fault | s_access_fault | ecall_m;
-    assign reg_MW_flush = illegal_inst | l_access_fault | s_access_fault | ecall_m;
+    wire flush_signal = illegal_inst | l_access_fault | s_access_fault | ecall_m;
+    reg flush_signal_latch;
+    assign reg_FD_flush = flush_signal | flush_signal_latch;
+    assign reg_DE_flush = flush_signal | flush_signal_latch;
+    assign reg_EM_flush = flush_signal | flush_signal_latch;
+    assign reg_MW_flush = flush_signal | flush_signal_latch;
     // assign redirect_mux = illegal_inst | l_access_fault | s_access_fault | ecall_m | mret; // TBD
 
     assign PC_redirect = csr_r_data_out;
@@ -68,6 +69,7 @@ module ExceptionUnit(
 //    According to the diagram, design the Exception Unit
     initial redirect_mux = 0;
     always @(posedge clk) begin
+        flush_signal_latch <= flush_signal;
         if(csr_rw_in) begin
             csr_raddr <= csr_rw_addr_in;
             csr_waddr <= csr_rw_addr_in;
