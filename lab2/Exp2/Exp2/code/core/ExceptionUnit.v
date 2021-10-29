@@ -31,6 +31,7 @@ module ExceptionUnit(
     reg[31:0] csr_wdata;
     reg csr_w;
     reg[1:0] csr_wsc;
+    reg[1:0] state;
 
     wire[31:0] mstatus;
 
@@ -68,6 +69,46 @@ module ExceptionUnit(
     assign RegWrite_cancel = illegal_inst | l_access_fault | s_access_fault | ecall_m; // TBD
 //    According to the diagram, design the Exception Unit
     initial redirect_mux = 0;
+
+    always @(posedge clk or posedge rst) begin
+        case(state)
+        2'b00: begin
+            if(RegWrite_cancel) begin 
+                // If the exception or interruption or ecall is called, we just change the state
+                //1. write the mstatus register
+                csr_waddr <= 12'h300; // the number of mstatus register
+                // mstatus[7] == MPIE, mstatus[3] == MIE
+                csr_wdata <= {mstatus[31:8], mstatus[3], mstatus[6:4], 1'b0, mstatus[2:0]};
+                csr_w <= 1'b1; // write enable
+                state <= 2'b01; // change the state to STATE_MEPC
+
+            end
+            else if(mret) begin
+                // mret cycle
+
+            
+            end
+            else if(csr_rw_in) begin
+                // CSR inst, then just execute it 
+                csr_raddr <= csr_rw_addr_in;
+                csr_waddr <= csr_rw_addr_in;
+                if (csr_w_imm_mux) begin
+                    csr_wdata <= {27'b0, csr_w_data_imm};
+                
+                end
+                else begin
+                    csr_wdata <= csr_w_data_reg;
+                end
+                csr_wsc <= csr_wsc_mode_in;
+                csr_w <= csr_rw_in; 
+                
+            end
+
+        end
+
+
+    
+    end
     always @(posedge clk) begin
         flush_signal_latch <= flush_signal;
         if(csr_rw_in) begin
@@ -90,8 +131,6 @@ module ExceptionUnit(
         else begin
             redirect_mux <= 0;
         end
-
-
 
     end
 
