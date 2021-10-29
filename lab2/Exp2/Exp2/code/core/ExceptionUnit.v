@@ -78,12 +78,17 @@ module ExceptionUnit(
         2'b00: begin
             if(RegWrite_cancel) begin 
                 // If the exception or interruption or ecall is called, we just change the state
-                //1. write the mstatus register
+                // read in mepc
+                if(csr_rw_in) begin
+                    csr_raddr = csr_rw_addr_in;
+                end
+
+                //2. write the mstatus register
                 csr_waddr <= 12'h300; // the number of mstatus register
                 // mstatus[7] == MPIE, mstatus[3] == MIE
                 csr_wdata <= {mstatus[31:8], mstatus[3], mstatus[6:4], 1'b0, mstatus[2:0]};
                 csr_w <= 1'b1; // write enable
-                csr_wsc_mode <= 2'b01; // write immediately
+                csr_wsc <= 2'b01; // write immediately
                 state <= 2'b01; // change the state to STATE_MEPC
 
             end
@@ -117,7 +122,7 @@ module ExceptionUnit(
             // 2. write mepc(0x341)
             csr_waddr <= 12'h341;
             csr_wdata <= epc_cur - 4; // TODO: check if this is epc_next
-            csr_wsc_mode <= 2'b01; // write immediately
+            csr_wsc <= 2'b01; // write immediately
             csr_w <= 1'b1; // write enable
             state <= 2'b10; // change the state to STATE_MCAUSE
 
@@ -130,7 +135,7 @@ module ExceptionUnit(
             csr_waddr <= 12'h342; // the number of mstatus register
             csr_wdata <= {mstatus[31:8], mstatus[3], mstatus[6:4], 1'b0, mstatus[2:0]};
             csr_w <= 1'b1; // write enable
-            csr_wsc_mode <= 2'b01; // write immediately
+            csr_wsc <= 2'b01; // write immediately
             state <= 2'b00; // change the state to STATE_IDLE
 
         end
@@ -139,6 +144,7 @@ module ExceptionUnit(
 
     
     end
+
     always @(posedge clk) begin
         flush_signal_latch <= flush_signal;
         if(csr_rw_in) begin
