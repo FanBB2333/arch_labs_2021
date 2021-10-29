@@ -71,8 +71,15 @@ module ExceptionUnit(
     assign RegWrite_cancel = illegal_inst | l_access_fault | s_access_fault | ecall_m; // TBD
 //    According to the diagram, design the Exception Unit
     initial redirect_mux = 0;
-
+    initial state = 0;
     always @(posedge clk or posedge rst) begin
+        if(RegWrite_cancel) begin
+            redirect_mux <= 1'b1;
+        end
+        else begin
+            redirect_mux <= 1'b0;
+        end
+
         case(state)
         // STATE_IDLE
         2'b00: begin
@@ -160,7 +167,6 @@ module ExceptionUnit(
             csr_waddr <= csr_rw_addr_in;
             if (csr_w_imm_mux) begin
                 csr_wdata <= csr_w_data_imm;
-            
             end
             else begin
                 csr_wdata <= csr_w_data_reg;
