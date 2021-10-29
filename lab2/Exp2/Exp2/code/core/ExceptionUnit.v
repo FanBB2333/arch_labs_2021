@@ -61,14 +61,14 @@ module ExceptionUnit(
     reg flush_signal_latch;
     reg[31:0] mcause_next;
 
-    assign reg_FD_flush = flush_signal ;
-    assign reg_DE_flush = flush_signal ;
-    assign reg_EM_flush = flush_signal ;
-    assign reg_MW_flush = flush_signal ;
+    assign reg_FD_flush = RegWrite_cancel | redirect_mux;
+    assign reg_DE_flush = RegWrite_cancel | redirect_mux;
+    assign reg_EM_flush = RegWrite_cancel | redirect_mux;
+    assign reg_MW_flush = RegWrite_cancel | redirect_mux; 
     // assign redirect_mux = illegal_inst | l_access_fault | s_access_fault | ecall_m | mret; // TBD
 
     assign PC_redirect = csr_r_data_out;
-    assign RegWrite_cancel = illegal_inst | l_access_fault | s_access_fault | ecall_m; // TBD
+    assign RegWrite_cancel = interrupt | illegal_inst | l_access_fault | s_access_fault | ecall_m; // TBD
 //    According to the diagram, design the Exception Unit
     initial redirect_mux = 0;
     initial state = 0;
@@ -151,11 +151,20 @@ module ExceptionUnit(
             csr_wdata <= {mstatus[31:8], mstatus[3], mstatus[6:4], 1'b0, mstatus[2:0]};
             csr_w <= 1'b1; // write enable
             csr_wsc <= 2'b01; // write immediately
+            state <= 2'b11; // change the state to STATE_IDLE
+
+        end
+
+        2'b10: begin
+            if(csr_rw_in) begin
+                csr_raddr = csr_rw_addr_in;
+            end
+            csr_w <= 1'b0; // write enable
+            csr_wsc <= 2'b01; // write immediately
             state <= 2'b00; // change the state to STATE_IDLE
 
         end
         
-
 
     
     end
