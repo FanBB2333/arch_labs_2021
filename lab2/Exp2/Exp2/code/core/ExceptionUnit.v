@@ -155,7 +155,7 @@ module ExceptionUnit(
 
         end
 
-        2'b10: begin
+        2'b11: begin
             if(csr_rw_in) begin
                 csr_raddr = csr_rw_addr_in;
             end
