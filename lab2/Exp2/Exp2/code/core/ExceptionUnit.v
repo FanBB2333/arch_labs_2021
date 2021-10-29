@@ -94,7 +94,13 @@ module ExceptionUnit(
             end
             else if(mret) begin
                 // mret cycle
-
+                // mepc: 0x341
+                csr_raddr <= 12'h341; 
+                csr_waddr <= 12'h300;
+                csr_wdata <= {mstatus[31:8], 1'b1, mstatus[6:4], mstatus[3], mstatus[2:0]}; // return the interrupt mode
+                // csr_w <= 1'b1; // write enable
+                // csr_wsc <= 2'b01; // write immediately
+                state <= 2'b00; // stall the state
             
             end
             else if(csr_rw_in) begin
@@ -103,14 +109,13 @@ module ExceptionUnit(
                 csr_waddr <= csr_rw_addr_in;
                 if (csr_w_imm_mux) begin
                     csr_wdata <= {27'b0, csr_w_data_imm};
-                
                 end
                 else begin
                     csr_wdata <= csr_w_data_reg;
                 end
                 csr_wsc <= csr_wsc_mode_in;
                 csr_w <= csr_rw_in; 
-                
+                state = 2'b00; // stall the state
             end
 
         end
@@ -131,6 +136,9 @@ module ExceptionUnit(
 
         // STATE_MCAUSE
         2'b10: begin
+            if(csr_rw_in) begin
+                csr_raddr = csr_rw_addr_in;
+            end
             // 1. write mcause(0x342)
             csr_waddr <= 12'h342; // the number of mstatus register
             csr_wdata <= {mstatus[31:8], mstatus[3], mstatus[6:4], 1'b0, mstatus[2:0]};
