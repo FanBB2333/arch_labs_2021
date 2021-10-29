@@ -59,6 +59,8 @@ module ExceptionUnit(
     wire ls_fault = l_access_fault | s_access_fault;
     wire flush_signal = illegal_inst | l_access_fault | s_access_fault | ecall_m;
     reg flush_signal_latch;
+    reg[31:0] mcause_next;
+
     assign reg_FD_flush = flush_signal ;
     assign reg_DE_flush = flush_signal ;
     assign reg_EM_flush = flush_signal ;
@@ -111,11 +113,13 @@ module ExceptionUnit(
         // STATE_MEPC
         2'b01: begin
             // 1. read mtvec(0x305)
-
-
+            csr_raddr <= 12'h305;
             // 2. write mepc(0x341)
-
-        
+            csr_waddr <= 12'h341;
+            csr_wdata <= epc_cur - 4; // TODO: check if this is epc_next
+            csr_wsc_mode <= 2'b01; // write immediately
+            csr_w <= 1'b1; // write enable
+            state <= 2'b10; // change the state to STATE_MCAUSE
 
         end
 
@@ -123,7 +127,11 @@ module ExceptionUnit(
         // STATE_MCAUSE
         2'b10: begin
             // 1. write mcause(0x342)
-
+                csr_waddr <= 12'h342; // the number of mstatus register
+                csr_wdata <= {mstatus[31:8], mstatus[3], mstatus[6:4], 1'b0, mstatus[2:0]};
+                csr_w <= 1'b1; // write enable
+                csr_wsc_mode <= 2'b01; // write immediately
+                state <= 2'b00; // change the state to STATE_IDLE
 
         end
         
