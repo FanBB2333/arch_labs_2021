@@ -127,11 +127,11 @@ module ExceptionUnit(
         // STATE_MCAUSE
         2'b10: begin
             // 1. write mcause(0x342)
-                csr_waddr <= 12'h342; // the number of mstatus register
-                csr_wdata <= {mstatus[31:8], mstatus[3], mstatus[6:4], 1'b0, mstatus[2:0]};
-                csr_w <= 1'b1; // write enable
-                csr_wsc_mode <= 2'b01; // write immediately
-                state <= 2'b00; // change the state to STATE_IDLE
+            csr_waddr <= 12'h342; // the number of mstatus register
+            csr_wdata <= {mstatus[31:8], mstatus[3], mstatus[6:4], 1'b0, mstatus[2:0]};
+            csr_w <= 1'b1; // write enable
+            csr_wsc_mode <= 2'b01; // write immediately
+            state <= 2'b00; // change the state to STATE_IDLE
 
         end
         
