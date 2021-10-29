@@ -72,6 +72,7 @@ module ExceptionUnit(
 
     always @(posedge clk or posedge rst) begin
         case(state)
+        // STATE_IDLE
         2'b00: begin
             if(RegWrite_cancel) begin 
                 // If the exception or interruption or ecall is called, we just change the state
@@ -80,6 +81,7 @@ module ExceptionUnit(
                 // mstatus[7] == MPIE, mstatus[3] == MIE
                 csr_wdata <= {mstatus[31:8], mstatus[3], mstatus[6:4], 1'b0, mstatus[2:0]};
                 csr_w <= 1'b1; // write enable
+                csr_wsc_mode <= 2'b01; // write immediately
                 state <= 2'b01; // change the state to STATE_MEPC
 
             end
@@ -105,6 +107,26 @@ module ExceptionUnit(
             end
 
         end
+
+        // STATE_MEPC
+        2'b01: begin
+            // 1. read mtvec(0x305)
+
+
+            // 2. write mepc(0x341)
+
+        
+
+        end
+
+
+        // STATE_MCAUSE
+        2'b10: begin
+            // 1. write mcause(0x342)
+
+
+        end
+        
 
 
     
