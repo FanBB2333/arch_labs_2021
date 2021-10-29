@@ -58,10 +58,10 @@ module ExceptionUnit(
     wire ls_fault = l_access_fault | s_access_fault;
     wire flush_signal = illegal_inst | l_access_fault | s_access_fault | ecall_m;
     reg flush_signal_latch;
-    assign reg_FD_flush = flush_signal | flush_signal_latch;
-    assign reg_DE_flush = flush_signal | flush_signal_latch;
-    assign reg_EM_flush = flush_signal | flush_signal_latch;
-    assign reg_MW_flush = flush_signal | flush_signal_latch;
+    assign reg_FD_flush = flush_signal ;
+    assign reg_DE_flush = flush_signal ;
+    assign reg_EM_flush = flush_signal ;
+    assign reg_MW_flush = flush_signal ;
     // assign redirect_mux = illegal_inst | l_access_fault | s_access_fault | ecall_m | mret; // TBD
 
     assign PC_redirect = csr_r_data_out;
@@ -84,7 +84,7 @@ module ExceptionUnit(
 
             csr_w <= csr_rw_in; 
         end
-        if (illegal_inst | l_access_fault | s_access_fault | ecall_m | mret) begin
+        if (illegal_inst | l_access_fault | s_access_fault | ecall_m ) begin
             redirect_mux <= 1;
         end
         else begin
