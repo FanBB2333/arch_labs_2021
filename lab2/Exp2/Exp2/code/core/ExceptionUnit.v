@@ -160,29 +160,5 @@ module ExceptionUnit(
     
     end
 
-    always @(posedge clk) begin
-        flush_signal_latch <= flush_signal;
-        if(csr_rw_in) begin
-            csr_raddr <= csr_rw_addr_in;
-            csr_waddr <= csr_rw_addr_in;
-            if (csr_w_imm_mux) begin
-                csr_wdata <= csr_w_data_imm;
-            end
-            else begin
-                csr_wdata <= csr_w_data_reg;
-            end
-            csr_wsc <= csr_wsc_mode_in;
-
-            csr_w <= csr_rw_in; 
-        end
-        if (illegal_inst | l_access_fault | s_access_fault | ecall_m ) begin
-            redirect_mux <= 1;
-        end
-        else begin
-            redirect_mux <= 0;
-        end
-
-    end
-
 
 endmodule
