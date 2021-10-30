@@ -83,16 +83,17 @@ module ExceptionUnit(
         else begin
             state <= next_state;
         end
-
-    end
-
-    always @(*) begin
         if(RegWrite_cancel) begin
             redirect_mux <= 1'b1;
         end
         else begin
             redirect_mux <= 1'b0;
         end
+
+    end
+
+    always @(*) begin
+
 
         case(state)
         // STATE_IDLE
