@@ -93,8 +93,6 @@ module ExceptionUnit(
     end
 
     always @(*) begin
-
-
         case(state)
         // STATE_IDLE
         2'b00: begin
