@@ -19,3 +19,25 @@ close_sim
 launch_simulation
 open_wave_config E:/arch_labs_2021/lab2/Exp2/Exp2/code/sim/core_sim_behav.wcfg
 source core_sim.tcl
+close_sim
+launch_simulation
+open_wave_config E:/arch_labs_2021/lab2/Exp2/Exp2/code/sim/core_sim_behav.wcfg
+source core_sim.tcl
+close_sim
+launch_simulation
+launch_simulation
+open_wave_config E:/arch_labs_2021/lab2/Exp2/Exp2/code/sim/core_sim_behav.wcfg
+source core_sim.tcl
+close_sim
+launch_simulation
+open_wave_config E:/arch_labs_2021/lab2/Exp2/Exp2/code/sim/core_sim_behav.wcfg
+source core_sim.tcl
+close_sim
+launch_simulation
+open_wave_config E:/arch_labs_2021/lab2/Exp2/Exp2/code/sim/core_sim_behav.wcfg
+source core_sim.tcl
+close_sim
+launch_simulation
+open_wave_config E:/arch_labs_2021/lab2/Exp2/Exp2/code/sim/core_sim_behav.wcfg
+source core_sim.tcl
+close_sim
