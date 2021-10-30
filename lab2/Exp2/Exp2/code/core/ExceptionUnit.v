@@ -111,7 +111,7 @@ module ExceptionUnit(
                 csr_wdata <= {mstatus[31:8], mstatus[3], mstatus[6:4], 1'b0, mstatus[2:0]};
                 csr_w <= 1'b1; // write enable
                 csr_wsc <= 2'b01; // write immediately
-                next_PC <= epc_cur - 4;
+                next_PC <= epc_cur;
                 next_state <= 2'b01; // change the state to STATE_MEPC
 
             end
