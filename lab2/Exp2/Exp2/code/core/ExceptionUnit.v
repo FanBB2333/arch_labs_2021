@@ -87,7 +87,7 @@ module ExceptionUnit(
                 // If the exception or interruption or ecall is called, we just change the state
                 // read in mepc
                 if(csr_rw_in) begin
-                    csr_raddr = csr_rw_addr_in;
+                    csr_raddr <= csr_rw_addr_in;
                 end
 
                 //2. write the mstatus register
@@ -122,7 +122,7 @@ module ExceptionUnit(
                 end
                 csr_wsc <= csr_wsc_mode_in;
                 csr_w <= csr_rw_in; 
-                state = 2'b00; // stall the state
+                state <= 2'b00; // stall the state
             end
 
         end
