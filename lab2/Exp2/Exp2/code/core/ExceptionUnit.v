@@ -66,7 +66,8 @@ module ExceptionUnit(
     assign reg_FD_flush = RegWrite_cancel | redirect_mux;
     assign reg_DE_flush = RegWrite_cancel | redirect_mux;
     assign reg_EM_flush = RegWrite_cancel | redirect_mux;
-    assign reg_MW_flush = RegWrite_cancel | redirect_mux; 
+    assign reg_MW_flush = RegWrite_cancel | next_redirect_mux; 
+
     // assign redirect_mux = illegal_inst | l_access_fault | s_access_fault | ecall_m | mret; // TBD
 
     assign PC_redirect = csr_r_data_out;
