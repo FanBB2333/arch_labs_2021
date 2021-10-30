@@ -21,7 +21,7 @@ module ExceptionUnit(
     input[31:0] epc_cur, // PC_WB
     input[31:0] epc_next, // MEM向前�???�??? 未被flush的最新PC
     output[31:0] PC_redirect,
-    output reg redirect_mux,
+    output redirect_mux,
 
     output reg_FD_flush, reg_DE_flush, reg_EM_flush, reg_MW_flush, 
     output RegWrite_cancel
@@ -62,7 +62,7 @@ module ExceptionUnit(
     reg flush_signal_latch;
     reg[31:0] mcause_next;
     reg[31:0] next_PC = 0;
-
+    reg next_redirect_mux;
     assign reg_FD_flush = RegWrite_cancel | redirect_mux;
     assign reg_DE_flush = RegWrite_cancel | redirect_mux;
     assign reg_EM_flush = RegWrite_cancel | redirect_mux;
@@ -72,10 +72,10 @@ module ExceptionUnit(
     assign PC_redirect = csr_r_data_out;
     assign RegWrite_cancel = interrupt | illegal_inst | l_access_fault | s_access_fault | ecall_m; // TBD
 //    According to the diagram, design the Exception Unit
-    initial redirect_mux = 0;
+    // initial redirect_mux = 0;
     initial state = 0;
     initial next_state = 0;
-
+    assign redirect_mux = next_redirect_mux | mret;
     always @(posedge clk or posedge rst) begin
         if(rst)begin
             state <= 2'b0; //
@@ -85,10 +85,10 @@ module ExceptionUnit(
             state <= next_state;
         end
         if(RegWrite_cancel) begin
-            redirect_mux <= 1'b1;
+            next_redirect_mux <= 1'b1;
         end
         else begin
-            redirect_mux <= 1'b0;
+            next_redirect_mux <= 1'b0;
         end
 
     end
