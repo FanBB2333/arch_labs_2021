@@ -61,6 +61,7 @@ module ExceptionUnit(
     wire flush_signal = illegal_inst | l_access_fault | s_access_fault | ecall_m;
     reg flush_signal_latch;
     reg[31:0] mcause_next;
+    reg[31:0] next_PC = 0;
 
     assign reg_FD_flush = RegWrite_cancel | redirect_mux;
     assign reg_DE_flush = RegWrite_cancel | redirect_mux;
@@ -109,6 +110,7 @@ module ExceptionUnit(
                 csr_wdata <= {mstatus[31:8], mstatus[3], mstatus[6:4], 1'b0, mstatus[2:0]};
                 csr_w <= 1'b1; // write enable
                 csr_wsc <= 2'b01; // write immediately
+                next_PC <= epc_cur - 4;
                 next_state <= 2'b01; // change the state to STATE_MEPC
 
             end
@@ -146,7 +148,7 @@ module ExceptionUnit(
             csr_raddr <= 12'h305;
             // 2. write mepc(0x341)
             csr_waddr <= 12'h341;
-            csr_wdata <= epc_cur - 4; // TODO: check if this is epc_next
+            csr_wdata <= next_PC; // TODO: check if this is epc_next
             csr_wsc <= 2'b01; // write immediately
             csr_w <= 1'b1; // write enable
             next_state <= 2'b10; // change the state to STATE_MCAUSE
