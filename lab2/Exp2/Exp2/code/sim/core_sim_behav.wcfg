@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="30160fs"></ZoomStartTime>
-      <ZoomEndTime time="47021fs"></ZoomEndTime>
-      <Cursor1Time time="38160fs"></Cursor1Time>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="15261fs"></ZoomEndTime>
+      <Cursor1Time time="6fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="185"></NameColumnWidth>
-      <ValueColumnWidth column_width="88"></ValueColumnWidth>
+      <ValueColumnWidth column_width="80"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="58" />
+   <WVObjectSize size="60" />
    <wvobject fp_name="/core_sim/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -103,6 +103,14 @@
    <wvobject fp_name="/core_sim/core/inst_EXE" type="array">
       <obj_property name="ElementShortName">inst_EXE[31:0]</obj_property>
       <obj_property name="ObjectShortName">inst_EXE[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/core_sim/core/exp_unit/state" type="array">
+      <obj_property name="ElementShortName">state[1:0]</obj_property>
+      <obj_property name="ObjectShortName">state[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/core_sim/core/exp_unit/next_state" type="array">
+      <obj_property name="ElementShortName">next_state[1:0]</obj_property>
+      <obj_property name="ObjectShortName">next_state[1:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/core_sim/core/Branch_ctrl" type="logic">
       <obj_property name="ElementShortName">Branch_ctrl</obj_property>

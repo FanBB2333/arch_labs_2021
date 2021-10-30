@@ -2,10 +2,10 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Wed Oct 20 23:06:59 2021
-# Process ID: 11596
+# Start of session at: Sat Oct 30 23:40:57 2021
+# Process ID: 4348
 # Current directory: E:/arch_labs_2021/lab2/Exp2/Exp2
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent25612 E:\arch_labs_2021\lab2\Exp2\Exp2\Exp2.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent26668 E:\arch_labs_2021\lab2\Exp2\Exp2\Exp2.xpr
 # Log file: E:/arch_labs_2021/lab2/Exp2/Exp2/vivado.log
 # Journal file: E:/arch_labs_2021/lab2/Exp2/Exp2\vivado.jou
 #-----------------------------------------------------------
@@ -16,7 +16,7 @@ Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'E:/Xilinx/Vivado/2020.2/data/ip'.
-open_project: Time (s): cpu = 00:00:14 ; elapsed = 00:00:08 . Memory (MB): peak = 1022.211 ; gain = 0.000
+open_project: Time (s): cpu = 00:00:14 ; elapsed = 00:00:08 . Memory (MB): peak = 1022.023 ; gain = 0.000
 update_compile_order -fileset sources_1
 launch_simulation
 Command: launch_simulation 
@@ -28,8 +28,7 @@ INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
 INFO: [USF-XSim-2] XSim::Compile design
 INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/arch_labs_2021/lab2/Exp2/Exp2/Exp2.sim/sim_1/behav/xsim'
 "xvlog --incr --relax -prj core_sim_vlog.prj"
-run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 1022.211 ; gain = 0.000
-INFO: [USF-XSim-69] 'compile' step finished in '7' seconds
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
 INFO: [USF-XSim-3] XSim::Elaborate design
 INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/arch_labs_2021/lab2/Exp2/Exp2/Exp2.sim/sim_1/behav/xsim'
 "xelab -wto bd08de18f65a4fff898ed77aa59a84cb --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot core_sim_behav xil_defaultlib.core_sim xil_defaultlib.glbl -log elaborate.log"
@@ -44,7 +43,7 @@ WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 32 fo
 WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 2 for port 'DatatoReg' [E:/arch_labs_2021/lab2/Exp2/Exp2/code/core/RV32core.v:233]
 Completed static elaboration
 INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
-INFO: [USF-XSim-69] 'elaborate' step finished in '5' seconds
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
 INFO: [USF-XSim-4] XSim::Simulate design
 INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'E:/arch_labs_2021/lab2/Exp2/Exp2/Exp2.sim/sim_1/behav/xsim'
 INFO: [USF-XSim-98] *** Running xsim
@@ -64,12 +63,13 @@ source core_sim.tcl
 #   }
 # }
 # run 1000ns
-xsim: Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1022.211 ; gain = 0.000
+WARNING: File rom.hex referenced on E:/arch_labs_2021/lab2/Exp2/Exp2/code/core/ROM_D.v at line 11 cannot be opened for reading. Please ensure that this file is available in the current working directory.
+WARNING: File ram.hex referenced on E:/arch_labs_2021/lab2/Exp2/Exp2/code/core/RAM_B.v at line 17 cannot be opened for reading. Please ensure that this file is available in the current working directory.
+xsim: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 1022.023 ; gain = 0.000
 INFO: [USF-XSim-96] XSim completed. Design snapshot 'core_sim_behav' loaded.
 INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:12 ; elapsed = 00:00:26 . Memory (MB): peak = 1022.211 ; gain = 0.000
+launch_simulation: Time (s): cpu = 00:00:13 ; elapsed = 00:00:11 . Memory (MB): peak = 1022.023 ; gain = 0.000
 close_sim
 INFO: [Simtcl 6-16] Simulation closed
-close_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 1022.211 ; gain = 0.000
 exit
-INFO: [Common 17-206] Exiting Vivado at Thu Oct 21 00:05:35 2021...
+INFO: [Common 17-206] Exiting Vivado at Sat Oct 30 23:43:16 2021...
