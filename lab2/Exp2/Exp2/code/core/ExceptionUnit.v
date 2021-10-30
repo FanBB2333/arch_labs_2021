@@ -151,19 +151,19 @@ module ExceptionUnit(
             csr_wdata <= {mstatus[31:8], mstatus[3], mstatus[6:4], 1'b0, mstatus[2:0]};
             csr_w <= 1'b1; // write enable
             csr_wsc <= 2'b01; // write immediately
-            state <= 2'b11; // change the state to STATE_IDLE
-
-        end
-
-        2'b11: begin
-            if(csr_rw_in) begin
-                csr_raddr = csr_rw_addr_in;
-            end
-            csr_w <= 1'b0; // write enable
-            csr_wsc <= 2'b01; // write immediately
             state <= 2'b00; // change the state to STATE_IDLE
 
         end
+
+        // 2'b11: begin
+        //     if(csr_rw_in) begin
+        //         csr_raddr = csr_rw_addr_in;
+        //     end
+        //     csr_w <= 1'b0; // write enable
+        //     csr_wsc <= 2'b01; // write immediately
+        //     state <= 2'b00; // change the state to STATE_IDLE
+
+        // end
     endcase
     end
 
