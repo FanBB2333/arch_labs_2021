@@ -32,6 +32,7 @@ module ExceptionUnit(
     reg csr_w;
     reg[1:0] csr_wsc;
     reg[1:0] state;
+    reg[1:0] next_state;
 
     wire[31:0] mstatus;
 
@@ -72,7 +73,20 @@ module ExceptionUnit(
 //    According to the diagram, design the Exception Unit
     initial redirect_mux = 0;
     initial state = 0;
+    initial next_state = 0;
+
     always @(posedge clk or posedge rst) begin
+        if(rst)begin
+            state <= 2'b0; //
+
+        end
+        else begin
+            state <= next_state;
+        end
+
+    end
+
+    always @(*) begin
         if(RegWrite_cancel) begin
             redirect_mux <= 1'b1;
         end
@@ -96,7 +110,7 @@ module ExceptionUnit(
                 csr_wdata <= {mstatus[31:8], mstatus[3], mstatus[6:4], 1'b0, mstatus[2:0]};
                 csr_w <= 1'b1; // write enable
                 csr_wsc <= 2'b01; // write immediately
-                state <= 2'b01; // change the state to STATE_MEPC
+                next_state <= 2'b01; // change the state to STATE_MEPC
 
             end
             else if(mret) begin
@@ -107,7 +121,7 @@ module ExceptionUnit(
                 csr_wdata <= {mstatus[31:8], 1'b1, mstatus[6:4], mstatus[3], mstatus[2:0]}; // return the interrupt mode
                 // csr_w <= 1'b1; // write enable
                 // csr_wsc <= 2'b01; // write immediately
-                state <= 2'b00; // stall the state
+                next_state <= 2'b00; // stall the state
             
             end
             else if(csr_rw_in) begin
@@ -122,7 +136,7 @@ module ExceptionUnit(
                 end
                 csr_wsc <= csr_wsc_mode_in;
                 csr_w <= csr_rw_in; 
-                state <= 2'b00; // stall the state
+                next_state <= 2'b00; // stall the state
             end
 
         end
@@ -136,7 +150,7 @@ module ExceptionUnit(
             csr_wdata <= epc_cur - 4; // TODO: check if this is epc_next
             csr_wsc <= 2'b01; // write immediately
             csr_w <= 1'b1; // write enable
-            state <= 2'b10; // change the state to STATE_MCAUSE
+            next_state <= 2'b10; // change the state to STATE_MCAUSE
 
         end
 
@@ -151,7 +165,7 @@ module ExceptionUnit(
             csr_wdata <= {mstatus[31:8], mstatus[3], mstatus[6:4], 1'b0, mstatus[2:0]};
             csr_w <= 1'b1; // write enable
             csr_wsc <= 2'b01; // write immediately
-            state <= 2'b00; // change the state to STATE_IDLE
+            next_state <= 2'b00; // change the state to STATE_IDLE
 
         end
 
