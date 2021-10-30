@@ -19,7 +19,7 @@ module ExceptionUnit(
     input mret,
 
     input[31:0] epc_cur, // PC_WB
-    input[31:0] epc_next, // MEM向前�??�?? 未被flush的最新PC
+    input[31:0] epc_next, // MEM向前�???�??? 未被flush的最新PC
     output[31:0] PC_redirect,
     output reg redirect_mux,
 
@@ -164,9 +164,7 @@ module ExceptionUnit(
             state <= 2'b00; // change the state to STATE_IDLE
 
         end
-        
-
-    
+    endcase
     end
 
 
