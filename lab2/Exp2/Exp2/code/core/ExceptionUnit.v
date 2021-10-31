@@ -113,6 +113,23 @@ module ExceptionUnit(
                 csr_wsc <= 2'b01; // write immediately
                 next_PC <= epc_cur;
                 next_state <= 2'b01; // change the state to STATE_MEPC
+                // do not forget to assign mcause_next
+                if(interrupt) begin
+                    mcause_next <= 1 << 31;
+                end
+                else if(illegal_inst) begin
+                    mcause_next <= 2;
+                end
+                else if(l_access_fault) begin
+                    mcause_next <= 5;
+                end
+                else if(s_access_fault) begin
+                    mcause_next <= 7;
+                end
+                else if(ecall_m) begin
+                    mcause_next <= 11;
+                end
+
 
             end
             else if(mret) begin
@@ -164,7 +181,7 @@ module ExceptionUnit(
             end
             // 1. write mcause(0x342)
             csr_waddr <= 12'h342; // the number of mstatus register
-            csr_wdata <= {mstatus[31:8], mstatus[3], mstatus[6:4], 1'b0, mstatus[2:0]};
+            csr_wdata <= mcause_next;
             csr_w <= 1'b1; // write enable
             csr_wsc <= 2'b01; // write immediately
             next_state <= 2'b00; // change the state to STATE_IDLE
