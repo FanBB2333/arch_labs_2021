@@ -1,0 +1,16 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Sun Oct 31 15:06:04 2021
+# Process ID: 13000
+# Current directory: E:/arch_labs_2021/lab2/Exp2/Exp2
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11820 E:\arch_labs_2021\lab2\Exp2\Exp2\Exp2.xpr
+# Log file: E:/arch_labs_2021/lab2/Exp2/Exp2/vivado.log
+# Journal file: E:/arch_labs_2021/lab2/Exp2/Exp2\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project E:/arch_labs_2021/lab2/Exp2/Exp2/Exp2.xpr
+update_compile_order -fileset sources_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
