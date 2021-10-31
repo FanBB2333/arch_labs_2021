@@ -19,7 +19,7 @@ module ExceptionUnit(
     input mret,
 
     input[31:0] epc_cur, // PC_WB
-    input[31:0] epc_next, // MEM向前�???�??? 未被flush的最新PC
+    input[31:0] epc_next, // MEM向前�????�???? 未被flush的最新PC
     output[31:0] PC_redirect,
     output redirect_mux,
 
@@ -77,14 +77,13 @@ module ExceptionUnit(
     initial state = 0;
     initial next_state = 0;
     assign redirect_mux = next_redirect_mux | mret;
-    always @(posedge clk or posedge rst) begin
-        if(rst)begin
-            state <= 2'b0; //
-
-        end
-        else begin
+    always @(posedge clk) begin
+//        if(rst)begin
+//            state <= 2'b0; //
+//        end
+//        else begin
             state <= next_state;
-        end
+//        end
         if(RegWrite_cancel) begin
             next_redirect_mux <= 1'b1;
         end
