@@ -19,7 +19,7 @@ module ExceptionUnit(
     input mret,
 
     input[31:0] epc_cur, // PC_WB
-    input[31:0] epc_next, // MEM向前�????�???? 未被flush的最新PC
+    input[31:0] epc_next, // MEM向前�????�???? 未被flush的最新PC
     output[31:0] PC_redirect,
     output redirect_mux,
 
@@ -97,7 +97,7 @@ module ExceptionUnit(
         case(state)
         // STATE_IDLE
         2'b00: begin
-            if(RegWrite_cancel) begin 
+            if(RegWrite_cancel && mstatus[3]) begin 
                 // If the exception or interruption or ecall is called, we just change the state
                 // read in mepc
                 if(csr_rw_in) begin
@@ -135,6 +135,7 @@ module ExceptionUnit(
                 // mret cycle
                 // mepc: 0x341
                 csr_raddr <= 12'h341; 
+                // mstatus: 0x300
                 csr_waddr <= 12'h300;
                 csr_wdata <= {mstatus[31:8], 1'b1, mstatus[6:4], mstatus[3], mstatus[2:0]}; // return the interrupt mode
                 // csr_w <= 1'b1; // write enable
@@ -187,15 +188,7 @@ module ExceptionUnit(
 
         end
 
-        // 2'b11: begin
-        //     if(csr_rw_in) begin
-        //         csr_raddr = csr_rw_addr_in;
-        //     end
-        //     csr_w <= 1'b0; // write enable
-        //     csr_wsc <= 2'b01; // write immediately
-        //     state <= 2'b00; // change the state to STATE_IDLE
 
-        // end
     endcase
     end
 
