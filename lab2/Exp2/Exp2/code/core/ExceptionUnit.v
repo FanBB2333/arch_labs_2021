@@ -68,22 +68,14 @@ module ExceptionUnit(
     assign reg_EM_flush = RegWrite_cancel | redirect_mux;
     assign reg_MW_flush = RegWrite_cancel | next_redirect_mux; 
 
-    // assign redirect_mux = illegal_inst | l_access_fault | s_access_fault | ecall_m | mret; // TBD
-
     assign PC_redirect = csr_r_data_out;
     assign RegWrite_cancel = interrupt | illegal_inst | l_access_fault | s_access_fault | ecall_m; // TBD
-//    According to the diagram, design the Exception Unit
-    // initial redirect_mux = 0;
+    //    According to the diagram, design the Exception Unit
     initial state = 0;
     initial next_state = 0;
     assign redirect_mux = next_redirect_mux | mret;
     always @(posedge clk) begin
-//        if(rst)begin
-//            state <= 2'b0; //
-//        end
-//        else begin
-            state <= next_state;
-//        end
+        state <= next_state;
         if(RegWrite_cancel) begin
             next_redirect_mux <= 1'b1;
         end
@@ -103,7 +95,6 @@ module ExceptionUnit(
                 if(csr_rw_in) begin
                     csr_raddr <= csr_rw_addr_in;
                 end
-
                 //2. write the mstatus register
                 csr_waddr <= 12'h300; // the number of mstatus register
                 // mstatus[7] == MPIE, mstatus[3] == MIE
@@ -166,7 +157,7 @@ module ExceptionUnit(
             csr_raddr <= 12'h305;
             // 2. write mepc(0x341)
             csr_waddr <= 12'h341;
-            csr_wdata <= next_PC; // TODO: check if this is epc_next
+            csr_wdata <= next_PC; 
             csr_wsc <= 2'b01; // write immediately
             csr_w <= 1'b1; // write enable
             next_state <= 2'b10; // change the state to STATE_MCAUSE
