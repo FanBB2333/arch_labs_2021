@@ -1,8 +1,8 @@
-0.6
-2018.2
-Jun 14 2018
-20:41:02
-C:/Users/Zonghui Wang/Desktop/risc v/Code4Teach/Exp3/Exp3.sim/sim_1/behav/xsim/glbl.v,1529022455,verilog,,,,glbl,,,,,,,,
-C:/Users/Zonghui Wang/Desktop/risc v/Code4Teach/Exp3/code/addr_define.vh,1630841752,verilog,,,,,,,,,,,,
-C:/Users/Zonghui Wang/Desktop/risc v/Code4Teach/Exp3/code/cache.v,1630841847,verilog,,C:/Users/Zonghui Wang/Desktop/risc v/Code4Teach/Exp3/code/sim/cache_sim.v,C:/Users/Zonghui Wang/Desktop/risc v/Code4Teach/Exp3/code/addr_define.vh,cache,,,../../../../code,,,,,
-C:/Users/Zonghui Wang/Desktop/risc v/Code4Teach/Exp3/code/sim/cache_sim.v,1628584874,verilog,,,,cache_sim,,,../../../../code,,,,,
+0.7
+2020.2
+Nov 18 2020
+09:47:47
+E:/arch_labs_2021/lab3/Exp3/Exp3/Exp3.sim/sim_1/behav/xsim/glbl.v,1529022455,verilog,,,,glbl,,,,,,,,
+E:/arch_labs_2021/lab3/Exp3/Exp3/code/addr_define.vh,1630841752,verilog,,,,,,,,,,,,
+E:/arch_labs_2021/lab3/Exp3/Exp3/code/cache.v,1636169491,verilog,,E:/arch_labs_2021/lab3/Exp3/Exp3/code/sim/cache_sim.v,E:/arch_labs_2021/lab3/Exp3/Exp3/code/addr_define.vh,cache,,,../../../../code,,,,,
+E:/arch_labs_2021/lab3/Exp3/Exp3/code/sim/cache_sim.v,1628584874,verilog,,,,cache_sim,,,../../../../code,,,,,

@@ -1,14 +1,15 @@
 #-----------------------------------------------------------
-# Webtalk v2018.2 (64-bit)
-# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
-# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Sun Sep  5 20:41:26 2021
-# Process ID: 20528
-# Current directory: C:/Users/Zonghui Wang/Desktop/risc v/Code4Teach/Exp3/Exp3.sim/sim_1/behav/xsim
-# Command line: wbtcv.exe -mode batch -source C:/Users/Zonghui Wang/Desktop/risc v/Code4Teach/Exp3/Exp3.sim/sim_1/behav/xsim/xsim.dir/cache_sim_behav/webtalk/xsim_webtalk.tcl -notrace
-# Log file: C:/Users/Zonghui Wang/Desktop/risc v/Code4Teach/Exp3/Exp3.sim/sim_1/behav/xsim/webtalk.log
-# Journal file: C:/Users/Zonghui Wang/Desktop/risc v/Code4Teach/Exp3/Exp3.sim/sim_1/behav/xsim\webtalk.jou
+# Webtalk v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Sat Nov  6 11:31:10 2021
+# Process ID: 19292
+# Current directory: E:/arch_labs_2021/lab3/Exp3/Exp3/Exp3.sim/sim_1/behav/xsim
+# Command line: wbtcv.exe -mode batch -source E:/arch_labs_2021/lab3/Exp3/Exp3/Exp3.sim/sim_1/behav/xsim/xsim.dir/cache_sim_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: E:/arch_labs_2021/lab3/Exp3/Exp3/Exp3.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: E:/arch_labs_2021/lab3/Exp3/Exp3/Exp3.sim/sim_1/behav/xsim\webtalk.jou
 #-----------------------------------------------------------
-source C:/Users/Zonghui -notrace
-couldn't read file "C:/Users/Zonghui": no such file or directory
-INFO: [Common 17-206] Exiting Webtalk at Sun Sep  5 20:41:26 2021...
+source E:/arch_labs_2021/lab3/Exp3/Exp3/Exp3.sim/sim_1/behav/xsim/xsim.dir/cache_sim_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'E:/arch_labs_2021/lab3/Exp3/Exp3/Exp3.sim/sim_1/behav/xsim/xsim.dir/cache_sim_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Sat Nov  6 11:31:16 2021. For additional details about this file, please refer to the WebTalk help file at E:/Xilinx/Vivado/2020.2/doc/webtalk_introduction.html.
+webtalk_transmit: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 116.605 ; gain = 23.824
+INFO: [Common 17-206] Exiting Webtalk at Sat Nov  6 11:31:16 2021...
