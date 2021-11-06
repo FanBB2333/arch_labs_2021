@@ -54,33 +54,35 @@ module cache (
     wire [ELEMENT_INDEX_WIDTH+ELEMENT_WORDS_WIDTH-1:0] addr_word1;
     wire [ELEMENT_INDEX_WIDTH+ELEMENT_WORDS_WIDTH-1:0] addr_word2; // element index + word index
 
-    assign addr_tag = ;             //need to fill in
-    assign addr_index = ;           //need to fill in
+    assign addr_tag = addr[ADDR_BITS-1:9];             //need to fill in
+    assign addr_index = addr[8:4];           //need to fill in
     assign addr_element1 = {addr_index, 1'b0};
-    assign addr_element2 = ;      //need to fill in
-    assign addr_word1 = {addr_element1, addr[ELEMENT_WORDS_WIDTH+WORD_BYTES_WIDTH-1:WORD_BYTES_WIDTH]};
-    assign addr_word2 = ;           //need to fill in
+    assign addr_element2 = {addr_index, 1'b1};      //need to fill in
+    assign addr_word1 = {addr_element1, addr[ELEMENT_WORDS_WIDTH+WORD_BYTES_WIDTH-1:WORD_BYTES_WIDTH]}; // addr[3:2]
+    assign addr_word2 = {addr_element2, addr[ELEMENT_WORDS_WIDTH+WORD_BYTES_WIDTH-1:WORD_BYTES_WIDTH]};           //need to fill in
 
     assign word1 = inner_data[addr_word1];
-    assign word2 = ;                //need to fill in
+    assign word2 = inner_data[addr_word2];                //need to fill in
     assign half_word1 = addr[1] ? word1[31:16] : word1[15:0];
-    assign half_word2 = ;           //need to fill in
+    assign half_word2 = addr[1] ? word2[31:16] : word2[15:0];           //need to fill in
     assign byte1 = addr[1] ?
                     addr[0] ? word1[31:24] : word1[23:16] :
                     addr[0] ? word1[15:8] :  word1[7:0]   ;
-    assign byte2 = ;                //need to fill in
+    assign byte2 = addr[1] ?
+                    addr[0] ? word2[31:24] : word2[23:16] :
+                    addr[0] ? word2[15:8] :  word2[7:0]   ;                //need to fill in
 
     assign recent1 = inner_recent[addr_element1];
-    assign recent2 = ;              //need to fill in
+    assign recent2 = inner_recent[addr_element2];              //need to fill in
     assign valid1 = inner_valid[addr_element1];
-    assign valid2 = ;               //need to fill in
+    assign valid2 = inner_valid[addr_element2];               //need to fill in
     assign dirty1 = inner_dirty[addr_element1];
-    assign dirty2 = ;               //need to fill in
+    assign dirty2 = inner_dirty[addr_element2];               //need to fill in
     assign tag1 = inner_tag[addr_element1];
-    assign tag2 = ;                 //need to fill in
+    assign tag2 = inner_tag[addr_element2];                 //need to fill in
 
     assign hit1 = valid1 & (tag1 == addr_tag);
-    assign hit2 = ;                 //need to fill in
+    assign hit2 = valid2 & (tag2 == addr_tag);                 //need to fill in
 
     always @ (posedge clk) begin
         valid <= ;                  //need to fill in
