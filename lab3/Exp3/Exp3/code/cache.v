@@ -48,7 +48,7 @@ module cache (
 
     // the bits in an input address:
     wire [TAG_BITS-1:0] addr_tag;
-    wire [SET_INDEX_WIDTH-1:0] addr_index;     // idx of set
+    wire [SET_INDEX_WIDTH-1:0] addr_index;     // idx of set [4:0]
     wire [ELEMENT_INDEX_WIDTH-1:0] addr_element1; 
     wire [ELEMENT_INDEX_WIDTH-1:0] addr_element2;     // idx of element
     wire [ELEMENT_INDEX_WIDTH+ELEMENT_WORDS_WIDTH-1:0] addr_word1;
@@ -85,8 +85,8 @@ module cache (
     assign hit2 = valid2 & (tag2 == addr_tag);                 //need to fill in
 
     always @ (posedge clk) begin
-        valid <= (hit1 & ~dirty1) | (hit2 & ~dirty2);                  //need to fill in
-        dirty <= dirty1 | dirty2;                  //need to fill in
+        valid <= (hit1 & valid1) | (hit2 & valid2);                  //need to fill in
+        dirty <= (hit1 & dirty1) | (hit2 & dirty2);                  //need to fill in
         tag <= addr_tag;                    //need to fill in
         hit <= hit1 | hit2 ;                    //need to fill in
         
