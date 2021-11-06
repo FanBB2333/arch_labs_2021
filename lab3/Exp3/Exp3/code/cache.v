@@ -17,7 +17,7 @@ module cache (
 	output reg [31:0] dout = 0,  // data read out
 	output reg valid = 0,  // valid bit
 	output reg dirty = 0,  // dirty bit
-	output reg [TAG_BITS-1:0] tag = 0  // tag bits
+	output reg [TAG_BITS-1:0] tag = 0  // tag bits [22:0]
 	);
 
     `include "addr_define.vh"
@@ -85,10 +85,10 @@ module cache (
     assign hit2 = valid2 & (tag2 == addr_tag);                 //need to fill in
 
     always @ (posedge clk) begin
-        valid <= ;                  //need to fill in
-        dirty <= ;                  //need to fill in
-        tag <= ;                    //need to fill in
-        hit <= ;                    //need to fill in
+        valid <= valid1 | valid2;                  //need to fill in
+        dirty <= dirty1 | dirty2;                  //need to fill in
+        tag <= addr_tag;                    //need to fill in
+        hit <= hit1 | hit2 ;                    //need to fill in
         
         // read $ with load==0 means moving data from $ to mem
         // no need to update recent bit
@@ -107,10 +107,14 @@ module cache (
             end
             else if (hit2) begin
                     //need to fill in
+                dout <= 
+                    u_b_h_w[1] ? word2 :
+                    u_b_h_w[0] ? {u_b_h_w[2] ? 16'b0 : {16{half_word2[15]}}, half_word2} :
+                    {u_b_h_w[2] ? 24'b0 : {24{byte2[7]}}, byte2};
             end
         end
         else dout <= inner_data[ recent1 ? addr_word2 : addr_word1 ];
-
+        // write $ with store==0 means moving data from mem to $
         if (edit) begin
             if (hit1) begin
                 inner_data[addr_word1] <= 
@@ -153,6 +157,17 @@ module cache (
                 // recent2 == 1 => replace 1
                 // recent2 == 0 => no data in this set, place to 1
                 //need to fill in
+                if(recent2) begin
+                    inner_data[addr_word1] <= din;
+                    inner_valid[addr_element1] <= 1'b1;
+                    inner_dirty[addr_element1] <= 1'b0;
+                    inner_tag[addr_element1] <= addr_tag;
+                end else begin
+                    inner_data[addr_word1] <= din;
+                    inner_valid[addr_element1] <= 1'b1;
+                    inner_dirty[addr_element1] <= 1'b0;
+                    inner_tag[addr_element1] <= addr_tag;
+                end
             end
         end
 
