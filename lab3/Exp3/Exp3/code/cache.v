@@ -144,6 +144,30 @@ module cache (
             end
             else if (hit2) begin
                     //need to fill in
+                     inner_data[addr_word2] <= 
+                        u_b_h_w[1] ?        // word?
+                            din
+                        :
+                            u_b_h_w[0] ?    // half word?
+                                addr[1] ?       // upper / lower?
+                                    {din[15:0], word2[15:0]} 
+                                :
+                                    {word2[31:16], din[15:0]} 
+                            :   // byte
+                                addr[1] ?
+                                    addr[0] ?
+                                        {din[7:0], word2[23:0]}   // 11
+                                    :
+                                        {word2[31:24], din[7:0], word2[15:0]} // 10
+                                :
+                                    addr[0] ?
+                                        {word2[31:16], din[7:0], word2[7:0]}   // 01
+                                    :
+                                        {word2[31:8], din[7:0]} // 00
+                    ;
+                    inner_dirty[addr_element2] <= 1'b1;
+                    inner_recent[addr_element2] <= 1'b1;
+                    inner_recent[addr_element2] <= 1'b0;
             end
         end
 
