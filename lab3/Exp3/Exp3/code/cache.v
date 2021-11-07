@@ -85,8 +85,8 @@ module cache (
     assign hit2 = valid2 & (tag2 == addr_tag);                 //need to fill in
 
     always @ (posedge clk) begin
-        valid <= (hit1 & valid1) | (hit2 & valid2);                  //need to fill in
-        dirty <= (hit1 & dirty1) | (hit2 & dirty2);                  //need to fill in
+        valid <= recent1 ? valid2 : valid1;                  //need to fill in
+        dirty <= edit ? 1 : store ? 0 : dirty;               //need to fill in
         tag <= addr_tag;                    //need to fill in
         hit <= hit1 | hit2 ;                    //need to fill in
         
