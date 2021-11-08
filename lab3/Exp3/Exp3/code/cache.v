@@ -111,6 +111,8 @@ module cache (
                     u_b_h_w[1] ? word2 :
                     u_b_h_w[0] ? {u_b_h_w[2] ? 16'b0 : {16{half_word2[15]}}, half_word2} :
                     {u_b_h_w[2] ? 24'b0 : {24{byte2[7]}}, byte2};
+                    inner_recent[addr_element2] <= 1'b1;
+                    inner_recent[addr_element1] <= 1'b0;
             end
         end
         else dout <= inner_data[ recent1 ? addr_word2 : addr_word1 ];
