@@ -88,17 +88,17 @@ module cmu (
                 S_IDLE: begin
                     if (en_r || en_w) begin
                         if (cache_hit)
-                            next_state = ??;
+                            next_state = S_IDLE;
                         else if (cache_valid && cache_dirty)
-                            next_state = ??;
+                            next_state = S_PRE_BACK;
                         else
-                            next_state = ??;
+                            next_state = S_FILL;
                     end
                     next_word_count = 2'b00;
                 end
 
                 S_PRE_BACK: begin
-                    next_state = ??;
+                    next_state = S_BACK;
                     next_word_count = 2'b00;
                 end
 
