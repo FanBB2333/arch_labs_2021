@@ -117,19 +117,20 @@ module cmu (
                 end
 
                 S_FILL: begin
+                    // wait for the ack signal of the mem
                     if (mem_ack_i && word_count == {ELEMENT_WORDS_WIDTH{1'b1}})
-                        next_state = ??;
+                        next_state = S_WAIT;
                     else
-                        next_state = ??;
+                        next_state = S_FILL;
 
                     if (mem_ack_i)
-                        next_word_count = ??;
+                        next_word_count = word_count + 2'b01;
                     else
                         next_word_count = word_count;
                 end
 
                 S_WAIT: begin
-                    next_state = ??;
+                    next_state = S_IDLE;
                     next_word_count = 2'b00;
                 end
             endcase
