@@ -192,6 +192,7 @@ module cmu (
     end
     assign mem_data_o = cache_dout;
 
-    assign stall = ??;
+    // assign stall = (state == S_BACK) || (state == S_FILL);
+    assign stall = ~(next_state == S_IDLE);
 
 endmodule
