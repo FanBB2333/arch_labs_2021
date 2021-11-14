@@ -103,13 +103,15 @@ module cmu (
                 end
 
                 S_BACK: begin
-                    if (mem_ack_i && word_count == {ELEMENT_WORDS_WIDTH{1'b1}})    // 2'b11 in default case
-                        next_state = ??;
+                    // wait for the ack signal of the mem
+                    // until 4 increments of the word_count 
+                    if (mem_ack_i && word_count == {ELEMENT_WORDS_WIDTH{1'b1}})    // 2'b11 in default case, ELEMENT_WORDS_WIDTH=2
+                        next_state = S_FILL;
                     else
-                        next_state = ??;
+                        next_state = S_BACK;
 
                     if (mem_ack_i)
-                        next_word_count = ??;
+                        next_word_count = word_count + 2'b01;
                     else
                         next_word_count = word_count;
                 end
