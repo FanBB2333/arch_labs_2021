@@ -2,7 +2,7 @@
 
 module FU_mem(
     input clk, EN, mem_w,
-    input[2:0] bhw,
+    input[2:0] bhw, // inst_ID[14:12]
     input[31:0] rs1_data, rs2_data, imm,
     output[31:0] mem_data,
     output finish
