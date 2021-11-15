@@ -2,8 +2,8 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Sun Nov 14 23:14:12 2021
-# Process ID: 17092
+# Start of session at: Mon Nov 15 14:21:12 2021
+# Process ID: 18076
 # Current directory: E:/arch_labs_2021/lab4/Exp4/Exp4/Exp4.runs/synth_1
 # Command line: vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
 # Log file: E:/arch_labs_2021/lab4/Exp4/Exp4/Exp4.runs/synth_1/top.vds
@@ -19,12 +19,12 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k325
 INFO: [Device 21-403] Loading part xc7k325tffg676-2L
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 13144
+INFO: [Synth 8-7075] Helper process launched with PID 22208
 WARNING: [Synth 8-6901] identifier 'ADDR_BITS' is used before its declaration [E:/arch_labs_2021/lab4/Exp4/Exp4/code/cache/cache.v:8]
 WARNING: [Synth 8-6901] identifier 'TAG_BITS' is used before its declaration [E:/arch_labs_2021/lab4/Exp4/Exp4/code/cache/cache.v:20]
 WARNING: [Synth 8-6901] identifier 'DATA_BITS' is used before its declaration [E:/arch_labs_2021/lab4/Exp4/Exp4/code/auxillary/parallel2serial.v:10]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1032.277 ; gain = 11.797
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1033.645 ; gain = 11.852
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'top' [E:/arch_labs_2021/lab4/Exp4/Exp4/code/top.v:8]
 INFO: [Synth 8-6157] synthesizing module 'clk_diff' [E:/arch_labs_2021/lab4/Exp4/Exp4/code/auxillary/clk_diff.v:7]
@@ -146,8 +146,8 @@ INFO: [Synth 8-6157] synthesizing module 'add_32' [E:/arch_labs_2021/lab4/Exp4/E
 INFO: [Synth 8-6155] done synthesizing module 'add_32' (11#1) [E:/arch_labs_2021/lab4/Exp4/Exp4/code/common/add_32.v:23]
 INFO: [Synth 8-6157] synthesizing module 'MUX2T1_32' [E:/arch_labs_2021/lab4/Exp4/Exp4/code/common/MUX2T1_32.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'MUX2T1_32' (12#1) [E:/arch_labs_2021/lab4/Exp4/Exp4/code/common/MUX2T1_32.v:23]
-INFO: [Synth 8-6157] synthesizing module 'ROM_D' [E:/arch_labs_2021/lab4/Exp4/Exp4/Exp4.runs/synth_1/.Xil/Vivado-17092-DESKTOP-FTNKO2C/realtime/ROM_D_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'ROM_D' (13#1) [E:/arch_labs_2021/lab4/Exp4/Exp4/Exp4.runs/synth_1/.Xil/Vivado-17092-DESKTOP-FTNKO2C/realtime/ROM_D_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'ROM_D' [E:/arch_labs_2021/lab4/Exp4/Exp4/Exp4.runs/synth_1/.Xil/Vivado-18076-DESKTOP-FTNKO2C/realtime/ROM_D_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ROM_D' (13#1) [E:/arch_labs_2021/lab4/Exp4/Exp4/Exp4.runs/synth_1/.Xil/Vivado-18076-DESKTOP-FTNKO2C/realtime/ROM_D_stub.v:6]
 INFO: [Synth 8-6157] synthesizing module 'REG_IF_ID' [E:/arch_labs_2021/lab4/Exp4/Exp4/code/core/REG_IF_ID.v:22]
 INFO: [Synth 8-6155] done synthesizing module 'REG_IF_ID' (14#1) [E:/arch_labs_2021/lab4/Exp4/Exp4/code/core/REG_IF_ID.v:22]
 INFO: [Synth 8-6157] synthesizing module 'CtrlUnit' [E:/arch_labs_2021/lab4/Exp4/Exp4/code/core/CtrlUnit.v:4]
@@ -280,6 +280,7 @@ INFO: [Synth 8-6155] done synthesizing module 'CPUTEST' (28#1) [E:/arch_labs_202
 INFO: [Synth 8-6155] done synthesizing module 'RV32core' (29#1) [E:/arch_labs_2021/lab4/Exp4/Exp4/code/core/RV32core.v:4]
 INFO: [Synth 8-6157] synthesizing module 'VGA_TESTP' [E:/arch_labs_2021/lab4/Exp4/Exp4/code/auxillary/VGATEST.v:21]
 INFO: [Synth 8-6157] synthesizing module 'Code2Inst' [E:/arch_labs_2021/lab4/Exp4/Exp4/code/auxillary/Code2Inst.v:2]
+INFO: [Synth 8-226] default block is never used [E:/arch_labs_2021/lab4/Exp4/Exp4/code/auxillary/Code2Inst.v:79]
 INFO: [Synth 8-6155] done synthesizing module 'Code2Inst' (30#1) [E:/arch_labs_2021/lab4/Exp4/Exp4/code/auxillary/Code2Inst.v:2]
 INFO: [Synth 8-226] default block is never used [E:/arch_labs_2021/lab4/Exp4/Exp4/code/auxillary/VGATEST.v:167]
 INFO: [Synth 8-226] default block is never used [E:/arch_labs_2021/lab4/Exp4/Exp4/code/auxillary/VGATEST.v:206]
@@ -362,18 +363,18 @@ WARNING: [Synth 8-7023] instance 'U12' of module 'vga' has 12 connections declar
 INFO: [Synth 8-6155] done synthesizing module 'VGA_TESTP' (34#1) [E:/arch_labs_2021/lab4/Exp4/Exp4/code/auxillary/VGATEST.v:21]
 INFO: [Synth 8-6155] done synthesizing module 'top' (35#1) [E:/arch_labs_2021/lab4/Exp4/Exp4/code/top.v:8]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1144.977 ; gain = 124.496
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1148.348 ; gain = 126.555
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1144.977 ; gain = 124.496
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1148.348 ; gain = 126.555
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1144.977 ; gain = 124.496
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1148.348 ; gain = 126.555
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.531 . Memory (MB): peak = 1147.637 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.529 . Memory (MB): peak = 1148.348 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 3 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -389,29 +390,29 @@ Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl
 INFO: [Timing 38-2] Deriving generated clocks
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1341.164 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1354.859 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 2 instances were transformed.
   IBUFGDS => IBUFDS: 1 instance 
   RAMB16_S1 => RAMB18E1: 1 instance 
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.080 . Memory (MB): peak = 1341.164 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.083 . Memory (MB): peak = 1354.859 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1341.164 ; gain = 320.684
+Finished Constraint Validation : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 1354.859 ; gain = 333.066
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7k325tffg676-2L
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1341.164 ; gain = 320.684
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 1354.859 ; gain = 333.066
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 Applied set_property KEEP_HIERARCHY = SOFT for core/inst_rom. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1341.164 ; gain = 320.684
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1354.859 ; gain = 333.066
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'btn_x_reg' in module 'btn_scan'
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'parallel2serial'
@@ -471,7 +472,7 @@ WARNING: [Synth 8-327] inferring latch for variable 'cache_edit_reg' [E:/arch_la
 WARNING: [Synth 8-327] inferring latch for variable 'cache_u_b_h_w_reg' [E:/arch_labs_2021/lab4/Exp4/Exp4/code/cache/cmu.v:47]
 WARNING: [Synth 8-327] inferring latch for variable 'cache_din_reg' [E:/arch_labs_2021/lab4/Exp4/Exp4/code/cache/cmu.v:48]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:45 ; elapsed = 00:00:48 . Memory (MB): peak = 1341.164 ; gain = 320.684
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:46 ; elapsed = 00:00:49 . Memory (MB): peak = 1354.859 ; gain = 333.066
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -482,7 +483,7 @@ Detailed RTL Component Info :
 	   2 Input   32 Bit       Adders := 13    
 	   3 Input   32 Bit       Adders := 1     
 	   2 Input   10 Bit       Adders := 4     
-	   2 Input    7 Bit       Adders := 4     
+	   2 Input    7 Bit       Adders := 64    
 	   2 Input    6 Bit       Adders := 1     
 	   2 Input    5 Bit       Adders := 1     
 	   2 Input    4 Bit       Adders := 1     
@@ -515,6 +516,12 @@ Detailed RTL Component Info :
 	              128 Bit	(4 X 32 bit)          RAMs := 1     
 +---Muxes : 
 	   2 Input 8192 Bit        Muxes := 1     
+	   4 Input  152 Bit        Muxes := 5     
+	   9 Input  152 Bit        Muxes := 5     
+	   2 Input  152 Bit        Muxes := 5     
+	   3 Input  152 Bit        Muxes := 5     
+	   4 Input  151 Bit        Muxes := 5     
+	   2 Input  151 Bit        Muxes := 5     
 	   4 Input   65 Bit        Muxes := 1     
 	   2 Input   64 Bit        Muxes := 23    
 	   4 Input   57 Bit        Muxes := 1     
@@ -529,11 +536,12 @@ Detailed RTL Component Info :
 	   5 Input   12 Bit        Muxes := 1     
 	   2 Input   10 Bit        Muxes := 1     
 	   2 Input    8 Bit        Muxes := 14    
+	   2 Input    7 Bit        Muxes := 71    
 	  16 Input    7 Bit        Muxes := 8     
-	   2 Input    7 Bit        Muxes := 11    
 	   6 Input    6 Bit        Muxes := 1     
 	   4 Input    6 Bit        Muxes := 1     
 	   6 Input    5 Bit        Muxes := 1     
+	   9 Input    4 Bit        Muxes := 5     
 	   4 Input    4 Bit        Muxes := 2     
 	   2 Input    4 Bit        Muxes := 4     
 	  16 Input    4 Bit        Muxes := 8     
@@ -565,60 +573,20 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "strdata" won't be mapped to RAM because it is too sparse
-WARNING: [Synth 8-3917] design top__GC0 has port LED_PEN driven by constant 1
-WARNING: [Synth 8-3917] design top__GC0 has port SEGLED_PEN driven by constant 1
-WARNING: [Synth 8-7129] Port MEM_Addr[31] in module VGA_TESTP is either unconnected or has no load
-WARNING: [Synth 8-7129] Port MEM_Addr[30] in module VGA_TESTP is either unconnected or has no load
-WARNING: [Synth 8-7129] Port MEM_Addr[29] in module VGA_TESTP is either unconnected or has no load
-WARNING: [Synth 8-7129] Port MEM_Addr[28] in module VGA_TESTP is either unconnected or has no load
-WARNING: [Synth 8-7129] Port MEM_Addr[27] in module VGA_TESTP is either unconnected or has no load
-WARNING: [Synth 8-7129] Port MEM_Addr[26] in module VGA_TESTP is either unconnected or has no load
-WARNING: [Synth 8-7129] Port MEM_Addr[25] in module VGA_TESTP is either unconnected or has no load
-WARNING: [Synth 8-7129] Port MEM_Addr[24] in module VGA_TESTP is either unconnected or has no load
-WARNING: [Synth 8-7129] Port MEM_Addr[23] in module VGA_TESTP is either unconnected or has no load
-WARNING: [Synth 8-7129] Port MEM_Addr[22] in module VGA_TESTP is either unconnected or has no load
-WARNING: [Synth 8-7129] Port MEM_Addr[21] in module VGA_TESTP is either unconnected or has no load
-WARNING: [Synth 8-7129] Port MEM_Addr[20] in module VGA_TESTP is either unconnected or has no load
-WARNING: [Synth 8-7129] Port MEM_Addr[19] in module VGA_TESTP is either unconnected or has no load
-WARNING: [Synth 8-7129] Port MEM_Addr[18] in module VGA_TESTP is either unconnected or has no load
-WARNING: [Synth 8-7129] Port MEM_Addr[17] in module VGA_TESTP is either unconnected or has no load
-WARNING: [Synth 8-7129] Port MEM_Addr[16] in module VGA_TESTP is either unconnected or has no load
-WARNING: [Synth 8-7129] Port MEM_Addr[15] in module VGA_TESTP is either unconnected or has no load
-WARNING: [Synth 8-7129] Port MEM_Addr[14] in module VGA_TESTP is either unconnected or has no load
-WARNING: [Synth 8-7129] Port MEM_Addr[13] in module VGA_TESTP is either unconnected or has no load
-WARNING: [Synth 8-7129] Port MEM_Addr[12] in module VGA_TESTP is either unconnected or has no load
-WARNING: [Synth 8-7129] Port MEM_Addr[11] in module VGA_TESTP is either unconnected or has no load
-WARNING: [Synth 8-7129] Port MEM_Addr[10] in module VGA_TESTP is either unconnected or has no load
-WARNING: [Synth 8-7129] Port MEM_Addr[9] in module VGA_TESTP is either unconnected or has no load
-WARNING: [Synth 8-7129] Port MEM_Addr[1] in module VGA_TESTP is either unconnected or has no load
-WARNING: [Synth 8-7129] Port MEM_Addr[0] in module VGA_TESTP is either unconnected or has no load
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\DISPLAY/P2S_SEG/buff_reg[0] )
-INFO: [Synth 8-3886] merging instance 'vga/strdata_reg[31]' (FD) to 'vga/strdata_reg[47]'
-INFO: [Synth 8-3886] merging instance 'vga/strdata_reg[47]' (FD) to 'vga/strdata_reg[39]'
-INFO: [Synth 8-3886] merging instance 'vga/strdata_reg[15]' (FD) to 'vga/strdata_reg[39]'
-INFO: [Synth 8-3886] merging instance 'vga/strdata_reg[23]' (FD) to 'vga/strdata_reg[39]'
-INFO: [Synth 8-3886] merging instance 'vga/strdata_reg[39]' (FD) to 'vga/strdata_reg[7]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (vga/\strdata_reg[7] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (vga/\strdata_reg[54] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\DISPLAY/P2S_SEG/cycle_count_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\DISPLAY/P2S_LED/cycle_count_reg[0] )
-INFO: [Synth 8-3886] merging instance 'vga/U12/B_reg[0]' (FDR) to 'vga/U12/B_reg[1]'
-INFO: [Synth 8-3886] merging instance 'vga/U12/G_reg[0]' (FDR) to 'vga/U12/G_reg[1]'
-INFO: [Synth 8-3886] merging instance 'vga/U12/G_reg[2]' (FDR) to 'vga/U12/G_reg[3]'
-INFO: [Synth 8-3886] merging instance 'vga/U12/R_reg[0]' (FDR) to 'vga/U12/R_reg[1]'
-INFO: [Synth 8-3886] merging instance 'vga/U12/R_reg[2]' (FDR) to 'vga/U12/R_reg[3]'
-INFO: [Synth 8-3886] merging instance 'DISPLAY/P2S_SEG/buff_reg[0]' (FDE) to 'DISPLAY/P2S_SEG/buff_reg[1]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\DISPLAY/P2S_SEG/buff_reg[1] )
-INFO: [Synth 8-3886] merging instance 'DISPLAY/P2S_SEG/buff_reg[1]' (FDE) to 'DISPLAY/P2S_SEG/buff_reg[2]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\DISPLAY/P2S_SEG/buff_reg[2] )
-INFO: [Synth 8-3886] merging instance 'DISPLAY/P2S_SEG/buff_reg[2]' (FDE) to 'DISPLAY/P2S_SEG/buff_reg[3]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\DISPLAY/P2S_SEG/buff_reg[3] )
-INFO: [Synth 8-3886] merging instance 'DISPLAY/P2S_SEG/buff_reg[3]' (FDE) to 'DISPLAY/P2S_SEG/buff_reg[4]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\DISPLAY/P2S_SEG/buff_reg[4] )
-INFO: [Synth 8-3886] merging instance 'DISPLAY/P2S_SEG/buff_reg[4]' (FDE) to 'DISPLAY/P2S_SEG/buff_reg[5]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\DISPLAY/P2S_SEG/buff_reg[5] )
+INFO: [Synth 8-3886] merging instance 'strdata_reg[31]' (FD) to 'strdata_reg[7]'
+INFO: [Synth 8-3886] merging instance 'strdata_reg[47]' (FD) to 'strdata_reg[7]'
+INFO: [Synth 8-3886] merging instance 'strdata_reg[15]' (FD) to 'strdata_reg[7]'
+INFO: [Synth 8-3886] merging instance 'strdata_reg[23]' (FD) to 'strdata_reg[7]'
+INFO: [Synth 8-3886] merging instance 'strdata_reg[39]' (FD) to 'strdata_reg[7]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\strdata_reg[7] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\strdata_reg[54] )
+INFO: [Synth 8-3886] merging instance 'U12/B_reg[0]' (FDR) to 'U12/B_reg[1]'
+INFO: [Synth 8-3886] merging instance 'U12/G_reg[0]' (FDR) to 'U12/G_reg[1]'
+INFO: [Synth 8-3886] merging instance 'U12/G_reg[2]' (FDR) to 'U12/G_reg[3]'
+INFO: [Synth 8-3886] merging instance 'U12/R_reg[0]' (FDR) to 'U12/R_reg[1]'
+INFO: [Synth 8-3886] merging instance 'U12/R_reg[2]' (FDR) to 'U12/R_reg[3]'
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:44 ; elapsed = 00:02:11 . Memory (MB): peak = 1341.164 ; gain = 320.684
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:50 ; elapsed = 00:02:20 . Memory (MB): peak = 1354.859 ; gain = 333.066
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -642,13 +610,13 @@ Block RAM: Preliminary Mapping	Report (see note below)
 Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
 
 Distributed RAM: Preliminary Mapping	Report (see note below)
-+------------+---------------+-----------+----------------------+---------------------------+
-|Module Name | RTL Object    | Inference | Size (Depth x Width) | Primitives                | 
-+------------+---------------+-----------+----------------------+---------------------------+
-|cache__GB7  | inner_tag_reg | Implied   | 64 x 23              | RAM64X1D x 4	RAM64M x 14	 | 
-|vga         | MEMBUF_reg    | Implied   | 256 x 32             | RAM64X1D x 8	RAM64M x 40	 | 
-|vga         | data_buf_reg  | Implied   | 4 x 32               | RAM32M x 6	               | 
-+------------+---------------+-----------+----------------------+---------------------------+
++---------------+---------------+-----------+----------------------+---------------------------+
+|Module Name    | RTL Object    | Inference | Size (Depth x Width) | Primitives                | 
++---------------+---------------+-----------+----------------------+---------------------------+
+|cache__GB7     | inner_tag_reg | Implied   | 64 x 23              | RAM64X1D x 4	RAM64M x 14	 | 
+|VGA_TESTP__GB0 | MEMBUF_reg    | Implied   | 256 x 32             | RAM64X1D x 8	RAM64M x 40	 | 
+|VGA_TESTP__GB0 | data_buf_reg  | Implied   | 4 x 32               | RAM32M x 6	               | 
++---------------+---------------+-----------+----------------------+---------------------------+
 
 Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
 ---------------------------------------------------------------------------------
@@ -658,13 +626,13 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:53 ; elapsed = 00:02:21 . Memory (MB): peak = 1341.164 ; gain = 320.684
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:00 ; elapsed = 00:02:29 . Memory (MB): peak = 1354.859 ; gain = 333.066
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:03:01 ; elapsed = 00:03:29 . Memory (MB): peak = 1644.949 ; gain = 624.469
+Finished Timing Optimization : Time (s): cpu = 00:02:28 ; elapsed = 00:02:58 . Memory (MB): peak = 1436.312 ; gain = 414.520
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -679,13 +647,13 @@ Block RAM: Final Mapping	Report
 
 
 Distributed RAM: Final Mapping	Report
-+------------+---------------+-----------+----------------------+---------------------------+
-|Module Name | RTL Object    | Inference | Size (Depth x Width) | Primitives                | 
-+------------+---------------+-----------+----------------------+---------------------------+
-|cache__GB7  | inner_tag_reg | Implied   | 64 x 23              | RAM64X1D x 4	RAM64M x 14	 | 
-|vga         | MEMBUF_reg    | Implied   | 256 x 32             | RAM64X1D x 8	RAM64M x 40	 | 
-|vga         | data_buf_reg  | Implied   | 4 x 32               | RAM32M x 6	               | 
-+------------+---------------+-----------+----------------------+---------------------------+
++---------------+---------------+-----------+----------------------+---------------------------+
+|Module Name    | RTL Object    | Inference | Size (Depth x Width) | Primitives                | 
++---------------+---------------+-----------+----------------------+---------------------------+
+|cache__GB7     | inner_tag_reg | Implied   | 64 x 23              | RAM64X1D x 4	RAM64M x 14	 | 
+|VGA_TESTP__GB0 | MEMBUF_reg    | Implied   | 256 x 32             | RAM64X1D x 8	RAM64M x 40	 | 
+|VGA_TESTP__GB0 | data_buf_reg  | Implied   | 4 x 32               | RAM32M x 6	               | 
++---------------+---------------+-----------+----------------------+---------------------------+
 
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -693,10 +661,10 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-7052] The timing for the instance i_0/core/RAM/data_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7052] The timing for the instance i_0/core/RAM/data_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance i_11/core/RAM/data_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance i_11/core/RAM/data_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:03:26 ; elapsed = 00:03:58 . Memory (MB): peak = 1644.949 ; gain = 624.469
+Finished Technology Mapping : Time (s): cpu = 00:02:51 ; elapsed = 00:03:28 . Memory (MB): peak = 1459.363 ; gain = 437.570
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -716,37 +684,37 @@ INFO: [Synth 8-7052] The timing for the instance core/RAM/data_reg_1 (implemente
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:03:47 ; elapsed = 00:04:19 . Memory (MB): peak = 1644.949 ; gain = 624.469
+Finished IO Insertion : Time (s): cpu = 00:03:10 ; elapsed = 00:03:46 . Memory (MB): peak = 1459.363 ; gain = 437.570
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:03:47 ; elapsed = 00:04:19 . Memory (MB): peak = 1644.949 ; gain = 624.469
+Finished Renaming Generated Instances : Time (s): cpu = 00:03:10 ; elapsed = 00:03:47 . Memory (MB): peak = 1459.363 ; gain = 437.570
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:54 ; elapsed = 00:04:26 . Memory (MB): peak = 1644.949 ; gain = 624.469
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:17 ; elapsed = 00:03:54 . Memory (MB): peak = 1459.363 ; gain = 437.570
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:03:54 ; elapsed = 00:04:26 . Memory (MB): peak = 1644.949 ; gain = 624.469
+Finished Renaming Generated Ports : Time (s): cpu = 00:03:17 ; elapsed = 00:03:54 . Memory (MB): peak = 1459.363 ; gain = 437.570
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:04:01 ; elapsed = 00:04:34 . Memory (MB): peak = 1644.949 ; gain = 624.469
+Finished Handling Custom Attributes : Time (s): cpu = 00:03:24 ; elapsed = 00:04:01 . Memory (MB): peak = 1459.363 ; gain = 437.570
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:04:01 ; elapsed = 00:04:34 . Memory (MB): peak = 1644.949 ; gain = 624.469
+Finished Renaming Generated Nets : Time (s): cpu = 00:03:24 ; elapsed = 00:04:01 . Memory (MB): peak = 1459.363 ; gain = 437.570
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -781,14 +749,14 @@ Report Cell Usage:
 |2     |BUFG       |     8|
 |3     |CARRY4     |    78|
 |4     |LUT1       |    18|
-|5     |LUT2       |   284|
-|6     |LUT3       |  3310|
-|7     |LUT4       |   617|
-|8     |LUT5       | 10388|
-|9     |LUT6       | 13379|
+|5     |LUT2       |   329|
+|6     |LUT3       |  3438|
+|7     |LUT4       |   858|
+|8     |LUT5       | 10810|
+|9     |LUT6       | 14949|
 |10    |MMCME2_ADV |     1|
-|11    |MUXF7      |  2056|
-|12    |MUXF8      |   704|
+|11    |MUXF7      |  2232|
+|12    |MUXF8      |   771|
 |13    |RAM32M     |     6|
 |14    |RAM64M     |    34|
 |15    |RAM64X1D   |     8|
@@ -796,7 +764,7 @@ Report Cell Usage:
 |17    |RAMB36E1   |     2|
 |19    |SRL16E     |     7|
 |20    |FDCE       |    32|
-|21    |FDRE       | 10086|
+|21    |FDRE       | 10246|
 |22    |FDSE       |    40|
 |23    |LD         |   155|
 |24    |LDC        |     5|
@@ -805,19 +773,19 @@ Report Cell Usage:
 |27    |OBUF       |    25|
 +------+-----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:04:02 ; elapsed = 00:04:34 . Memory (MB): peak = 1644.949 ; gain = 624.469
+Finished Writing Synthesis Report : Time (s): cpu = 00:03:25 ; elapsed = 00:04:01 . Memory (MB): peak = 1459.363 ; gain = 437.570
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 40 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:03:43 ; elapsed = 00:04:26 . Memory (MB): peak = 1644.949 ; gain = 428.281
-Synthesis Optimization Complete : Time (s): cpu = 00:04:02 ; elapsed = 00:04:35 . Memory (MB): peak = 1644.949 ; gain = 624.469
+Synthesis finished with 0 errors, 0 critical warnings and 13 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:03:06 ; elapsed = 00:03:53 . Memory (MB): peak = 1459.363 ; gain = 231.059
+Synthesis Optimization Complete : Time (s): cpu = 00:03:25 ; elapsed = 00:04:03 . Memory (MB): peak = 1459.363 ; gain = 437.570
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.674 . Memory (MB): peak = 1644.949 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 3051 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.752 . Memory (MB): peak = 1463.473 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 3294 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
 WARNING: [Netlist 29-101] Netlist 'top' is not ideal for floorplanning, since the cellview 'cache' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 1 inverter(s) to 24 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 1644.949 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 1468.594 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 210 instances were transformed.
   IBUFGDS => IBUFDS: 1 instance 
@@ -831,10 +799,10 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   RAMB16_S1 => RAMB18E1: 1 instance 
 
 INFO: [Common 17-83] Releasing license: Synthesis
-140 Infos, 51 Warnings, 0 Critical Warnings and 0 Errors encountered.
+128 Infos, 24 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:04:21 ; elapsed = 00:04:55 . Memory (MB): peak = 1644.949 ; gain = 624.469
+synth_design: Time (s): cpu = 00:03:44 ; elapsed = 00:04:24 . Memory (MB): peak = 1468.594 ; gain = 446.801
 INFO: [Common 17-1381] The checkpoint 'E:/arch_labs_2021/lab4/Exp4/Exp4/Exp4.runs/synth_1/top.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 1644.949 ; gain = 0.000
+write_checkpoint: Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 1468.594 ; gain = 0.000
 INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sun Nov 14 23:19:20 2021...
+INFO: [Common 17-206] Exiting Vivado at Mon Nov 15 14:25:48 2021...
