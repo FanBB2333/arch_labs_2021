@@ -43,8 +43,28 @@ module Code2Inst (
                     default: inst = "illegal instruction";          //illegal instruction     
                     endcase
             end
-            5'b00000: inst = {" lw",I_Type, "   "};
-            5'b01000: inst = {" sw",S_Type, "   "};
+            5'b00000: begin
+                case({code[14:12]})
+                    3'b000: inst = {" lb",I_Type, "  "};
+                    3'b001: inst = {" lh",I_Type, "  "};
+                    3'b010: inst = {" lw",I_Type, "  "};
+                    3'b100: inst = {" lbu",I_Type, " "};
+                    3'b101: inst = {" lhu",I_Type, " "};
+                    default: inst = "illegal instruction";          //illegal instruction     
+                    endcase
+            end
+            
+            // inst = {" lw",I_Type, "   "};
+            5'b01000: begin
+                case({code[14:12]})
+                    3'b000: inst = {" sb",S_Type, " "};
+                    3'b001: inst = {" sh",S_Type, " "};
+                    3'b010: inst = {" sw",S_Type, " "};
+                    default: inst = "illegal instruction";          //illegal instruction     
+                    endcase
+            end
+            
+            // inst = {" sw",S_Type, "   "};
             5'b11000: begin
                 case(code[14:12])
                     3'b000: inst = {"beq",SB_Type, "   "};
