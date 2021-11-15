@@ -19,7 +19,15 @@ module FU_div(
     reg A_valid, B_valid;
     reg[31:0] A_reg, B_reg;
 
-    ...             //to fill sth.in
+    //to fill sth.in
+    always@(posedge clk) begin
+        if(EN & ~state) begin // state == 0
+
+
+            state <= 1;
+        end
+        else state <= 0;
+    end
 
 
     divider div(.aclk(clk),
