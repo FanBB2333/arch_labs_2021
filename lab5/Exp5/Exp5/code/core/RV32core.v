@@ -106,7 +106,7 @@ module  RV32core(
     
     REG32 reg_WB_jump(.clk(debug_clk),.rst(rst),.CE(FU_jump_finish),.D(PC_wb_FU),.Q(PC_wb_WB));
 
-    MUX8T1_32 mux_DtR(...);         //to fill sth.in
+    MUX8T1_32 mux_DtR(.I1(ALUout_WB), .I2(mem_data_WB), .I3(mulres_WB), .I4(divres_WB), .I5(PC_wb_WB), .s(DatatoReg_ctrl), .o(wt_data_WB));         //to fill sth.in
 
 
     always @* begin
