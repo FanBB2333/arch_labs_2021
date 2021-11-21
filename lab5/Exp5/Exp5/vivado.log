@@ -1,0 +1,26 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Mon Nov 15 14:51:22 2021
+# Process ID: 6036
+# Current directory: E:/arch_labs_2021/lab5/Exp5/Exp5
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent6312 E:\arch_labs_2021\lab5\Exp5\Exp5\Exp5.xpr
+# Log file: E:/arch_labs_2021/lab5/Exp5/Exp5/vivado.log
+# Journal file: E:/arch_labs_2021/lab5/Exp5/Exp5\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project E:/arch_labs_2021/lab5/Exp5/Exp5/Exp5.xpr
+INFO: [Project 1-313] Project file moved from 'C:/Users/Zonghui Wang/Desktop/risc v/Code4Stu/Exp5' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'E:/Xilinx/Vivado/2020.2/data/ip'.
+WARNING: [IP_Flow 19-2162] IP 'multiplier' is locked:
+* IP definition 'Multiplier (12.0)' for IP 'multiplier' (customized with software release 2018.2) has a different revision in the IP Catalog.
+WARNING: [IP_Flow 19-2162] IP 'divider' is locked:
+* IP definition 'Divider Generator (5.1)' for IP 'divider' (customized with software release 2018.2) has a different revision in the IP Catalog.
+INFO: [Project 1-230] Project 'Exp5.xpr' upgraded for this version of Vivado.
+open_project: Time (s): cpu = 00:00:15 ; elapsed = 00:00:08 . Memory (MB): peak = 1022.938 ; gain = 0.000
+update_compile_order -fileset sources_1
