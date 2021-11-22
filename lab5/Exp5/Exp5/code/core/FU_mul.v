@@ -23,7 +23,7 @@ module FU_mul(
 
             state <= 7'b100_0000;
         end
-        else state <= {1'b0, state[6:1];
+        else state <= {1'b0, state[6:1]};
     end
 
     multiplier mul(.CLK(clk),.A(A_reg),.B(B_reg),.P(mulres));
