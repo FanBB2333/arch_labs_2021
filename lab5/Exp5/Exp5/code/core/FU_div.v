@@ -22,6 +22,7 @@ module FU_div(
     //to fill sth.in
     always@(posedge clk) begin
         if(EN & ~state) begin // state == 0
+            A_reg
 
 
             state <= 1;
