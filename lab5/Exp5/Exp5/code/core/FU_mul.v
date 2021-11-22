@@ -17,12 +17,13 @@ module FU_mul(
 
     //to fill sth.in
     always@(posedge clk) begin
-        if(EN & (state != 7'b1111111)) begin // state == 0
+        if(EN & ~|state) begin // state == 0
+            A_reg = A;  
+            B_reg = B;
 
-
-            state <= state << 1;
+            state <= 7'b100_0000;
         end
-        else state <= 0;
+        else state <= {1'b0, state[6:1];
     end
 
     multiplier mul(.CLK(clk),.A(A_reg),.B(B_reg),.P(mulres));
