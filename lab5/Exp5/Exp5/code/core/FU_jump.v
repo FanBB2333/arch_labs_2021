@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 
 module FU_jump(
-	input clk, EN, JALR,
+	input clk, EN, JALR, // in JALR the source dest is in rs1
 	input[2:0] cmp_ctrl,
 	input[31:0] rs1_data, rs2_data, imm, PC,
 	output[31:0] PC_jump, PC_wb,
