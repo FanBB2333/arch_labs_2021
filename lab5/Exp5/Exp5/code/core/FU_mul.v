@@ -25,6 +25,7 @@ module FU_mul(
         end
         else state <= {1'b0, state[6:1]};
     end
+    wire[63:0] mulres;
 
     multiplier mul(.CLK(clk),.A(A_reg),.B(B_reg),.P(mulres));
 

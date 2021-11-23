@@ -34,7 +34,7 @@ module FU_jump(
 	
 	cmp_32 cmp(.a(rs1_data_reg), .b(rs2_data_reg), .ctrl(cmp_ctrl_reg), .c(cmp_res));
 	add_32 a(.a(JALR_reg ? rs1_data : PC_reg), .b(imm_reg), .c(PC_jump));
-	add_32 b(.a(PC), .b(32'b4), .c(PC_wb));	
+	add_32 b(.a(PC), .b(32'd4), .c(PC_wb));	
 
 
 endmodule
