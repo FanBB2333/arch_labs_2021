@@ -26,7 +26,7 @@ module FU_div(
             B_reg <= B;
             A_valid <= 1'b1;
             B_valid <= 1'b1;
-            state <= 1'b1'
+            state <= 1'b1;
         end
         else if(res_valid) begin
             A_valid <= 1'b0;
