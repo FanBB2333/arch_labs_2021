@@ -86,10 +86,9 @@ module cache (
 
     always @ (posedge clk) begin
         valid <= recent1 ? valid2 : valid1;                  //need to fill in
-        // dirty <= edit ? 1 : store ? 0 : dirty;               //need to fill in
-        dirty <= recent1 ? dirty2 : dirty1; //need to fill in
-        tag <= recent1 ? tag2 : tag1;                    //need to fill in
-        hit <= hit1 | hit2 ;                    //need to fill in
+        dirty <= recent1 ? dirty2 : dirty1;                  //need to fill in
+        tag <= recent1 ? tag2 : tag1;                        //need to fill in
+        hit <= hit1 | hit2 ;                                 //need to fill in
         
         // read $ with load==0 means moving data from $ to mem
         // no need to update recent bit

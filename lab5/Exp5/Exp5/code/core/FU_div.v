@@ -22,12 +22,19 @@ module FU_div(
     //to fill sth.in
     always@(posedge clk) begin
         if(EN & ~state) begin // state == 0
-
-
-            state <= 1;
+            A_reg <= A;
+            B_reg <= B;
+            A_valid <= 1'b1;
+            B_valid <= 1'b1;
+            state <= 1'b1'
         end
-        else state <= 0;
+        else if(res_valid) begin
+            A_valid <= 1'b0;
+            B_valid <= 1'b0;
+            state <= 1'b0;
+        end
     end
+
 
 
     divider div(.aclk(clk),
