@@ -1,0 +1,37 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Mon Nov  8 08:10:33 2021
+# Process ID: 3616
+# Current directory: E:/arch_labs_2021/lab3/Exp3/Exp3
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent14404 E:\arch_labs_2021\lab3\Exp3\Exp3\Exp3.xpr
+# Log file: E:/arch_labs_2021/lab3/Exp3/Exp3/vivado.log
+# Journal file: E:/arch_labs_2021/lab3/Exp3/Exp3\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project E:/arch_labs_2021/lab3/Exp3/Exp3/Exp3.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+open_wave_config E:/arch_labs_2021/lab3/Exp3/Exp3/code/wave/cache_sim_behav.wcfg
+source cache_sim.tcl
+current_wave_config {cache_sim_behav.wcfg}
+add_wave {{/cache_sim/uut/addr_element1}} {{/cache_sim/uut/addr_element2}} 
+save_wave_config {E:/arch_labs_2021/lab3/Exp3/Exp3/code/wave/cache_sim_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config E:/arch_labs_2021/lab3/Exp3/Exp3/code/wave/cache_sim_behav.wcfg
+source cache_sim.tcl
+close_sim
+launch_simulation
+open_wave_config E:/arch_labs_2021/lab3/Exp3/Exp3/code/wave/cache_sim_behav.wcfg
+source cache_sim.tcl
+close_sim
+launch_simulation
+open_wave_config E:/arch_labs_2021/lab3/Exp3/Exp3/code/wave/cache_sim_behav.wcfg
+source cache_sim.tcl
+close_sim
+launch_simulation
+open_wave_config E:/arch_labs_2021/lab3/Exp3/Exp3/code/wave/cache_sim_behav.wcfg
+source cache_sim.tcl
+close_sim
