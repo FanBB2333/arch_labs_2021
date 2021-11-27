@@ -26,9 +26,9 @@ module FU_mem(
             rs1_data_reg <= rs1_data;
             rs2_data_reg <= rs2_data;
             imm_reg <= imm;
-            state <= 1;
+            state <= 2'b10;
         end
-        else state <= 0;
+        else state <= {1'b0, state[1]};
     end
     wire[31:0] addr;
 
