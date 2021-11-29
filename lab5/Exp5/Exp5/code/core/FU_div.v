@@ -35,8 +35,6 @@ module FU_div(
         end
     end
 
-
-
     divider div(.aclk(clk),
         .s_axis_dividend_tvalid(A_valid),
         .s_axis_dividend_tdata(A_reg),

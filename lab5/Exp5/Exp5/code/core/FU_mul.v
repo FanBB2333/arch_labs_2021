@@ -14,13 +14,11 @@ module FU_mul(
     end
 
     reg[31:0] A_reg, B_reg;
-
     //to fill sth.in
     always@(posedge clk) begin
         if(EN & ~|state) begin // state == 0
             A_reg = A;  
             B_reg = B;
-
             state <= 7'b100_0000;
         end
         else state <= {1'b0, state[6:1]};

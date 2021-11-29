@@ -33,8 +33,6 @@ module FU_mem(
     wire[31:0] addr;
 
     add_32 add(.a(rs1_data_reg), .b(imm_reg), .c(addr));
-
-
     RAM_B ram(.clka(clk),.addra(addr),.dina(rs2_data_reg),.wea(mem_w_reg),
         .douta(mem_data),.mem_u_b_h_w(bhw_reg));
 
