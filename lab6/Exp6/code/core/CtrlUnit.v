@@ -1,6 +1,7 @@
 `timescale 1ns / 1ps
 `include "CtrlDefine.vh"
 
+// include the issue operation
 module CtrlUnit(
     input clk,
     input rst,
