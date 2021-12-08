@@ -14,20 +14,29 @@
 `define Imm_type_U 3'b101
 
 // bits in FUS
+// Busy
 `define BUSY    0
+// Op
 `define OP_L    1
 `define OP_H    5
+// Fi
 `define DST_L   6
 `define DST_H   10
+// Fj
 `define SRC1_L  11
 `define SRC1_H  15
+// Fk
 `define SRC2_L  16
 `define SRC2_H  20
+// Qj
 `define FU1_L   21
 `define FU1_H   23
+// Qk
 `define FU2_L   24
 `define FU2_H   26
+// Rj
 `define RDY1    27
+// Rk
 `define RDY2    28
 `define FU_DONE 29
 

@@ -274,14 +274,14 @@ module CtrlUnit(
     // ensure WAR:
     // If an FU hasn't read a register value (RO), don't write to it.
     wire ALU_WAR = (
-        (FUS[`FU_MEM][`SRC1_H:`SRC1_L]  != ... | ...)  &    //fill sth. here
-        (FUS[`FU_MEM][`SRC2_H:`SRC2_L]  != ... | ...)  &    //fill sth. here
-        (FUS[`FU_MUL][`SRC1_H:`SRC1_L]  != ... | ...)  &    //fill sth. here
-        (FUS[`FU_MUL][`SRC2_H:`SRC2_L]  != ... | ...)  &    //fill sth. here
-        (FUS[`FU_DIV][`SRC1_H:`SRC1_L]  != ... | ...)  &    //fill sth. here
-        (FUS[`FU_DIV][`SRC2_H:`SRC2_L]  != ... | ...)  &    //fill sth. here
-        (FUS[`FU_JUMP][`SRC1_H:`SRC1_L] != ... | ...)  &    //fill sth. here
-        (FUS[`FU_JUMP][`SRC2_H:`SRC2_L] != ... | ...)       //fill sth. here
+        (FUS[`FU_MEM][`SRC1_H:`SRC1_L]  != dst | ...)  &    //fill sth. here
+        (FUS[`FU_MEM][`SRC2_H:`SRC2_L]  != dst | ...)  &    //fill sth. here
+        (FUS[`FU_MUL][`SRC1_H:`SRC1_L]  != dst | ...)  &    //fill sth. here
+        (FUS[`FU_MUL][`SRC2_H:`SRC2_L]  != dst | ...)  &    //fill sth. here
+        (FUS[`FU_DIV][`SRC1_H:`SRC1_L]  != dst | ...)  &    //fill sth. here
+        (FUS[`FU_DIV][`SRC2_H:`SRC2_L]  != dst | ...)  &    //fill sth. here
+        (FUS[`FU_JUMP][`SRC1_H:`SRC1_L] != dst | ...)  &    //fill sth. here
+        (FUS[`FU_JUMP][`SRC2_H:`SRC2_L] != dst | ...)       //fill sth. here
     );
 
     wire MEM_WAR = (
@@ -346,6 +346,7 @@ module CtrlUnit(
             // IS
             if (RO_en) begin
                 // not busy, no WAW, write info to FUS and RRS
+                // if no stall, put the next inst to read operands stage
                 if (|dst) RRS[dst] <= use_FU;
                 FUS[use_FU][`BUSY] <= 1'b1;
                 ...                             //fill sth. here.
