@@ -162,7 +162,16 @@ module CtrlUnit(
     wire use_JUMP = B_valid | JAL | JALR;
 
     // normal stall: structural hazard or WAW
-    assign normal_stall = ...;           //fill sth. here
+    assign structural_hazard = 
+                    FUS[`FU_ALU][`BUSY] & use_ALU |
+                    FUS[`FU_MEM][`BUSY] & use_MEM |
+                    FUS[`FU_MUL][`BUSY] & use_MUL |
+                    FUS[`FU_DIV][`BUSY] & use_DIV |
+                    FUS[`FU_JUMP][`BUSY] & use_JUMP;
+
+    assign WAW_signal = ;
+                                
+    assign normal_stall = structural_hazard | WAW_signal;           //fill sth. here
 
     assign IS_en = IS_flush | ~normal_stall & ~ctrl_stall;
     assign RO_en = ~IS_flush & ~normal_stall & ~ctrl_stall;
