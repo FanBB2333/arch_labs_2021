@@ -361,11 +361,14 @@ module CtrlUnit(
                 FUS[`FU_JUMP][`RDY1] <= 1'b0;
                 FUS[`FU_JUMP][`RDY2] <= 1'b0;
             end
-            else if (...) begin             //fill sth. here.
+            else if (FUS[`FU_ALU][`RDY1] & FUS[`FU_ALU][`RDY2]) begin             //fill sth. here.
                 // ALU
+                FUS[`FU_ALU][`RDY1] <= 1'b0;
+                FUS[`FU_ALU][`RDY2] <= 1'b0;
+                
                 ...                         //fill sth. here.
             end
-            else if (..) begin             //fill sth. here.
+            else if () begin             //fill sth. here.
                 // MEM
                 ...                         //fill sth. here.
             end
