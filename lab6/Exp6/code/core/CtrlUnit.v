@@ -274,7 +274,7 @@ module CtrlUnit(
     // ensure WAR:
     // If an FU hasn't read a register value (RO), don't write to it.
     wire ALU_WAR = (
-        (FUS[`FU_MEM][`SRC1_H:`SRC1_L]  != dst | ...)  &    //fill sth. here
+        (FUS[`FU_MEM][`SRC1_H:`SRC1_L]  != FUS[`FU_ALU][`DST_H:`DST_L] | !FUS[`FU_MEM][`RDY1])  &    //fill sth. here
         (FUS[`FU_MEM][`SRC2_H:`SRC2_L]  != dst | ...)  &    //fill sth. here
         (FUS[`FU_MUL][`SRC1_H:`SRC1_L]  != dst | ...)  &    //fill sth. here
         (FUS[`FU_MUL][`SRC2_H:`SRC2_L]  != dst | ...)  &    //fill sth. here
@@ -384,6 +384,7 @@ module CtrlUnit(
 
             // WB
             if (FUS[`FU_JUMP][`FU_DONE] & JUMP_WAR) begin
+                // clear the FUS
                 FUS[`FU_JUMP] <= 32'b0;
                 RRS[FUS[`FU_JUMP][`DST_H:`DST_L]] <= 3'b0;
 
