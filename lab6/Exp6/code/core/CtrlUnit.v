@@ -365,20 +365,25 @@ module CtrlUnit(
                 // ALU
                 FUS[`FU_ALU][`RDY1] <= 1'b0;
                 FUS[`FU_ALU][`RDY2] <= 1'b0;
-                
-                ...                         //fill sth. here.
+                // ...                         //fill sth. here.
             end
-            else if () begin             //fill sth. here.
+            else if (FUS[`FU_MEM][`RDY1] & FUS[`FU_MEM][`RDY2]) begin             //fill sth. here.
                 // MEM
-                ...                         //fill sth. here.
+                FUS[`FU_MEM][`RDY1] <= 1'b0;
+                FUS[`FU_MEM][`RDY2] <= 1'b0;
+                // ...                         //fill sth. here.
             end
-            else if (...) begin             //fill sth. here.
+            else if (FUS[`FU_MUL][`RDY1] & FUS[`FU_MUL][`RDY2]) begin             //fill sth. here.
                 // MUL
-                ...                         //fill sth. here.
+                FUS[`FU_MUL][`RDY1] <= 1'b0;
+                FUS[`FU_MUL][`RDY2] <= 1'b0;
+                // ...                         //fill sth. here.
             end
-            else if (..) begin             //fill sth. here.
+            else if (FUS[`FU_DIV][`RDY1] & FUS[`FU_DIV][`RDY2]) begin             //fill sth. here.
                 // DIV
-                ...                         //fill sth. here.
+                FUS[`FU_DIV][`RDY1] <= 1'b0;
+                FUS[`FU_DIV][`RDY2] <= 1'b0;
+                // ...                         //fill sth. here.
             end
 
             // EX
