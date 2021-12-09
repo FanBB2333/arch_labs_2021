@@ -38,6 +38,7 @@
 `define RDY1    27
 // Rk
 `define RDY2    28
+
 `define FU_DONE 29
 
 // op in FUS
