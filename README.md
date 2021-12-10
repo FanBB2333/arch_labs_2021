@@ -6,5 +6,5 @@ Computer Architecture Experiment 2021 in RISC-V
 - Lab2: Pipelined CPU supporting exception & interrupt
 - Lab3: Cache Design
 - Lab4: Pipelined CPU with Cache
-- Lab5: Dynamically Scheduled Pipelines using Scoreboarding
+- Lab5: Dynamically Scheduled Pipelines using Scoreboarding(Complete different Function Units and control signals)
 - Lab6: Dynamically Scheduled Pipelines using Scoreboarding(Implement Scoreboarding)
