@@ -401,8 +401,17 @@ module CtrlUnit(
             end
 
             // EX
-            FUS[`FU_ALU][`FU_DONE] <= ...   //fill sth. here
-            ...                             //fill sth. here
+            //  When all operands have been fetched, the Computation Unit starts its execution. 
+            // After the result is ready, the scoreboard is notified.
+
+            FUS[`FU_ALU][`FU_DONE] <= ALU_done;   //fill sth. here
+            FUS[`FU_MEM][`FU_DONE] <= MEM_done;   //fill sth. here
+            FUS[`FU_MUL][`FU_DONE] <= MUL_done;   //fill sth. here
+            FUS[`FU_DIV][`FU_DONE] <= DIV_done;   //fill sth. here
+            FUS[`FU_JUMP][`FU_DONE] <= JUMP_done;   //fill sth. here
+            
+            
+            // ...                             //fill sth. here
 
             // WB
             // Jump
