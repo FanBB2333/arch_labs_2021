@@ -349,7 +349,19 @@ module CtrlUnit(
                 // if no stall, put the next inst to read operands stage
                 if (|dst) RRS[dst] <= use_FU;
                 FUS[use_FU][`BUSY] <= 1'b1;
-                ...                             //fill sth. here.
+                // update the states stored in the current busy FU
+                FUS[use_FU][`OP_H:`OP_L] <= op;
+
+                FUS[use_FU][`SRC1_H:`SRC1_L] <= src1;
+                FUS[use_FU][`SRC2_H:`SRC2_L] <= src2;
+                FUS[use_FU][`DST_H:`DST_L] <= dst;
+
+                FUS[use_FU][`FU1_H:`FU1_L] <= fu1;
+                FUS[use_FU][`FU2_H:`FU2_L] <= fu2;
+                FUS[use_FU][`RDY1] <= 1'b0;
+                FUS[use_FU][`RDY2] <= 1'b0;
+
+                // ...                             //fill sth. here.
                 
                 IMM[use_FU] <= imm;
                 PCR[use_FU] <= PC;
