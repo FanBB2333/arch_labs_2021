@@ -358,8 +358,10 @@ module CtrlUnit(
 
                 FUS[use_FU][`FU1_H:`FU1_L] <= fu1;
                 FUS[use_FU][`FU2_H:`FU2_L] <= fu2;
-                FUS[use_FU][`RDY1] <= 1'b0;
-                FUS[use_FU][`RDY2] <= 1'b0;
+
+                // note that if the source register is x0, then it is always ready
+                FUS[use_FU][`RDY1] <= fu1 == 0;
+                FUS[use_FU][`RDY2] <= fu2 == 0;
 
                 // ...                             //fill sth. here.
                 
