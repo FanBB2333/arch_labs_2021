@@ -405,6 +405,7 @@ module CtrlUnit(
             ...                             //fill sth. here
 
             // WB
+            // Jump
             if (FUS[`FU_JUMP][`FU_DONE] & JUMP_WAR) begin
                 // clear the FUS
                 FUS[`FU_JUMP] <= 32'b0;
@@ -422,13 +423,77 @@ module CtrlUnit(
                 if (FUS[`FU_DIV][`FU2_H:`FU2_L] == `FU_JUMP) FUS[`FU_DIV][`RDY2] <= 1;           //fill sth. here
             end
             // ALU
-                ...;           //fill sth. here
+            if (FUS[`FU_ALU][`FU_DONE] & ALU_WAR) begin
+                // clear the FUS
+                FUS[`FU_ALU] <= 32'b0;
+                RRS[FUS[`FU_ALU][`DST_H:`DST_L]] <= 3'b0;
+
+                // ensure RAW
+                if (FUS[`FU_JUMP][`FU1_H:`FU1_L] == `FU_ALU) FUS[`FU_JUMP][`RDY1] <= 1;           //fill sth. here
+                if (FUS[`FU_MEM][`FU1_H:`FU1_L] == `FU_ALU) FUS[`FU_MEM][`RDY1] <= 1;           //fill sth. here
+                if (FUS[`FU_MUL][`FU1_H:`FU1_L] == `FU_ALU) FUS[`FU_MUL][`RDY1] <= 1;           //fill sth. here
+                if (FUS[`FU_DIV][`FU1_H:`FU1_L] == `FU_ALU) FUS[`FU_DIV][`RDY1] <= 1;           //fill sth. here
+
+                if (FUS[`FU_JUMP][`FU2_H:`FU2_L] == `FU_ALU) FUS[`FU_JUMP][`RDY2] <= 1;           //fill sth. here
+                if (FUS[`FU_MEM][`FU2_H:`FU2_L] == `FU_ALU) FUS[`FU_MEM][`RDY2] <= 1;           //fill sth. here
+                if (FUS[`FU_MUL][`FU2_H:`FU2_L] == `FU_ALU) FUS[`FU_MUL][`RDY2] <= 1;           //fill sth. here
+                if (FUS[`FU_DIV][`FU2_H:`FU2_L] == `FU_ALU) FUS[`FU_DIV][`RDY2] <= 1;           //fill sth. here
+            end
+                // ...;           //fill sth. here
             // MEM
-                ...;           //fill sth. here
+            if (FUS[`FU_MEM][`FU_DONE] & MEM_WAR) begin
+                // clear the FUS
+                FUS[`FU_MEM] <= 32'b0;
+                RRS[FUS[`FU_MEM][`DST_H:`DST_L]] <= 3'b0;
+
+                // ensure RAW
+                if (FUS[`FU_JUMP][`FU1_H:`FU1_L] == `FU_MEM) FUS[`FU_JUMP][`RDY1] <= 1;           //fill sth. here
+                if (FUS[`FU_ALU][`FU1_H:`FU1_L] == `FU_MEM) FUS[`FU_ALU][`RDY1] <= 1;           //fill sth. here
+                if (FUS[`FU_MUL][`FU1_H:`FU1_L] == `FU_MEM) FUS[`FU_MUL][`RDY1] <= 1;           //fill sth. here
+                if (FUS[`FU_DIV][`FU1_H:`FU1_L] == `FU_MEM) FUS[`FU_DIV][`RDY1] <= 1;           //fill sth. here
+
+                if (FUS[`FU_JUMP][`FU2_H:`FU2_L] == `FU_MEM) FUS[`FU_JUMP][`RDY2] <= 1;           //fill sth. here
+                if (FUS[`FU_ALU][`FU2_H:`FU2_L] == `FU_MEM) FUS[`FU_ALU][`RDY2] <= 1;           //fill sth. here
+                if (FUS[`FU_MUL][`FU2_H:`FU2_L] == `FU_MEM) FUS[`FU_MUL][`RDY2] <= 1;           //fill sth. here
+                if (FUS[`FU_DIV][`FU2_H:`FU2_L] == `FU_MEM) FUS[`FU_DIV][`RDY2] <= 1;           //fill sth. here
+            end
+                // ...;           //fill sth. here
             // MUL
-                ...;           //fill sth. here
+            if (FUS[`FU_MUL][`FU_DONE] & MUL_WAR) begin
+                // clear the FUS
+                FUS[`FU_MUL] <= 32'b0;
+                RRS[FUS[`FU_MUL][`DST_H:`DST_L]] <= 3'b0;
+
+                // ensure RAW
+                if (FUS[`FU_JUMP][`FU1_H:`FU1_L] == `FU_MUL) FUS[`FU_JUMP][`RDY1] <= 1;           //fill sth. here
+                if (FUS[`FU_ALU][`FU1_H:`FU1_L] == `FU_MUL) FUS[`FU_ALU][`RDY1] <= 1;           //fill sth. here
+                if (FUS[`FU_MEM][`FU1_H:`FU1_L] == `FU_MUL) FUS[`FU_MEM][`RDY1] <= 1;           //fill sth. here
+                if (FUS[`FU_DIV][`FU1_H:`FU1_L] == `FU_MUL) FUS[`FU_DIV][`RDY1] <= 1;           //fill sth. here
+
+                if (FUS[`FU_JUMP][`FU2_H:`FU2_L] == `FU_MUL) FUS[`FU_JUMP][`RDY2] <= 1;           //fill sth. here
+                if (FUS[`FU_ALU][`FU2_H:`FU2_L] == `FU_MUL) FUS[`FU_ALU][`RDY2] <= 1;           //fill sth. here
+                if (FUS[`FU_MEM][`FU2_H:`FU2_L] == `FU_MUL) FUS[`FU_MEM][`RDY2] <= 1;           //fill sth. here
+                if (FUS[`FU_DIV][`FU2_H:`FU2_L] == `FU_MUL) FUS[`FU_DIV][`RDY2] <= 1;           //fill sth. here
+            end
+                // ...;           //fill sth. here
             // DIV
-                ...;           //fill sth. here
+            if (FUS[`FU_DIV][`FU_DONE] & DIV_WAR) begin
+                // clear the FUS
+                FUS[`FU_DIV] <= 32'b0;
+                RRS[FUS[`FU_DIV][`DST_H:`DST_L]] <= 3'b0;
+
+                // ensure RAW
+                if (FUS[`FU_JUMP][`FU1_H:`FU1_L] == `FU_DIV) FUS[`FU_JUMP][`RDY1] <= 1;           //fill sth. here
+                if (FUS[`FU_ALU][`FU1_H:`FU1_L] == `FU_DIV) FUS[`FU_ALU][`RDY1] <= 1;           //fill sth. here
+                if (FUS[`FU_MEM][`FU1_H:`FU1_L] == `FU_DIV) FUS[`FU_MEM][`RDY1] <= 1;           //fill sth. here
+                if (FUS[`FU_MUL][`FU1_H:`FU1_L] == `FU_DIV) FUS[`FU_MUL][`RDY1] <= 1;           //fill sth. here
+
+                if (FUS[`FU_JUMP][`FU2_H:`FU2_L] == `FU_DIV) FUS[`FU_JUMP][`RDY2] <= 1;           //fill sth. here
+                if (FUS[`FU_ALU][`FU2_H:`FU2_L] == `FU_DIV) FUS[`FU_ALU][`RDY2] <= 1;           //fill sth. here
+                if (FUS[`FU_MEM][`FU2_H:`FU2_L] == `FU_DIV) FUS[`FU_MEM][`RDY2] <= 1;           //fill sth. here
+                if (FUS[`FU_MUL][`FU2_H:`FU2_L] == `FU_DIV) FUS[`FU_MUL][`RDY2] <= 1;           //fill sth. here
+            end
+                // ...;           //fill sth. here
         end
     end
 
