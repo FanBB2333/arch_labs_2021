@@ -13,7 +13,7 @@ E:/arch_labs_2021/lab5/Exp5/Exp5/code/common/add_32.v,1630067407,verilog,,E:/arc
 E:/arch_labs_2021/lab5/Exp5/Exp5/code/common/cmp_32.v,1628609816,verilog,,E:/arch_labs_2021/lab5/Exp5/Exp5/code/auxillary/debug_clk.v,,cmp_32,,,../../../../code/auxillary,,,,,
 E:/arch_labs_2021/lab5/Exp5/Exp5/code/core/CtrlUnit.v,1632032083,verilog,,E:/arch_labs_2021/lab5/Exp5/Exp5/code/core/FU_ALU.v,,CtrlUnit,,,../../../../code/auxillary,,,,,
 E:/arch_labs_2021/lab5/Exp5/Exp5/code/core/FU_ALU.v,1636991961,verilog,,E:/arch_labs_2021/lab5/Exp5/Exp5/code/core/FU_div.v,,FU_ALU,,,../../../../code/auxillary,,,,,
-E:/arch_labs_2021/lab5/Exp5/Exp5/code/core/FU_div.v,1637629134,verilog,,E:/arch_labs_2021/lab5/Exp5/Exp5/code/core/FU_jump.v,,FU_div,,,../../../../code/auxillary,,,,,
+E:/arch_labs_2021/lab5/Exp5/Exp5/code/core/FU_div.v,1638690044,verilog,,E:/arch_labs_2021/lab5/Exp5/Exp5/code/core/FU_jump.v,,FU_div,,,../../../../code/auxillary,,,,,
 E:/arch_labs_2021/lab5/Exp5/Exp5/code/core/FU_jump.v,1638010759,verilog,,E:/arch_labs_2021/lab5/Exp5/Exp5/code/core/FU_mem.v,,FU_jump,,,../../../../code/auxillary,,,,,
 E:/arch_labs_2021/lab5/Exp5/Exp5/code/core/FU_mem.v,1638007814,verilog,,E:/arch_labs_2021/lab5/Exp5/Exp5/code/core/FU_mul.v,,FU_mem,,,../../../../code/auxillary,,,,,
 E:/arch_labs_2021/lab5/Exp5/Exp5/code/core/FU_mul.v,1637629668,verilog,,E:/arch_labs_2021/lab5/Exp5/Exp5/code/core/ImmGen.v,,FU_mul,,,../../../../code/auxillary,,,,,
