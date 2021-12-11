@@ -264,3 +264,8 @@ INFO: [USF-XSim-96] XSim completed. Design snapshot 'core_sim_behav' loaded.
 INFO: [USF-XSim-97] XSim simulation ran for 1000ns
 launch_simulation: Time (s): cpu = 00:00:15 ; elapsed = 00:00:39 . Memory (MB): peak = 1021.594 ; gain = 0.000
 save_wave_config {E:/arch_labs_2021/lab5/Exp5/Exp5/code/sim/core_sim_behav.wcfg}
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 1216.445 ; gain = 0.000
+exit
+INFO: [Common 17-206] Exiting Vivado at Sat Dec 11 23:49:37 2021...
