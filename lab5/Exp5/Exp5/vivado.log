@@ -22,5 +22,5 @@ WARNING: [IP_Flow 19-2162] IP 'divider' is locked:
 * IP definition 'Divider Generator (5.1)' for IP 'divider' (customized with software release 2018.2) has a different revision in the IP Catalog.
 open_project: Time (s): cpu = 00:00:14 ; elapsed = 00:00:09 . Memory (MB): peak = 1021.125 ; gain = 0.000
 update_compile_order -fileset sources_1
-exit
-INFO: [Common 17-206] Exiting Vivado at Sun Dec 12 20:27:43 2021...
+exexit
+INFO: [Common 17-206] Exiting Vivado at Sun Dec 12 23:32:42 2021...
