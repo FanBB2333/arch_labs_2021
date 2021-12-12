@@ -1,0 +1,1 @@
+multiplier.vhd,vhdl,xil_defaultlib,../../../../Exp6.srcs/sources_1/ip/multiplier_1/sim/multiplier.vhd,

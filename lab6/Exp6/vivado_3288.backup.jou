@@ -1,0 +1,32 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Sun Dec 12 20:18:39 2021
+# Process ID: 3288
+# Current directory: E:/arch_labs_2021/lab6/Exp6
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent2336 E:\arch_labs_2021\lab6\Exp6\Exp6.xpr
+# Log file: E:/arch_labs_2021/lab6/Exp6/vivado.log
+# Journal file: E:/arch_labs_2021/lab6/Exp6\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project E:/arch_labs_2021/lab6/Exp6/Exp6.xpr
+update_compile_order -fileset sources_1
+create_ip -name div_gen -vendor xilinx.com -library ip -version 5.1 -module_name divider
+set_property -dict [list CONFIG.Component_Name {divider} CONFIG.dividend_and_quotient_width {32} CONFIG.divisor_width {32} CONFIG.fractional_width {32} CONFIG.latency {36}] [get_ips divider]
+generate_target {instantiation_template} [get_files e:/arch_labs_2021/lab6/Exp6/Exp6.srcs/sources_1/ip/divider/divider.xci]
+update_compile_order -fileset sources_1
+create_ip -name mult_gen -vendor xilinx.com -library ip -version 12.0 -module_name multiplier
+set_property -dict [list CONFIG.Component_Name {multiplier} CONFIG.MultType {Parallel_Multiplier} CONFIG.PortAWidth {32} CONFIG.PortBWidth {32} CONFIG.OutputWidthHigh {63}] [get_ips multiplier]
+generate_target {instantiation_template} [get_files E:/arch_labs_2021/lab6/Exp6/Exp6.srcs/sources_1/ip/multiplier/multiplier.xci]
+update_compile_order -fileset sources_1
+generate_target all [get_files e:/arch_labs_2021/lab6/Exp6/Exp6.srcs/sources_1/ip/divider/divider.xci]
+generate_target all [get_files -of_objects [get_filesets sources_1] e:/arch_labs_2021/lab6/Exp6/Exp6.srcs/sources_1/ip/divider/divider.xci]
+catch { config_ip_cache -export [get_ips -all divider] }
+export_ip_user_files -of_objects [get_files e:/arch_labs_2021/lab6/Exp6/Exp6.srcs/sources_1/ip/divider/divider.xci] -no_script -sync -force -quiet
+launch_runs divider_synth_1 -jobs 4
+wait_on_run divider_synth_1
+export_simulation -of_objects [get_files e:/arch_labs_2021/lab6/Exp6/Exp6.srcs/sources_1/ip/divider/divider.xci] -directory E:/arch_labs_2021/lab6/Exp6/Exp6.ip_user_files/sim_scripts -ip_user_files_dir E:/arch_labs_2021/lab6/Exp6/Exp6.ip_user_files -ipstatic_source_dir E:/arch_labs_2021/lab6/Exp6/Exp6.ip_user_files/ipstatic -lib_map_path [list {modelsim=E:/arch_labs_2021/lab6/Exp6/Exp6.cache/compile_simlib/modelsim} {questa=E:/arch_labs_2021/lab6/Exp6/Exp6.cache/compile_simlib/questa} {riviera=E:/arch_labs_2021/lab6/Exp6/Exp6.cache/compile_simlib/riviera} {activehdl=E:/arch_labs_2021/lab6/Exp6/Exp6.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+export_ip_user_files -of_objects  [get_files E:/arch_labs_2021/lab6/Exp6/Exp6.srcs/sources_1/ip/multiplier/multiplier.xci] -no_script -reset -force -quiet
+remove_files  E:/arch_labs_2021/lab6/Exp6/Exp6.srcs/sources_1/ip/multiplier/multiplier.xci
+file delete -force E:/arch_labs_2021/lab6/Exp6/Exp6.srcs/sources_1/ip/multiplier
