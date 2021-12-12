@@ -2,18 +2,13 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Sun Nov 28 13:59:41 2021
-# Process ID: 18860
+# Start of session at: Sun Dec 12 09:56:32 2021
+# Process ID: 4932
 # Current directory: E:/arch_labs_2021/lab4/Exp4/Exp4
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent19588 E:\arch_labs_2021\lab4\Exp4\Exp4\Exp4.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent12148 E:\arch_labs_2021\lab4\Exp4\Exp4\Exp4.xpr
 # Log file: E:/arch_labs_2021/lab4/Exp4/Exp4/vivado.log
 # Journal file: E:/arch_labs_2021/lab4/Exp4/Exp4\vivado.jou
 #-----------------------------------------------------------
 start_gui
 open_project E:/arch_labs_2021/lab4/Exp4/Exp4/Exp4.xpr
 update_compile_order -fileset sources_1
-launch_simulation
-open_wave_config E:/arch_labs_2021/lab4/Exp4/Exp4/code/cache/wave/sim_top_behav.wcfg
-source sim_top.tcl
-save_wave_config {E:/arch_labs_2021/lab4/Exp4/Exp4/code/cache/wave/sim_top_behav.wcfg}
-close_sim

@@ -1,10 +1,10 @@
-// Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+// Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-// Date        : Sat Nov  6 15:33:33 2021
-// Host        : DESKTOP-EJES3MJ running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub {c:/Users/Zonghui Wang/Desktop/risc
-//               v/Code4Stu/Exp5/Exp5.srcs/sources_1/ip/divider/divider_stub.v}
+// Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
+// Date        : Sun Dec 12 08:07:58 2021
+// Host        : DESKTOP-FTNKO2C running 64-bit major release  (build 9200)
+// Command     : write_verilog -force -mode synth_stub
+//               e:/arch_labs_2021/lab5/Exp5/Exp5/Exp5.srcs/sources_1/ip/divider/divider_stub.v
 // Design      : divider
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7k325tffg676-2L

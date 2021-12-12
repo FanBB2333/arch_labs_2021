@@ -1,0 +1,175 @@
+/*
+
+Xilinx Vivado v2020.2 (64-bit) [Major: 2020, Minor: 2]
+SW Build: 3064766 on Wed Nov 18 09:12:45 MST 2020
+IP Build: 3064653 on Wed Nov 18 14:17:31 MST 2020
+
+Process ID (PID): 10932
+License: Customer
+Mode: GUI Mode
+
+Current time: 	Sat Dec 11 23:50:38 CST 2021
+Time zone: 	China Standard Time (Asia/Shanghai)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 4
+
+Screen size: 1920x1080
+Screen resolution (DPI): 100
+Available screens: 1
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+Scale size: 12
+
+Java version: 	11.0.2 64-bit
+Java home: 	E:/Xilinx/Vivado/2020.2/tps/win64/jre11.0.2
+Java executable location: 	E:/Xilinx/Vivado/2020.2/tps/win64/jre11.0.2/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	25040
+User home directory: C:/Users/25040
+User working directory: E:/arch_labs_2021/lab6/Exp6
+User country: 	CN
+User language: 	zh
+User locale: 	zh_CN
+
+RDI_BASEROOT: E:/Xilinx/Vivado
+HDI_APPROOT: E:/Xilinx/Vivado/2020.2
+RDI_DATADIR: E:/Xilinx/Vivado/2020.2/data
+RDI_BINDIR: E:/Xilinx/Vivado/2020.2/bin
+
+Vivado preferences file location: C:/Users/25040/AppData/Roaming/Xilinx/Vivado/2020.2/vivado.xml
+Vivado preferences directory: C:/Users/25040/AppData/Roaming/Xilinx/Vivado/2020.2/
+Vivado layouts directory: C:/Users/25040/AppData/Roaming/Xilinx/Vivado/2020.2/data/layouts
+PlanAhead jar file location: 	E:/Xilinx/Vivado/2020.2/lib/classes/planAhead.jar
+Vivado log file location: 	E:/arch_labs_2021/lab6/Exp6/vivado.log
+Vivado journal file location: 	E:/arch_labs_2021/lab6/Exp6/vivado.jou
+Engine tmp dir: 	E:/arch_labs_2021/lab6/Exp6/.Xil/Vivado-10932-DESKTOP-FTNKO2C
+
+Xilinx Environment Variables
+----------------------------
+XILINX: E:/Xilinx/Vivado/2020.2/ids_lite/ISE
+XILINX_DSP: E:/Xilinx/Vivado/2020.2/ids_lite/ISE
+XILINX_HLS: E:/Xilinx/Vitis_HLS/2020.2
+XILINX_PLANAHEAD: E:/Xilinx/Vivado/2020.2
+XILINX_VIVADO: E:/Xilinx/Vivado/2020.2
+XILINX_VIVADO_HLS: E:/Xilinx/Vivado/2020.2
+
+
+GUI allocated memory:	154 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 1,035 MB
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// [GUI Memory]: 79 MB (+80230kb) [00:00:09]
+// [Engine Memory]: 1,035 MB (+933677kb) [00:00:09]
+// bz (cr):  Open Project : addNotify
+// Opening Vivado Project: E:\arch_labs_2021\lab6\Exp6\Exp6.xpr. Version: Vivado v2020.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project E:/arch_labs_2021/lab6/Exp6/Exp6.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project E:/arch_labs_2021/lab6/Exp6/Exp6.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: ERROR: [IP_Flow 19-993] Could not find IP file for IP 'multiplier'. 
+// Tcl Message: ERROR: [IP_Flow 19-993] Could not find IP file for IP 'divider'. 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 103 MB (+21365kb) [00:00:15]
+// WARNING: HEventQueue.dispatchEvent() is taking  3687 ms.
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'E:/Xilinx/Vivado/2020.2/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,035 MB. GUI used memory: 58 MB. Current time: 12/11/21, 11:50:43 PM CST
+// Tcl Message: open_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:07 . Memory (MB): peak = 1021.508 ; gain = 0.000 
+// Tcl Message: ERROR: [Common 17-39] 'open_project' failed due to earlier errors. 
+// CommandFailedException: ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'open_project' failed due to earlier errors.  
+dismissDialog("Open Project"); // bz
+// a (cr): Critical Messages: addNotify
+// [GUI Memory]: 122 MB (+13753kb) [00:00:24]
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 13 seconds
+selectButton(PAResourceAtoD.CmdMsgDialog_OPEN_MESSAGES_VIEW, "Open Messages View"); // a
+// Run Command: PAResourceCommand.PACommandNames_MESSAGE_WINDOW
+dismissDialog("Critical Messages"); // a
+// Elapsed time: 311 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files]", 2); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files, CtrlUnit.v]", 3, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files, CtrlUnit.v]", 3, false, false, false, false, false, true); // D - Double Click
+// Elapsed time: 86 seconds
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Vivado Commands, General Messages, [Project 1-19] Could not find the file 'E:/arch_labs_2021/lab6/Exp6/Exp6.srcs/sources_1/ip/multiplier/multiplier.xci'.. ]", 2, true); // ah - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Vivado Commands, General Messages, [Project 1-19] Could not find the file 'E:/arch_labs_2021/lab6/Exp6/Exp6.srcs/sources_1/ip/multiplier/multiplier.xci'.. ]", 2, true, false, false, false, false, true); // ah - Double Click - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Vivado Commands, General Messages, [Project 1-19] Could not find the file 'E:/arch_labs_2021/lab6/Exp6/Exp6.srcs/sources_1/ip/multiplier/multiplier.xci'.. , [Project 1-19] Could not find the file 'E:/arch_labs_2021/lab6/Exp6/Exp6.srcs/sources_1/ip/divider/divider.xci'.. ]", 3, false); // ah
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Vivado Commands, General Messages, [Project 1-19] Could not find the file 'E:/arch_labs_2021/lab6/Exp6/Exp6.srcs/sources_1/ip/multiplier/multiplier.xci'.. , [Project 1-19] Could not find the file 'E:/arch_labs_2021/lab6/Exp6/Exp6.srcs/sources_1/ip/divider/divider.xci'.. ]", 3, false, false, false, false, false, true); // ah - Double Click
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 5); // D
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 5); // D
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 6); // D
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 6); // D
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Utility Sources]", 7); // D
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Utility Sources]", 7); // D
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Vivado Commands, General Messages, [IP_Flow 19-993] Could not find IP file for IP 'multiplier'.. ]", 4, true); // ah - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Vivado Commands, General Messages, [IP_Flow 19-993] Could not find IP file for IP 'multiplier'.. ]", 4, true, false, false, false, false, true); // ah - Double Click - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Vivado Commands, General Messages, [IP_Flow 19-993] Could not find IP file for IP 'multiplier'.. , [IP_Flow 19-993] Could not find IP file for IP 'divider'.. ]", 5, false); // ah
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Vivado Commands, General Messages, [IP_Flow 19-993] Could not find IP file for IP 'multiplier'.. , [IP_Flow 19-993] Could not find IP file for IP 'divider'.. ]", 5, false, false, false, false, false, true); // ah - Double Click
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Vivado Commands, General Messages, [IP_Flow 19-993] Could not find IP file for IP 'multiplier'.. ]", 4, true); // ah - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Vivado Commands, General Messages, [IP_Flow 19-993] Could not find IP file for IP 'multiplier'.. ]", 4, true, false, false, false, false, true); // ah - Double Click - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Vivado Commands, General Messages, [IP_Flow 19-993] Could not find IP file for IP 'multiplier'.. ]", 4, true); // ah - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Vivado Commands, General Messages, [IP_Flow 19-993] Could not find IP file for IP 'multiplier'.. ]", 4, true, false, false, false, false, true); // ah - Double Click - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Analysis Results, sources_1, [HDL 9-806] Syntax error near ;. [E:/arch_labs_2021/lab6/Exp6/code/core/CtrlUnit.v:172]. ]", 9, true); // ah - Node
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;E:\arch_labs_2021\lab6\Exp6\code\core\CtrlUnit.v;-;;-;16;-;line;-;172;-;;-;16;-;"); // ah
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Analysis Results, sim_1, [HDL 9-806] Syntax error near ;. [E:/arch_labs_2021/lab6/Exp6/code/core/CtrlUnit.v:172]. ]", 11, true); // ah - Node
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;E:\arch_labs_2021\lab6\Exp6\code\core\CtrlUnit.v;-;;-;16;-;line;-;172;-;;-;16;-;"); // ah
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Analysis Results, sim_1, [HDL 9-806] Syntax error near ;. [E:/arch_labs_2021/lab6/Exp6/code/core/CtrlUnit.v:172]. ]", 11, true); // ah - Node
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;E:\arch_labs_2021\lab6\Exp6\code\core\CtrlUnit.v;-;;-;16;-;line;-;172;-;;-;16;-;"); // ah
+selectCodeEditor("CtrlUnit.v", 144, 198); // bP
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// [GUI Memory]: 138 MB (+10835kb) [00:07:58]
+// Elapsed time: 16 seconds
+selectCodeEditor("CtrlUnit.v", 249, 204); // bP
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Analysis Results, sources_1, [HDL 9-806] Syntax error near ). [E:/arch_labs_2021/lab6/Exp6/code/core/CtrlUnit.v:300]. ]", 9, true); // ah - Node
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;E:\arch_labs_2021\lab6\Exp6\code\core\CtrlUnit.v;-;;-;16;-;line;-;300;-;;-;16;-;"); // ah
+// Elapsed time: 12 seconds
+maximizeView(PAResourceOtoP.PAViews_BASE_WORKSPACE, "BaseWorkspace"); // N
+// Elapsed time: 16 seconds
+typeControlKey(null, null, 'z');
+selectCodeEditor("CtrlUnit.v", 409, 332); // bP
+// HMemoryUtils.trashcanNow. Engine heap size: 1,035 MB. GUI used memory: 76 MB. Current time: 12/12/21, 12:20:44 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,035 MB. GUI used memory: 69 MB. Current time: 12/12/21, 12:50:45 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,035 MB. GUI used memory: 67 MB. Current time: 12/12/21, 1:20:45 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,035 MB. GUI used memory: 67 MB. Current time: 12/12/21, 1:50:45 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,035 MB. GUI used memory: 68 MB. Current time: 12/12/21, 2:20:46 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,035 MB. GUI used memory: 67 MB. Current time: 12/12/21, 2:50:46 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,035 MB. GUI used memory: 67 MB. Current time: 12/12/21, 3:20:46 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,035 MB. GUI used memory: 67 MB. Current time: 12/12/21, 3:50:47 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,035 MB. GUI used memory: 68 MB. Current time: 12/12/21, 4:20:47 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,035 MB. GUI used memory: 67 MB. Current time: 12/12/21, 4:50:47 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,035 MB. GUI used memory: 67 MB. Current time: 12/12/21, 5:20:47 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,035 MB. GUI used memory: 67 MB. Current time: 12/12/21, 5:50:48 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,035 MB. GUI used memory: 67 MB. Current time: 12/12/21, 6:20:48 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,035 MB. GUI used memory: 67 MB. Current time: 12/12/21, 6:50:48 AM CST
