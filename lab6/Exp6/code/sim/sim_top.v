@@ -33,6 +33,8 @@ module sim_top;
 		#95 rstn = 1;
         
 		// Add stimulus here
+        // #10 rstn = 0;
+
 	end
 	
 	initial forever #10 clk = ~clk;
