@@ -1,7 +1,7 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
--- Date        : Sun Dec 12 22:55:28 2021
+-- Date        : Sun Dec 19 00:21:28 2021
 -- Host        : DESKTOP-FTNKO2C running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub
 --               e:/arch_labs_2021/lab6/Exp6/Exp6.srcs/sources_1/ip/divider/divider_stub.vhdl

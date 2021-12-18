@@ -169,7 +169,7 @@ module CtrlUnit(
                     FUS[`FU_DIV][`BUSY] & use_DIV |
                     FUS[`FU_JUMP][`BUSY] & use_JUMP;
 
-    assign WAW_signal = 0; // TODO
+    assign WAW_signal = RRS[dst] != `FU_BLANK; // TODO
                                 
     assign normal_stall = structural_hazard | WAW_signal;           //fill sth. here
 

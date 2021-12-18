@@ -23,7 +23,7 @@ E:/arch_labs_2021/lab6/Exp6/code/common/REG32.v,1630116495,verilog,,E:/arch_labs
 E:/arch_labs_2021/lab6/Exp6/code/common/add_32.v,1630116495,verilog,,E:/arch_labs_2021/lab6/Exp6/code/auxillary/btn_scan.v,,add_32,,,../../../../code/auxillary;../../../../code/core,,,,,
 E:/arch_labs_2021/lab6/Exp6/code/common/cmp_32.v,1630116495,verilog,,E:/arch_labs_2021/lab6/Exp6/code/auxillary/debug_clk.v,,cmp_32,,,../../../../code/auxillary;../../../../code/core,,,,,
 E:/arch_labs_2021/lab6/Exp6/code/core/CtrlDefine.vh,1639066098,verilog,,,,,,,,,,,,
-E:/arch_labs_2021/lab6/Exp6/code/core/CtrlUnit.v,1639322362,verilog,,E:/arch_labs_2021/lab6/Exp6/code/core/FU_ALU.v,E:/arch_labs_2021/lab6/Exp6/code/core/CtrlDefine.vh,CtrlUnit,,,../../../../code/auxillary;../../../../code/core,,,,,
+E:/arch_labs_2021/lab6/Exp6/code/core/CtrlUnit.v,1639845973,verilog,,E:/arch_labs_2021/lab6/Exp6/code/core/FU_ALU.v,E:/arch_labs_2021/lab6/Exp6/code/core/CtrlDefine.vh,CtrlUnit,,,../../../../code/auxillary;../../../../code/core,,,,,
 E:/arch_labs_2021/lab6/Exp6/code/core/FU_ALU.v,1630116495,verilog,,E:/arch_labs_2021/lab6/Exp6/code/core/FU_div.v,,FU_ALU,,,../../../../code/auxillary;../../../../code/core,,,,,
 E:/arch_labs_2021/lab6/Exp6/code/core/FU_div.v,1630116495,verilog,,E:/arch_labs_2021/lab6/Exp6/code/core/FU_jump.v,,FU_div,,,../../../../code/auxillary;../../../../code/core,,,,,
 E:/arch_labs_2021/lab6/Exp6/code/core/FU_jump.v,1633008300,verilog,,E:/arch_labs_2021/lab6/Exp6/code/core/FU_mem.v,,FU_jump,,,../../../../code/auxillary;../../../../code/core,,,,,
