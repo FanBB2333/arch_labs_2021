@@ -35,4 +35,4 @@ E:/arch_labs_2021/lab6/Exp6/code/core/REG_IF_IS.v,1630116495,verilog,,E:/arch_la
 E:/arch_labs_2021/lab6/Exp6/code/core/ROM_D.v,1630116495,verilog,,E:/arch_labs_2021/lab6/Exp6/code/core/RV32core.v,,ROM_D,,,../../../../code/auxillary;../../../../code/core,,,,,
 E:/arch_labs_2021/lab6/Exp6/code/core/RV32core.v,1637137547,verilog,,E:/arch_labs_2021/lab6/Exp6/code/core/Regs.v,,RV32core,,,../../../../code/auxillary;../../../../code/core,,,,,
 E:/arch_labs_2021/lab6/Exp6/code/core/Regs.v,1630116495,verilog,,E:/arch_labs_2021/lab6/Exp6/code/auxillary/VGATEST.v,,Regs,,,../../../../code/auxillary;../../../../code/core,,,,,
-E:/arch_labs_2021/lab6/Exp6/code/sim/sim_top.v,1639324197,verilog,,,,sim_top,,,../../../../code/auxillary;../../../../code/core,,,,,
+E:/arch_labs_2021/lab6/Exp6/code/sim/sim_top.v,1639324278,verilog,,,,sim_top,,,../../../../code/auxillary;../../../../code/core,,,,,
