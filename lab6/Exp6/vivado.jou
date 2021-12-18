@@ -11,3 +11,13 @@
 #-----------------------------------------------------------
 start_gui
 open_project E:/arch_labs_2021/lab6/Exp6/Exp6.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+open_wave_config E:/arch_labs_2021/lab6/Exp6/code/sim/sim_top_behav.wcfg
+source sim_top.tcl
+run 10000 ns
+run 10000 ns
+close_sim
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
