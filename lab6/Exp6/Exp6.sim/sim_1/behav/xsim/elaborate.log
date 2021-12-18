@@ -164,5 +164,4 @@ Compiling module xil_defaultlib.VGA_TESTP
 Compiling module xil_defaultlib.top
 Compiling module xil_defaultlib.sim_top
 Compiling module xil_defaultlib.glbl
-ERROR: [XSIM 43-3409] Failed to compile generated C file xsim.dir/sim_top_behav/obj/xsim_3.c.
-ERROR: [XSIM 43-3915] Encountered a fatal error. Cannot continue. Exiting... 
+Built simulation snapshot sim_top_behav

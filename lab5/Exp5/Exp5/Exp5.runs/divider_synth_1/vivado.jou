@@ -2,8 +2,8 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Sun Dec 12 08:06:49 2021
-# Process ID: 1868
+# Start of session at: Sat Dec 18 23:33:14 2021
+# Process ID: 4824
 # Current directory: E:/arch_labs_2021/lab5/Exp5/Exp5/Exp5.runs/divider_synth_1
 # Command line: vivado.exe -log divider.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source divider.tcl
 # Log file: E:/arch_labs_2021/lab5/Exp5/Exp5/Exp5.runs/divider_synth_1/divider.vds

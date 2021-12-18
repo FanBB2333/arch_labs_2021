@@ -2,8 +2,8 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Sun Dec 12 08:06:49 2021
-# Process ID: 6260
+# Start of session at: Sat Dec 18 23:33:14 2021
+# Process ID: 4612
 # Current directory: E:/arch_labs_2021/lab5/Exp5/Exp5/Exp5.runs/multiplier_synth_1
 # Command line: vivado.exe -log multiplier.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source multiplier.tcl
 # Log file: E:/arch_labs_2021/lab5/Exp5/Exp5/Exp5.runs/multiplier_synth_1/multiplier.vds

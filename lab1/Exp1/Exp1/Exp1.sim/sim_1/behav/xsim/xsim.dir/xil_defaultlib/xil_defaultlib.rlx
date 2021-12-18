@@ -14,7 +14,7 @@ E:/arch_labs_2021/lab1/Exp1/Exp1/code/core/ALU.v,1628301567,verilog,,E:/arch_lab
 E:/arch_labs_2021/lab1/Exp1/Exp1/code/core/CtrlUnit.v,1633782523,verilog,,E:/arch_labs_2021/lab1/Exp1/Exp1/code/core/HazardDetectionUnit.v,,CtrlUnit,,,../../../../code/auxillary,,,,,
 E:/arch_labs_2021/lab1/Exp1/Exp1/code/core/HazardDetectionUnit.v,1634372612,verilog,,E:/arch_labs_2021/lab1/Exp1/Exp1/code/core/ImmGen.v,,HazardDetectionUnit,,,../../../../code/auxillary,,,,,
 E:/arch_labs_2021/lab1/Exp1/Exp1/code/core/ImmGen.v,1630067356,verilog,,E:/arch_labs_2021/lab1/Exp1/Exp1/code/core/Latch2_2.v,,ImmGen,,,../../../../code/auxillary,,,,,
-E:/arch_labs_2021/lab1/Exp1/Exp1/code/core/Latch2_2.v,1633683032,verilog,,E:/arch_labs_2021/lab1/Exp1/Exp1/code/common/MUX2T1_32.v,,Latch2_2,,,../../../../code/auxillary,,,,,
+E:/arch_labs_2021/lab1/Exp1/Exp1/code/core/Latch2_2.v,1634348133,verilog,,E:/arch_labs_2021/lab1/Exp1/Exp1/code/common/MUX2T1_32.v,,Latch2_2,,,../../../../code/auxillary,,,,,
 E:/arch_labs_2021/lab1/Exp1/Exp1/code/core/RAM_B.v,1629983726,verilog,,E:/arch_labs_2021/lab1/Exp1/Exp1/code/common/REG32.v,,RAM_B,,,../../../../code/auxillary,,,,,
 E:/arch_labs_2021/lab1/Exp1/Exp1/code/core/REG_EX_MEM.v,1629996003,verilog,,E:/arch_labs_2021/lab1/Exp1/Exp1/code/core/REG_ID_EX.v,,REG_EX_MEM,,,../../../../code/auxillary,,,,,
 E:/arch_labs_2021/lab1/Exp1/Exp1/code/core/REG_ID_EX.v,1629996012,verilog,,E:/arch_labs_2021/lab1/Exp1/Exp1/code/core/REG_IF_ID.v,,REG_ID_EX,,,../../../../code/auxillary,,,,,

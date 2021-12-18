@@ -33,4 +33,5 @@ Compiling module xil_defaultlib.CPUTEST
 Compiling module xil_defaultlib.RV32core
 Compiling module xil_defaultlib.core_sim
 Compiling module xil_defaultlib.glbl
-Built simulation snapshot core_sim_behav
+ERROR: [XSIM 43-3409] Failed to compile generated C file xsim.dir/core_sim_behav/obj/xsim_1.c.
+ERROR: [XSIM 43-3915] Encountered a fatal error. Cannot continue. Exiting... 

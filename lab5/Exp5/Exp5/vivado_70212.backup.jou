@@ -2,18 +2,19 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Sat Dec 11 19:45:32 2021
-# Process ID: 16628
+# Start of session at: Sat Dec 18 23:09:54 2021
+# Process ID: 70212
 # Current directory: E:/arch_labs_2021/lab5/Exp5/Exp5
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent17508 E:\arch_labs_2021\lab5\Exp5\Exp5\Exp5.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent70208 E:\arch_labs_2021\lab5\Exp5\Exp5\Exp5.xpr
 # Log file: E:/arch_labs_2021/lab5/Exp5/Exp5/vivado.log
 # Journal file: E:/arch_labs_2021/lab5/Exp5/Exp5\vivado.jou
 #-----------------------------------------------------------
 start_gui
 open_project E:/arch_labs_2021/lab5/Exp5/Exp5/Exp5.xpr
 update_compile_order -fileset sources_1
+reset_run synth_1
+reset_run multiplier_synth_1
+reset_run divider_synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
 launch_simulation
-open_wave_config E:/arch_labs_2021/lab5/Exp5/Exp5/code/sim/core_sim_behav.wcfg
-source core_sim.tcl
-save_wave_config {E:/arch_labs_2021/lab5/Exp5/Exp5/code/sim/core_sim_behav.wcfg}
-close_sim
