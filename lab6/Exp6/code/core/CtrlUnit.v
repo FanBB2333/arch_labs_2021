@@ -363,8 +363,6 @@ module CtrlUnit(
                 FUS[use_FU][`RDY1] <= fu1 == 0;
                 FUS[use_FU][`RDY2] <= fu2 == 0;
 
-                // ...                             //fill sth. here.
-                
                 IMM[use_FU] <= imm;
                 PCR[use_FU] <= PC;
             end
@@ -379,7 +377,6 @@ module CtrlUnit(
                 // ALU
                 FUS[`FU_ALU][`RDY1] <= 1'b0;
                 FUS[`FU_ALU][`RDY2] <= 1'b0;
-                // ...                         //fill sth. here.
             end
             else if (FUS[`FU_MEM][`RDY1] & FUS[`FU_MEM][`RDY2]) begin             //fill sth. here.
                 // MEM
@@ -403,7 +400,6 @@ module CtrlUnit(
             // EX
             //  When all operands have been fetched, the Computation Unit starts its execution. 
             // After the result is ready, the scoreboard is notified.
-
             FUS[`FU_ALU][`FU_DONE] <= ALU_done   | FUS[`FU_ALU][`FU_DONE] ;   //fill sth. here
             FUS[`FU_MEM][`FU_DONE] <= MEM_done   | FUS[`FU_MEM][`FU_DONE] ;   //fill sth. here
             FUS[`FU_MUL][`FU_DONE] <= MUL_done   | FUS[`FU_MUL][`FU_DONE] ;   //fill sth. here
